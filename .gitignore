@@ -1,0 +1,6 @@
+node_modules/
+*.mp4
+Public.zip
+public/*.jpg
+public/*.jpeg
+public/*.png
