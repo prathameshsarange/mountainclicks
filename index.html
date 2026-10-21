@@ -2,1059 +2,494 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MountainClicks Photography</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/db006bf474.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap"
-        rel="stylesheet">
-    <style>
-        :root {
-            --dark: #1a1a18;
-            --gold: #c8a96e;
-            --light: #f5f0e8;
-            --mid: #3d3d38;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Jost', sans-serif;
-            font-weight: 300;
-            color: var(--dark);
-            background: var(--light);
-        }
-
-        /* ---- SCROLLBAR ---- */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold);
-        }
-
-        /* ---- SIDENAV ---- */
-        .sidenav {
-            height: 100vh;
-            width: 0;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            background: var(--dark);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 80px;
-            font-family: 'Jost', sans-serif;
-            letter-spacing: 3px;
-        }
-
-        .sidenav a {
-            padding: 12px 32px;
-            text-decoration: none;
-            color: #ccc;
-            display: block;
-            font-size: 13px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: var(--gold);
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 32px;
-            color: #ccc;
-        }
-
-        .sidenav .closebtn:hover {
-            color: var(--gold);
-        }
-
-        /* ---- DESKTOP NAV ---- */
-        #nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            padding: 18px 5%;
-            display: flex;
-            align-items: center;
-            transition: 0.5s all;
-        }
-
-        .nav-left,
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            flex: 1;
-        }
-
-        .nav-right {
-            justify-content: flex-end;
-        }
-
-        .nav-center {
-            text-align: center;
-        }
-
-        #nav a {
-            font-size: 11px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .classinitial {
-            background: transparent;
-        }
-
-        .classinitial a {
-            color: #fff;
-        }
-
-        .classinitial .brand-name {
-            color: #fff;
-        }
-
-        .classfinal {
-            background: var(--dark);
-        }
-
-        .classfinal a {
-            color: #ccc;
-        }
-
-        .classfinal a:hover {
-            color: var(--gold);
-        }
-
-        .classfinal .brand-name {
-            color: var(--gold);
-        }
-
-        .classinitial a:hover {
-            color: var(--gold);
-        }
-
-        .brand-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        .btn-enquire {
-            border: 1px solid currentColor;
-            padding: 7px 22px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: transparent;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Jost', sans-serif;
-        }
-
-        .classinitial .btn-enquire {
-            color: #fff;
-            border-color: #fff;
-        }
-
-        .classinitial .btn-enquire:hover {
-            background: #fff;
-            color: var(--dark);
-        }
-
-        .classfinal .btn-enquire {
-            color: var(--gold);
-            border-color: var(--gold);
-        }
-
-        .classfinal .btn-enquire:hover {
-            background: var(--gold);
-            color: var(--dark);
-        }
-
-        /* ---- MOBILE NAV ---- */
-        #navMob {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            background: var(--dark);
-            padding: 14px 5%;
-            align-items: center;
-        }
-
-        #navMob a {
-            color: #ccc;
-            text-decoration: none;
-        }
-
-        #navMob .brand-name {
-            color: var(--gold);
-            font-size: 18px;
-        }
-
-        /* ---- HERO CAROUSEL ---- */
-        .hero-carousel {
-            position: relative;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .hero-carousel .carousel,
-        .hero-carousel .carousel-inner,
-        .hero-carousel .carousel-item {
-            height: 100%;
-        }
-
-        .hero-carousel .carousel-item img {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            filter: brightness(0.65);
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 10;
-            color: #fff;
-            width: 90%;
-        }
-
-        .hero-overlay .tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(42px, 7vw, 90px);
-            font-weight: 300;
-            font-style: italic;
-            letter-spacing: 2px;
-            line-height: 1.1;
-            margin-bottom: 16px;
-        }
-
-        .hero-overlay .sub {
-            font-size: 11px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 32px;
-        }
-
-        .hero-overlay .hero-btn {
-            display: inline-block;
-            border: 1px solid #fff;
-            color: #fff;
-            padding: 12px 40px;
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .hero-overlay .hero-btn:hover {
-            background: #fff;
-            color: var(--dark);
-        }
-
-        /* placeholder images */
-        .placeholder-img {
-            background: linear-gradient(135deg, #c8a96e22, #1a1a1844);
-            border: 1px dashed #c8a96e55;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 12px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .hero-placeholder {
-            width: 100%;
-            height: 100vh;
-        }
-
-        /* ---- SECTION HEADINGS ---- */
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(36px, 5vw, 64px);
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-        .section-sub {
-            font-size: 11px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 50px;
-        }
-
-        .gold-line {
-            width: 50px;
-            height: 1px;
-            background: var(--gold);
-            margin: 16px auto 20px;
-        }
-
-        /* ---- PORTFOLIO SECTION ---- */
-        .portfolio-section {
-            padding: 100px 5%;
-            text-align: center;
-            background: var(--light);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-top: 50px;
-        }
-
-        .portfolio-card {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .portfolio-card .card-img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            transition: 0.6s;
-        }
-
-        .portfolio-card .ph {
-            width: 100%;
-            height: 380px;
-        }
-
-        .portfolio-card:hover .card-img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-card .card-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(26, 26, 24, 0.85));
-            padding: 30px 20px 20px;
-            transform: translateY(10px);
-            transition: 0.3s;
-        }
-
-        .portfolio-card:hover .card-overlay {
-            transform: translateY(0);
-        }
-
-        .portfolio-card .card-title {
-            color: #fff;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 20px;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        .portfolio-card .card-explore {
-            color: var(--gold);
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        /* ---- FEATURED STORIES ---- */
-        .stories-section {
-            padding: 100px 5%;
-            background: var(--dark);
-            color: #fff;
-            text-align: center;
-        }
-
-        .stories-section .section-title {
-            color: #fff;
-        }
-
-        .stories-section .section-sub {
-            color: var(--gold);
-        }
-
-        .story-card {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 20px;
-        }
-
-        .story-card .story-img {
-            width: 100%;
-            height: 450px;
-            object-fit: cover;
-            filter: brightness(0.7);
-            transition: 0.6s;
-        }
-
-        .story-card .ph {
-            width: 100%;
-            height: 450px;
-        }
-
-        .story-card:hover .story-img {
-            filter: brightness(0.5);
-            transform: scale(1.03);
-        }
-
-        .story-info {
-            margin-top: 20px;
-            text-align: left;
-            padding: 0 5px;
-        }
-
-        .story-info h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 300;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        .story-info h5 {
-            font-size: 11px;
-            color: #888;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 4px;
-        }
-
-        .story-btn {
-            display: inline-block;
-            margin-top: 14px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 8px 24px;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .story-btn:hover {
-            background: var(--gold);
-            color: var(--dark);
-            text-decoration: none;
-        }
-
-        /* ---- INSTAGRAM SECTION ---- */
-        .instagram-section {
-            padding: 100px 5%;
-            background: var(--light);
-            text-align: center;
-        }
-
-        .insta-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 8px;
-            margin-top: 50px;
-        }
-
-        .insta-item {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .insta-item .insta-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: 0.5s;
-            display: block;
-        }
-
-        .insta-item .ph {
-            width: 100%;
-            height: 300px;
-        }
-
-        .insta-item:hover .insta-img {
-            transform: scale(1.05);
-            filter: brightness(0.8);
-        }
-
-        .insta-overlay {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: 0.3s;
-            background: rgba(26, 26, 24, 0.4);
-        }
-
-        .insta-item:hover .insta-overlay {
-            opacity: 1;
-        }
-
-        .insta-overlay i {
-            color: #fff;
-            font-size: 28px;
-        }
-
-        /* ---- BRANDS ---- */
-        .brands-section {
-            padding: 80px 5%;
-            background: #fff;
-            text-align: center;
-        }
-
-        .brands-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .brand-circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: #fff;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .brand-circle:hover {
-            box-shadow: none;
-        }
-
-        .brand-circle img {
-            width: 80%;
-        }
-
-        .brand-ph {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 9px;
-            color: #999;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ---- FOOTER BANNER ---- */
-        .footer-banner {
-            background: var(--gold);
-            padding: 40px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-banner h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 26px;
-            font-weight: 300;
-            color: var(--dark);
-            margin: 0;
-        }
-
-        .footer-banner .social-icons a {
-            color: var(--dark);
-            font-size: 20px;
-            margin-left: 20px;
-            transition: 0.3s;
-        }
-
-        .footer-banner .social-icons a:hover {
-            opacity: 0.6;
-        }
-
-        /* ---- FOOTER BOTTOM ---- */
-        .footer-bottom {
-            background: var(--dark);
-            color: #999;
-            padding: 60px 5% 30px;
-        }
-
-        .footer-bottom .footer-brand {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            color: var(--gold);
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-        }
-
-        .footer-bottom p {
-            font-size: 13px;
-            line-height: 1.8;
-        }
-
-        .footer-bottom h6 {
-            color: #fff;
-            letter-spacing: 3px;
-            font-size: 11px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .footer-bottom a {
-            color: #888;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer-bottom a:hover {
-            color: var(--gold);
-        }
-
-        .footer-bottom .footer-link {
-            display: block;
-            font-size: 12px;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .footer-copyright {
-            border-top: 1px solid #333;
-            margin-top: 40px;
-            padding-top: 20px;
-            text-align: center;
-            font-size: 11px;
-            color: #555;
-            letter-spacing: 2px;
-        }
-
-        /* ---- RESPONSIVE ---- */
-        @media (max-width: 768px) {
-            #nav {
-                display: none !important;
-            }
-
-            #navMob {
-                display: flex !important;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 8px;
-            }
-
-            .portfolio-card .card-img,
-            .portfolio-card .ph {
-                height: 220px;
-            }
-
-            .insta-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .insta-item .insta-img,
-            .insta-item .ph {
-                height: 200px;
-            }
-
-            .hero-placeholder {
-                height: 100vh;
-            }
-
-            .footer-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-banner .social-icons a {
-                margin: 0 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .insta-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MountainClicks </title>
+  <meta name="description"
+    content="MountainClicks is a high-end wedding and fine art photography studio capturing timeless emotion, cinematic romance, and authentic elegance worldwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MountainClicks — Luxury Wedding & Fine Art Photography">
+  <meta property="og:description"
+    content="High-end wedding and fine art photography studio capturing timeless emotion and authentic elegance.">
+  <meta property="og:image" content="./Public/final/optimized/hero1.jpg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Master Luxury Stylesheet -->
+  <link rel="stylesheet" href="css/luxury-photographer.css">
 </head>
 
 <body>
 
-    <!-- SIDENAV -->
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.html"><i class="fa fa-home mr-2"></i> Home</a>
-        <a href="portfolio.html"><i class="fa fa-photo mr-2"></i> Portfolio</a>
-        <a href="wedding.html"><i class="fa fa-heart mr-2"></i> Wedding</a>
-        <a href="events.html"><i class="fa fa-calendar mr-2"></i> Events</a>
-        <a href="contact.html"><i class="fa fa-phone mr-2"></i> Contact</a>
-        <a href="about.html"><i class="fa fa-info-circle mr-2"></i> About</a>
-        <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram mr-2"></i> Instagram</a>
+  <!-- FLOATING LUXURY NAVBAR -->
+  <header class="mc-nav-wrapper">
+    <nav class="mc-nav">
+      <a href="index.html" class="mc-nav-brand">
+        <span class="brand-lens"></span> MOUNTAINCLICKS</span>
+      </a>
+
+      <ul class="mc-nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="Portfolio.html">Portfolio</a></li>
+        <li><a href="Wedding.html">Wedding</a></li>
+        <li><a href="WeddingFilms.html">Wedding Films</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+
+      <div class="mc-nav-actions">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+          style="color: var(--gold); font-size: 1.1rem; margin-right: 6px;">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a href="Contact.html" class="btn-luxury btn-shimmer-gold btn-enquire-nav">
+          <span>Enquire</span>
+          <span class="shutter-icon"></span>
+        </a>
+        <button class="mc-mobile-toggle" aria-label="Open Navigation Menu">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- FULLSCREEN MOBILE NAVIGATION DRAWER -->
+  <div class="mc-mobile-menu">
+    <button class="mc-mobile-close" aria-label="Close Navigation Menu">&times;</button>
+    <ul class="mc-mobile-nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Portfolio.html">Portfolio</a></li>
+      <li><a href="Wedding.html">Wedding</a></li>
+      <li><a href="WeddingFilms.html">Wedding Films</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+    <div style="margin-top: 36px; text-align: center;">
+      <a href="Contact.html" class="btn-luxury btn-shimmer-gold" style="display: inline-flex;">
+        <span>Book a Consultation</span>
+        <span class="shutter-icon"></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO SECTION (AIDA: ATTENTION) -->
+  <section class="mc-hero">
+    <div class="mc-hero-slider">
+      <div class="mc-hero-slide active">
+        <img src="./Public/final/optimized/hero1.jpg" alt="Luxury Wedding Portrait">
+      </div>
+      <div class="mc-hero-slide">
+        <img src="./Public/final/optimized/hero2.jpg" alt="Fine Art Couple Romance">
+      </div>
+      <div class="mc-hero-slide">
+        <img src="./Public/final/optimized/hero3.jpg" alt="Editorial Ceremony Moment">
+      </div>
+      <div class="mc-hero-slide">
+        <img src="./Public/final/optimized/hero4.jpg" alt="Cinematic Mountain Wedding">
+      </div>
+      <div class="mc-hero-slide">
+        <img src="./Public/final/optimized/hero5.jpg" alt="Authentic Celebration Emotion">
+      </div>
+      <div class="mc-hero-slide">
+        <img src="./Public/final/optimized/hero6.jpg" alt="Golden Hour Sunset Couple">
+      </div>
     </div>
 
-    <!-- DESKTOP NAV -->
-    <div id="nav" class="classinitial">
-        <div class="nav-left">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="wedding.html">Wedding</a>
-            <a href="events.html">Events</a>
-        </div>
-        <div class="nav-center">
-            <span class="brand-name">MountainClicks</span>
-        </div>
-        <div class="nav-right">
-            <a href="about.html">About Us</a>
-            <a href="contact.html">Contact</a>
-            <a href="https://www.instagram.com/" target="_blank">
-                <i class="fa fa-instagram" style="font-size:16px;"></i>
-            </a>
-            <button class="btn-enquire" onclick="window.location='contact.html'">Enquire Now</button>
-        </div>
+    <div class="mc-hero-vignette"></div>
+
+    <div class="hero-controls">
+      <span class="hero-slide-counter">01 / 06</span>
+      <div class="hero-progress-bar">
+        <div class="hero-progress-fill"></div>
+      </div>
+      <div class="hero-nav-arrows">
+        <button class="hero-arrow-btn hero-arrow-prev" aria-label="Previous Slide">
+          <i class="fa fa-angle-left"></i>
+        </button>
+        <button class="hero-arrow-btn hero-arrow-next" aria-label="Next Slide">
+          <i class="fa fa-angle-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAPLESS BENTO SHOWCASE (AIDA: INTEREST) -->
+  <section class="bento-section">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+      <p class="section-sub">Curated Archive</p>
+      <h2 class="section-title">The Art of the Moment</h2>
+      <div class="gold-divider"></div>
+      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8;">
+        Every wedding is a private masterpiece. Here is a glimpse into the intimate ceremonies, royal banquets,
+        and quiet glances we have immortalized.
+      </p>
     </div>
 
-    <!-- MOBILE NAV -->
-    <div id="navMob">
-        <div style="flex:1;">
-            <a onclick="openNav()" style="font-size:22px;"><i class="fa fa-bars"></i></a>
+    <div class="bento-grid">
+      <!-- Card 1: Wide Feature (8 cols) -->
+      <div class="bento-card col-span-8" data-cursor="EXPLORE" onclick="window.location='Wedding.html'">
+        <div class="bento-card-img-wrap" style="height: 480px;">
+          <img src="./Public/final/optimized/wedding1.jpg" alt="Grand Royal Wedding">
         </div>
-        <div style="flex:2; text-align:center;">
-            <span class="brand-name">MountainClicks</span>
+        <div class="bento-card-overlay">
+          <span class="bento-tag">Fine Art Wedding</span>
+          <h3 class="bento-title">The Heritage Palace Vows</h3>
+          <div class="bento-meta">
+            <span>Leica M11 &bull; 35mm f/1.4</span>
+            <span>Rajasthan, India</span>
+          </div>
         </div>
-        <div style="flex:1; text-align:right; display:flex; justify-content:flex-end; gap:14px;">
-            <a href="tel:+91XXXXXXXXXX"><i class="fa fa-phone" style="font-size:18px;"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"
-                    style="font-size:18px;"></i></a>
+      </div>
+
+      <!-- Card 2: Tall Portrait (4 cols) -->
+      <div class="bento-card col-span-4" data-cursor="EXPLORE" onclick="window.location='Portfolio.html'">
+        <div class="bento-card-img-wrap" style="height: 480px;">
+          <img src="./Public/final/optimized/prewedding1.jpg" alt="Sunset Pre-Wedding">
         </div>
+        <div class="bento-card-overlay">
+          <span class="bento-tag">Pre-Wedding Story</span>
+          <h3 class="bento-title">Golden Hour Serenade</h3>
+          <div class="bento-meta">
+            <span>Sony A7R V &bull; 85mm f/1.2</span>
+            <span>Mountain Ridge</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Medium (4 cols) -->
+      <div class="bento-card col-span-4" data-cursor="EXPLORE" onclick="window.location='Wedding.html'">
+        <div class="bento-card-img-wrap" style="height: 380px;">
+          <img src="./Public/final/optimized/wedding2.jpg" alt="Intimate Bridal Portrait">
+        </div>
+        <div class="bento-card-overlay">
+          <span class="bento-tag">Bridal Elegance</span>
+          <h3 class="bento-title">The Unspoken Grace</h3>
+          <div class="bento-meta">
+            <span>50mm f/1.2 &bull; Natural Light</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Medium (4 cols) -->
+      <div class="bento-card col-span-4" data-cursor="EXPLORE" onclick="window.location='Portfolio.html'">
+        <div class="bento-card-img-wrap" style="height: 380px;">
+          <img src="./Public/final/optimized/gallery3.jpg" alt="Celebration & Festivity">
+        </div>
+        <div class="bento-card-overlay">
+          <span class="bento-tag">Event Celebration</span>
+          <h3 class="bento-title">Midnight Joy</h3>
+          <div class="bento-meta">
+            <span>Documentary &bull; 1/250s</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Medium (4 cols) -->
+      <div class="bento-card col-span-4" data-cursor="EXPLORE" onclick="window.location='Portfolio.html'">
+        <div class="bento-card-img-wrap" style="height: 380px;">
+          <img src="./Public/final/optimized/prewedding3.jpg" alt="Lakeside Romance">
+        </div>
+        <div class="bento-card-overlay">
+          <span class="bento-tag">Destination Couple</span>
+          <h3 class="bento-title">Still Waters</h3>
+          <div class="bento-meta">
+            <span>Editorial Fine Art</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Panoramic Bottom (12 cols) -->
+      <div class="bento-card col-span-12" data-cursor="EXPLORE" onclick="window.location='Wedding.html'">
+        <div class="bento-card-img-wrap" style="height: 420px;">
+          <img src="./Public/final/optimized/wedding4.jpg" alt="Grand Sangeet & Reception">
+        </div>
+        <div class="bento-card-overlay">
+          <span class="bento-tag">Reception &amp; Nightfall</span>
+          <h3 class="bento-title">Under A Thousand Lanterns</h3>
+          <div class="bento-meta">
+            <span>Grand Ball &bull; Ambient Illumination &bull; 24mm f/1.4</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- HERO CAROUSEL -->
-    <div class="hero-carousel">
-        <div id="heroCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./public/final/optimized/hero1.jpg"
-                        style="width:100%; height:100vh; object-fit:cover; filter:brightness(0.65);" alt="Hero 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="./public/final/optimized/hero2.jpg"
-                        style="width:100%; height:100vh; object-fit:cover; filter:brightness(0.65);" alt="Hero 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="./public/final/optimized/hero3.jpg"
-                        style="width:100%; height:100vh; object-fit:cover; filter:brightness(0.65);" alt="Hero 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="./public/final/optimized/hero4.jpg"
-                        style="width:100%; height:100vh; object-fit:cover; filter:brightness(0.65);" alt="Hero 4">
-                </div>
-                <div class="carousel-item">
-                    <img src="./public/final/optimized/hero5.jpg"
-                        style="width:100%; height:100vh; object-fit:cover; filter:brightness(0.65);" alt="Hero 5">
-                </div>
-                <div class="carousel-item">
-                    <img src="./public/final/optimized/hero6.jpg"
-                        style="width:100%; height:100vh; object-fit:cover; filter:brightness(0.65);" alt="Hero 6">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-        </div>
-        <!-- <div class="hero-overlay">
-            <p class="sub">Capturing moments that last forever</p>
-            <h1 class="tagline">Love Stories,<br>Beautifully Told.</h1>
-            <div style="width:50px; height:1px; background:var(--gold); margin:20px auto;"></div>
-            <a href="portfolio.html" class="hero-btn">View Portfolio</a>
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="Portfolio.html" class="btn-link-editorial">
+        <span>View Full 2026 Portfolio Gallery</span>
+        <i class="fa fa-long-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================
+         CUSTOM SECTION PLACEHOLDER
+         (Yahan aap apna custom section code daal sakte hain)
+         ======================================================== -->
+  <!-- START: USER CUSTOM SECTION -->
+  <!-- <section id="custom-section" style="display: none;"></section> -->
+  <!-- END: USER CUSTOM SECTION -->
+
+  <!-- FEATURED EDITORIAL CHAPTERS (AIDA: DESIRE) -->
+  <section class="stories-section">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 70px;">
+      <p class="section-sub">Editorial Chapters</p>
+      <h2 class="section-title">Stories Behind the Lens</h2>
+      <div class="gold-divider"></div>
+    </div>
+
+    <!-- Chapter 1 -->
+    <article class="story-chapter">
+      <a href="WeddingStory.html?id=aarav-meera" class="story-visual" data-cursor="VIEW"
+        style="text-decoration: none; display: block;">
+        <span class="story-badge-floating">Chapter 01 &bull; Lake Pichola</span>
+        <img src="./Public/final/optimized/wedding3.jpg" alt="Aarav & Meera Wedding Story">
+      </a>
+      <div class="story-content">
+        <p class="section-sub" style="margin-bottom: 0.5rem;">Intimate Royalty</p>
+        <h3 style="font-size: clamp(2rem, 3.5vw, 3rem); color: var(--text-white);">Aarav &amp; Meera</h3>
+        <div class="gold-divider gold-divider-left"></div>
+        <blockquote class="story-quote">
+          &ldquo;MountainClicks didn’t just photograph our wedding; they bottled the breathless, quiet pulse
+          of the entire weekend.&rdquo;
+        </blockquote>
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8;">
+          Three days of misty mornings, heartfelt vows, and candlelit courtyard toasts. Every photograph
+          preserves the genuine tears and laughter of their closest circle.
+        </p>
+        <!-- <div class="story-details-list">
+          <div class="story-detail-item">
+            <h5>Setting</h5>
+            <p>Lake Palace</p>
+          </div>
+          <div class="story-detail-item">
+            <h5>Aesthetic</h5>
+            <p>Film &amp; Candlelight</p>
+          </div>
+          <div class="story-detail-item">
+            <h5>Curated By</h5>
+            <p>MountainClicks</p>
+          </div>
         </div> -->
-    </div>
+        <a href="WeddingStory.html?id=aarav-meera" class="btn-luxury btn-shimmer-gold" style="margin-top: 10px;">
+          <span>View Wedding Story</span>
+          <span class="shutter-icon"></span>
+        </a>
+      </div>
+    </article>
 
-    <!-- PORTFOLIO SECTION -->
-    <div class="portfolio-section">
-        <p class="section-sub">What We Do</p>
-        <h2 class="section-title">Portfolio</h2>
-        <div class="gold-line"></div>
-        <p style="font-size:13px; letter-spacing:1px; color:#666; max-width:500px; margin:0 auto;">
-            Premium photography crafted with emotion, elegance, and artistry.
+    <!-- Chapter 2 -->
+    <article class="story-chapter reversed">
+      <a href="WeddingStory.html?id=kabir-ananya" class="story-visual" data-cursor="VIEW"
+        style="text-decoration: none; display: block;">
+        <span class="story-badge-floating">Chapter 02 &bull; Alpine Escape</span>
+        <img src="./Public/final/optimized/prewedding2.jpg" alt="Kabir & Ananya Pre-Wedding Story">
+      </a>
+      <div class="story-content">
+        <p class="section-sub" style="margin-bottom: 0.5rem;">Wild Romance</p>
+        <h3 style="font-size: clamp(2rem, 3.5vw, 3rem); color: var(--text-white);">Kabir &amp; Ananya</h3>
+        <div class="gold-divider gold-divider-left"></div>
+        <blockquote class="story-quote">
+          &ldquo;They made us feel completely untamed and natural. Looking at these frames brings back the
+          crisp mountain air.&rdquo;
+        </blockquote>
+        <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8;">
+          Captured at first light across high mountain meadows. A modern pre-wedding experience with
+          effortless style and zero stiff poses.
         </p>
+        <!-- <div class="story-details-list">
+          <div class="story-detail-item">
+            <h5>Location</h5>
+            <p>Himalayan Heights</p>
+          </div>
+          <div class="story-detail-item">
+            <h5>Atmosphere</h5>
+            <p>Dawn Golden Hour</p>
+          </div>
+          <div class="story-detail-item">
+            <h5>Coverage</h5>
+            <p>Full-Day Adventure</p>
+          </div>
+        </div> -->
+        <a href="WeddingStory.html?id=kabir-ananya" class="btn-luxury btn-shimmer-gold" style="margin-top: 10px;">
+          <span>View Wedding Story</span>
+          <span class="shutter-icon"></span>
+        </a>
+      </div>
+    </article>
+  </section>
 
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <img src="./public/final/optimized/wedding1.jpg" class="card-img"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Wedding">
-                <div class="card-overlay">
-                    <div class="card-title">Wedding</div>
-                    <div class="card-explore">Explore →</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="./public/final/optimized/prewedding1.jpg" class="card-img"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Pre-Wedding">
-                <div class="card-overlay">
-                    <div class="card-title">Pre-Wedding</div>
-                    <div class="card-explore">Explore →</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="./public/final/optimized/gallery1.jpg" class="card-img"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Birthday">
-                <div class="card-overlay">
-                    <div class="card-title">Birthday</div>
-                    <div class="card-explore">Explore →</div>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                <img src="./public/final/optimized/gallery2.jpg" class="card-img"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Events">
-                <div class="card-overlay">
-                    <div class="card-title">Events</div>
-                    <div class="card-explore">Explore →</div>
-                </div>
-            </div>
+  <!-- CRAFTSMANSHIP & PHILOSOPHY -->
+  <section class="philosophy-section">
+    <p class="section-sub">Our Philosophy</p>
+    <h2 class="section-title">Crafting Timeless Heirlooms</h2>
+    <div class="gold-divider"></div>
+    <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto; line-height: 1.8; font-size: 0.95rem;">
+      We believe wedding photography should transcend fleeting trends. Our work is driven by three core artistic
+      pillars.
+    </p>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <i class="fa fa-eye"></i>
         </div>
-    </div>
-
-    <!-- FEATURED STORIES -->
-    <div class="stories-section">
-        <p class="section-sub">Real Moments</p>
-        <h2 class="section-title">Featured Stories</h2>
-        <div class="gold-line"></div>
-
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="story-card">
-                    <img src="./public/final/optimized/story1.jpg" class="story-img"
-                        style="width:100%; height:450px; object-fit:cover;" alt="Story 1">
-                </div>
-                <div class="story-info">
-                    <h4>Aditya &amp; Ananya</h4>
-                    <h5>A Fairytale by the Lake</h5>
-                    <a href="wedding.html" class="story-btn">Explore</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="story-card">
-                    <img src="./public/final/optimized/story2.jpg" class="story-img"
-                        style="width:100%; height:450px; object-fit:cover;" alt="Story 2">
-                </div>
-                <div class="story-info">
-                    <h4>Rushikesh &amp; Bhumika</h4>
-                    <h5>Royal Paithani Celebration</h5>
-                    <a href="wedding.html" class="story-btn">Explore</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="story-card">
-                    <img src="./public/final/optimized/story3.jpg" class="story-img"
-                        style="width:100%; height:450px; object-fit:cover;" alt="Story 3">
-                </div>
-                <div class="story-info">
-                    <h4>Omkar &amp; Sneha</h4>
-                    <h5>Sangeet Night Reverie</h5>
-                    <a href="wedding.html" class="story-btn">Explore</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- INSTAGRAM SECTION -->
-    <div class="instagram-section">
-        <p class="section-sub">Follow Our Feed</p>
-        <h2 class="section-title">Instagram</h2>
-        <div class="gold-line"></div>
-        <p style="font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#888; margin-bottom:0;">
-            Few of our favourite shots — follow for the latest updates
+        <h3 class="pillar-title">Unobtrusive Documentary</h3>
+        <p class="pillar-desc">
+          We step back into the background, watching patiently for the micro-moments: a trembling hand, a
+          father's tear, an unchoreographed belly laugh.
         </p>
-        <div class="insta-grid">
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta1.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 1">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta2.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 2">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta3.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 3">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta4.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 4">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta5.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 5">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta6.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 6">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta7.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 7">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta8.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 8">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
-            <div class="insta-item">
-                <img src="./public/final/optimized/insta9.jpg" class="insta-img"
-                    style="width:100%; height:300px; object-fit:cover;" alt="Insta 9">
-                <div class="insta-overlay"><i class="fa fa-instagram"></i></div>
-            </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <i class="fa fa-sun-o"></i>
         </div>
-        <div style="margin-top:40px;">
-            <a href="https://www.instagram.com/" target="_blank"
-                style="display:inline-block; border:1px solid var(--dark); color:var(--dark); padding:12px 40px; font-size:11px; letter-spacing:3px; text-transform:uppercase; text-decoration:none; transition:0.3s;"
-                onmouseover="this.style.background='var(--dark)'; this.style.color='#fff'"
-                onmouseout="this.style.background='transparent'; this.style.color='var(--dark)'">
-                Follow on Instagram
-            </a>
+        <h3 class="pillar-title">Mastery of Natural Light</h3>
+        <p class="pillar-desc">
+          From soft morning window light to dramatic candlelit dining halls, we shape and celebrate natural
+          light to create painterly portraits.
+        </p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <i class="fa fa-diamond"></i>
         </div>
+        <h3 class="pillar-title">Bespoke Color Science</h3>
+        <p class="pillar-desc">
+          Each image is hand-mastered with rich skin tones, deep blacks, and true-to-life editorial warmth
+          that looks gorgeous today and fifty years from now.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM GALLERY -->
+  <section class="insta-section">
+    <p class="section-sub">Follow The Journey</p>
+    <h2 class="section-title">@MountainClicks</h2>
+    <div class="gold-divider"></div>
+    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 30px;">
+      Real-time previews, behind-the-scenes glimpses, and wedding sneak peeks.
+    </p>
+
+    <div class="insta-grid-modern">
+      <div class="insta-box" data-cursor="INSTA" onclick="window.open('https://instagram.com','_blank')">
+        <img src="./Public/final/optimized/insta1.jpg" alt="Instagram Post 1">
+        <div class="insta-box-overlay"><i class="fa fa-instagram"></i></div>
+      </div>
+      <div class="insta-box" data-cursor="INSTA" onclick="window.open('https://instagram.com','_blank')">
+        <img src="./Public/final/optimized/insta2.jpg" alt="Instagram Post 2">
+        <div class="insta-box-overlay"><i class="fa fa-instagram"></i></div>
+      </div>
+      <div class="insta-box" data-cursor="INSTA" onclick="window.open('https://instagram.com','_blank')">
+        <img src="./Public/final/optimized/insta3.jpg" alt="Instagram Post 3">
+        <div class="insta-box-overlay"><i class="fa fa-instagram"></i></div>
+      </div>
+      <div class="insta-box" data-cursor="INSTA" onclick="window.open('https://instagram.com','_blank')">
+        <img src="./Public/final/optimized/insta4.jpg" alt="Instagram Post 4">
+        <div class="insta-box-overlay"><i class="fa fa-instagram"></i></div>
+      </div>
+      <div class="insta-box" data-cursor="INSTA" onclick="window.open('https://instagram.com','_blank')">
+        <img src="./Public/final/optimized/insta5.jpg" alt="Instagram Post 5">
+        <div class="insta-box-overlay"><i class="fa fa-instagram"></i></div>
+      </div>
+      <div class="insta-box" data-cursor="INSTA" onclick="window.open('https://instagram.com','_blank')">
+        <img src="./Public/final/optimized/insta6.jpg" alt="Instagram Post 6">
+        <div class="insta-box-overlay"><i class="fa fa-instagram"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELITE FOOTER -->
+  <footer class="mc-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>MountainClicks</h3>
+        <p>
+          Fine art wedding and editorial photography studio dedicated to poetic imagery, luxury celebrations,
+          and honest emotional storytelling.
+        </p>
+        <div class="footer-social-strip">
+          <a href="https://www.instagram.com/mountainclicks.in/" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+          <a href="http://www.youtube.com/@mountainclicks5588" target="_blank" rel="noopener noreferrer"
+            aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Portfolio.html">Portfolio</a></li>
+          <li><a href="Wedding.html">Wedding Collections</a></li>
+          <li><a href="About.html">Studio Story</a></li>
+          <li><a href="Contact.html">Get in Touch</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Portfolio</h4>
+        <ul class="footer-links">
+          <li><a href="Wedding.html">Palace Weddings</a></li>
+          <li><a href="Portfolio.html">Pre-Wedding Shoots</a></li>
+          <li><a href="Portfolio.html">Bridal Portraits</a></li>
+          <li><a href="Wedding.html">Destination Guides</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Studio Inquiries</h4>
+        <div class="footer-contact-item">
+          <i class="fa fa-map-marker"></i>
+          <span>Studio: Umarkhed,Yavatmal,Maharashtra</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa fa-envelope-o"></i>
+          <span>mountainclicks.in@gmail.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa fa-phone"></i>
+          <span>+91 9527320932</span>
+        </div>
+        <div style="margin-top: 18px;">
+          <a href="Contact.html" class="btn-luxury btn-shimmer-gold" style="padding: 10px 22px; font-size: 0.7rem;">
+            <span>Direct Booking</span>
+            <span class="shutter-icon"></span>
+          </a>
+        </div>
+      </div>
     </div>
 
-    <!-- FOOTER BANNER -->
-    <div class="footer-banner">
-        <h4>Get connected with us on social networks!</h4>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=+91XXXXXXXXXX" target="_blank"><i
-                    class="fa fa-whatsapp"></i></a>
-        </div>
-    </div>
-
-    <!-- FOOTER BOTTOM -->
     <div class="footer-bottom">
-        <div class="row">
-            <div class="col-md-4 mb-5">
-                <div class="footer-brand">MountainClicks</div>
-                <div style="width:40px; height:1px; background:var(--gold); margin-bottom:16px;"></div>
-                <p>
-                    "You live it, we capture it."<br><br>
-                    MountainClicks is dedicated to preserving your most precious moments — weddings, pre-weddings,
-                    birthdays, and events — with elegance and authenticity.
-                </p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3 mb-5">
-                <h6>Connect With Us</h6>
-                <a class="footer-link" href="https://www.instagram.com/" target="_blank">
-                    <i class="fa fa-instagram mr-2"></i> Follow on Instagram
-                </a>
-                <a class="footer-link" href="https://www.facebook.com/" target="_blank">
-                    <i class="fa fa-facebook mr-2"></i> Follow on Facebook
-                </a>
-                <a class="footer-link" href="https://www.youtube.com/" target="_blank">
-                    <i class="fa fa-youtube mr-2"></i> YouTube Channel
-                </a>
-                <a class="footer-link" href="mailto:hello@mountainclicks.com">
-                    <i class="fa fa-envelope mr-2"></i> Email Us
-                </a>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-3 mb-5">
-                <h6>Contact Us</h6>
-                <p class="footer-link"><i class="fa fa-map-marker mr-2"></i> umbarkhed, Maharashtra</p>
-                <p class="footer-link"><i class="fa fa-envelope mr-2"></i> hello@mountainclicks.com</p>
-                <p class="footer-link"><i class="fa fa-phone mr-2"></i> +91 9527320932</p>
-                <p class="footer-link"><i class="fa fa-phone mr-2"></i> +91 XXXXXXXXXX</p>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            © 2024 MountainClicks — All Rights Reserved
-        </div>
+      <div>
+        &copy; 2026 MountainClicks Photography Studio. All Rights Reserved.
+      </div>
+      <div>
+        <span class="footer-placeholder-link" aria-disabled="true" title="This page is not available yet."
+          style="margin-right: 20px;">Privacy Policy</span>
+        <span class="footer-placeholder-link" aria-disabled="true" title="This page is not available yet.">Terms
+          of Commission</span>
+      </div>
     </div>
+  </footer>
 
-    <!-- SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+  <!-- FLOATING QUICK WHATSAPP / BOOKING ACTION -->
+  <a href="https://wa.me/919527320932?text=Hi%20MountainClicks%2C%20I%20would%20like%20to%20enquire%20about%20wedding%20photography%20dates."
+    target="_blank" rel="noopener noreferrer" class="floating-booking-pill" aria-label="Quick WhatsApp Consultation">
+    <span class="pulse-dot"></span>
+    <span>WhatsApp Studio</span>
+  </a>
 
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "100%";
-        }
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-
-        // Navbar scroll effect
-        $(window).scroll(function () {
-            var scroll = $(window).scrollTop();
-            if (scroll >= 100) {
-                $("#nav").removeClass('classinitial').addClass("classfinal");
-            } else {
-                $("#nav").removeClass("classfinal").addClass('classinitial');
-            }
-        });
-    </script>
-
+  <!-- MASTER JS ENGINE -->
+  <script src="js/luxury-photographer.js"></script>
 </body>
 
 </html>

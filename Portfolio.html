@@ -4,555 +4,713 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — MountainClicks</title>
-    <meta name="description" content="Explore MountainClicks wedding, pre-wedding, birthday, and event photography. Discover moments captured with emotion, elegance, and artistry.">
+    <title>Portfolio — MountainClicks Luxury Photography</title>
+    <meta name="description"
+        content="Explore MountainClicks fine art wedding, pre-wedding, and celebration photography. Timeless moments preserved with poetic elegance and cinematic light.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Portfolio — MountainClicks">
-    <meta property="og:description" content="Explore MountainClicks wedding, pre-wedding, birthday, and event photography. Discover moments captured with emotion, elegance, and artistry.">
-    <meta property="og:image" content="public/final/optimized/hero1.jpg">
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://use.fontawesome.com/db006bf474.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap"
-        rel="stylesheet">
+    <meta property="og:title" content="Portfolio — MountainClicks Luxury Photography">
+    <meta property="og:description"
+        content="Explore MountainClicks fine art wedding, pre-wedding, and celebration photography.">
+    <meta property="og:image" content="./Public/final/optimized/hero1.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css">
+
+    <!-- Master Luxury Stylesheet -->
+    <link rel="stylesheet" href="css/luxury-photographer.css">
     <style>
-        :root {
-            --dark: #1a1a18;
-            --gold: #c8a96e;
-            --light: #f5f0e8;
-            --mid: #3d3d38;
+        /* Portfolio page: warm editorial layout, with the gallery visible sooner. */
+        .portfolio-page-hero {
+            background: #f7f1e8 !important;
+            padding: 125px 5% 42px !important;
+            text-align: center;
+            border-bottom: 1px solid #d8c8b8 !important;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .portfolio-page-hero .section-sub {
+            color: #855b40 !important;
+        }
+
+        .portfolio-page-title {
+            font: normal clamp(2.8rem, 6vw, 5rem)/1.08 Georgia, serif !important;
+            color: #30231b !important;
+            margin: 12px 0 16px;
+        }
+
+        .portfolio-page-title em {
+            color: #9b6948 !important;
+        }
+
+        .portfolio-page-description {
+            color: #55473d !important;
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .filter-tabs-modern {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 26px 5% 24px;
+            background: #f7f1e8;
+        }
+
+        .filter-tabs-modern .filter-btn-luxury {
+            color: #493629 !important;
+            background: #fffaf2 !important;
+            border: 1px solid #cbb9a6 !important;
+            text-shadow: none !important;
+        }
+
+        .filter-tabs-modern .filter-btn-luxury.active,
+        .filter-tabs-modern .filter-btn-luxury[aria-pressed="true"] {
+            color: #fffaf2 !important;
+            background: #493629 !important;
+            border-color: #493629 !important;
+        }
+
+        .filter-tabs-modern .filter-btn-luxury:hover {
+            color: #fffaf2 !important;
+            background: #76543e !important;
+            border-color: #76543e !important;
         }
 
         body {
-            font-family: 'Jost', sans-serif;
-            font-weight: 300;
-            color: var(--dark);
-            background: var(--light);
+            background: #f7f1e8;
         }
 
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold);
-        }
-
-        /* NAV */
-        #nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            padding: 18px 5%;
-            display: flex;
-            align-items: center;
-            background: var(--dark);
-            transition: 0.5s;
-        }
-
-        .nav-left,
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            flex: 1;
-        }
-
-        .nav-right {
-            justify-content: flex-end;
-        }
-
-        #nav a {
-            font-size: 11px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: #ccc;
-            transition: 0.3s;
-        }
-
-        #nav a:hover {
-            color: var(--gold);
-        }
-
-        .brand-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-        }
-
-        .btn-enquire {
-            border: 1px solid var(--gold);
-            padding: 7px 22px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: transparent;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Jost', sans-serif;
-            color: var(--gold);
-        }
-
-        .btn-enquire:hover {
-            background: var(--gold);
-            color: var(--dark);
-        }
-
-        /* SIDENAV */
-        .sidenav {
-            height: 100vh;
-            width: 0;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            background: var(--dark);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 80px;
-            font-family: 'Jost', sans-serif;
-            letter-spacing: 3px;
-        }
-
-        .sidenav a {
-            padding: 12px 32px;
-            text-decoration: none;
-            color: #ccc;
-            display: block;
-            font-size: 13px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: var(--gold);
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 32px;
-            color: #ccc;
-        }
-
-        /* MOBILE NAV */
-        #navMob {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            background: var(--dark);
-            padding: 14px 5%;
-            align-items: center;
-        }
-
-        #navMob a {
-            color: #ccc;
-            text-decoration: none;
-        }
-
-        /* PAGE HERO */
-        .page-hero {
-            height: 50vh;
-            background: var(--dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            margin-top: 0;
-        }
-
-        .page-hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(48px, 7vw, 90px);
-            font-weight: 300;
-            color: #fff;
-            letter-spacing: 4px;
-        }
-
-        .page-hero p {
-            font-size: 11px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-top: 12px;
-        }
-
-        .gold-line {
-            width: 50px;
-            height: 1px;
-            background: var(--gold);
-            margin: 16px auto;
-        }
-
-        /* FILTER TABS */
-        .filter-tabs {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            padding: 50px 5% 30px;
-        }
-
-        .tab-btn {
-            border: 1px solid var(--dark);
-            background: transparent;
-            height: 40px;
-            padding: 0 28px;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-family: 'Jost', sans-serif;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .tab-btn:hover,
-        .tab-btn.active {
-            background: var(--dark);
-            color: #fff;
-        }
-
-        /* GALLERY GRID */
-        .gallery-section {
-            padding: 20px 5% 80px;
-        }
-
-        .gallery-grid {
-            columns: 3;
-            gap: 12px;
-        }
-
-        .gallery-item {
-            break-inside: avoid;
-            margin-bottom: 12px;
-            overflow: hidden;
-            position: relative;
-            height: 320px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.03);
-        }
-
-        .gallery-item .ph {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #c8a96e22, #1a1a1844);
-            border: 1px dashed #c8a96e55;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* FOOTER */
-        .footer-banner {
-            background: var(--gold);
-            padding: 30px 5%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .shoot-cta {
-            padding: 70px 5%;
-            text-align: center;
-            background: var(--light);
-        }
-
-        .shoot-cta h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(32px, 4vw, 52px);
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 24px;
-        }
-
-        .shoot-cta a {
-            display: inline-block;
-            border: 1px solid var(--gold);
-            padding: 12px 28px;
-            color: var(--dark);
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-
-        .shoot-cta a:hover {
-            background: var(--gold);
-            color: var(--dark);
-        }
-
-        .footer-banner h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 300;
-            color: var(--dark);
-            margin: 0;
-        }
-
-        .footer-banner .social-icons a {
-            color: var(--dark);
-            font-size: 20px;
-            margin-left: 20px;
-        }
-
-        .footer-bottom {
-            background: var(--dark);
-            color: #999;
-            padding: 30px 5%;
-            text-align: center;
-            font-size: 11px;
-            letter-spacing: 2px;
-        }
-
-        .footer-bottom a {
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        @media(max-width:768px) {
-            #nav {
-                display: none !important;
+        @media (max-width: 700px) {
+            .portfolio-page-hero {
+                padding: 105px 6% 32px !important;
             }
 
-            #navMob {
-                display: flex !important;
-            }
-
-            .gallery-grid {
-                columns: 2;
-            }
-
-            .gallery-item {
-                height: 260px;
+            .filter-tabs-modern {
+                gap: 8px;
+                padding: 20px 4%;
             }
         }
 
-        @media(max-width:480px) {
-            .gallery-grid {
-                columns: 1;
-            }
+        /* Final contrast overrides: keep every portfolio label readable */
+        .portfolio-page-hero,
+        .portfolio-page-hero::before,
+        .portfolio-page-hero::after {
+            background: #f7f1e8 !important;
+            color: #30231b !important;
+            opacity: 1 !important;
+        }
 
-            .gallery-item {
-                height: 220px;
+        .portfolio-page-hero .section-sub,
+        .portfolio-page-hero .portfolio-page-title,
+        .portfolio-page-hero .portfolio-page-description,
+        .portfolio-page-hero .gold-divider {
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-shadow: none !important;
+        }
+
+        .portfolio-page-hero .section-sub {
+            color: #76543e !important;
+        }
+
+        .portfolio-page-hero .portfolio-page-title,
+        .portfolio-page-hero .portfolio-page-title em {
+            color: #30231b !important;
+        }
+
+        .portfolio-page-hero .portfolio-page-title em {
+            color: #9b6948 !important;
+        }
+
+        .portfolio-page-hero .portfolio-page-description {
+            color: #493629 !important;
+        }
+
+        .filter-tabs-modern {
+            background: #f7f1e8 !important;
+        }
+
+        .filter-tabs-modern .filter-btn-luxury,
+        .filter-tabs-modern .filter-btn-luxury:not(.active) {
+            color: #493629 !important;
+            -webkit-text-fill-color: #493629 !important;
+            background: #fffaf2 !important;
+            border-color: #cbb9a6 !important;
+            opacity: 1 !important;
+            text-shadow: none !important;
+        }
+
+        .filter-tabs-modern .filter-btn-luxury.active,
+        .filter-tabs-modern .filter-btn-luxury[aria-pressed="true"] {
+            color: #fffaf2 !important;
+            -webkit-text-fill-color: #fffaf2 !important;
+            background: #493629 !important;
+            border-color: #493629 !important;
+        }
+
+        .portfolio-filter-item,
+        .portfolio-filter-item a {
+            color: #30231b !important;
+        }
+
+        .portfolio-filter-item img {
+            opacity: 1 !important;
+        }
+
+        @media (max-width: 700px) {
+            .portfolio-page-hero {
+                padding: 105px 6% 32px !important;
+            }
+        }
+
+
+        /* MountainClicks navbar: enforce readable contrast on the ivory background */
+        .mc-nav-wrapper,
+        .mc-nav-wrapper .mc-nav,
+        .mc-nav,
+        header.mc-nav,
+        header .mc-nav {
+            background: #f7f1e8 !important;
+            background-color: #f7f1e8 !important;
+        }
+
+        .mc-nav-wrapper .mc-nav-brand,
+        .mc-nav-wrapper .mc-nav-brand *,
+        .mc-nav-wrapper .mc-nav-links a,
+        .mc-nav-wrapper .mc-nav-actions a,
+        .mc-nav-wrapper .mc-nav-actions button,
+        .mc-nav .mc-nav-brand,
+        .mc-nav .mc-nav-brand *,
+        .mc-nav .mc-nav-links a,
+        .mc-nav .mc-nav-actions a,
+        .mc-nav .mc-nav-actions button {
+            color: #30231b !important;
+            opacity: 1 !important;
+            text-shadow: none !important;
+            -webkit-text-fill-color: #30231b !important;
+        }
+
+        .mc-nav-wrapper .mc-nav-brand .brand-lens,
+        .mc-nav .mc-nav-brand .brand-lens {
+            background: #9b6948 !important;
+            box-shadow: none !important;
+        }
+
+        .mc-nav-wrapper .mc-nav-brand>span:not(.brand-lens),
+        .mc-nav .mc-nav-brand>span:not(.brand-lens) {
+            color: #9b6948 !important;
+            -webkit-text-fill-color: #9b6948 !important;
+        }
+
+        .mc-nav-wrapper .mc-nav-links a:hover,
+        .mc-nav-wrapper .mc-nav-links a.active,
+        .mc-nav-wrapper .mc-nav-links a[aria-current="page"],
+        .mc-nav .mc-nav-links a:hover,
+        .mc-nav .mc-nav-links a.active,
+        .mc-nav .mc-nav-links a[aria-current="page"] {
+            color: #9b6948 !important;
+            -webkit-text-fill-color: #9b6948 !important;
+        }
+
+        .mc-nav-wrapper .mc-nav-actions a:last-child,
+        .mc-nav-wrapper .mc-nav-actions button,
+        .mc-nav .mc-nav-actions a:last-child,
+        .mc-nav .mc-nav-actions button {
+            background: #493629 !important;
+            color: #fffaf2 !important;
+            -webkit-text-fill-color: #fffaf2 !important;
+            border-color: #493629 !important;
+            text-shadow: none !important;
+        }
+    </style>
+
+    <style id="portfolio-final-visibility-fix">
+        /* Final fix: high-contrast filter buttons on the cream background. */
+        .filter-tabs-modern {
+            background-color: #f7f1e8 !important;
+        }
+
+        .filter-tabs-modern button,
+        .filter-tabs-modern .filter-btn-luxury,
+        .filter-tabs-modern button[data-filter] {
+            color: #30231b !important;
+            -webkit-text-fill-color: #30231b !important;
+            background-color: #fffaf2 !important;
+            border: 1px solid #cbb9a6 !important;
+            opacity: 1 !important;
+            text-shadow: none !important;
+            font-weight: 700 !important;
+            visibility: visible !important;
+        }
+
+        .filter-tabs-modern button.active,
+        .filter-tabs-modern button[aria-pressed="true"],
+        .filter-tabs-modern .filter-btn-luxury.active {
+            color: #fffaf2 !important;
+            -webkit-text-fill-color: #fffaf2 !important;
+            background-color: #493629 !important;
+            border-color: #493629 !important;
+        }
+
+        .filter-tabs-modern button:hover,
+        .filter-tabs-modern button:focus-visible {
+            color: #fffaf2 !important;
+            -webkit-text-fill-color: #fffaf2 !important;
+            background-color: #76543e !important;
+            border-color: #76543e !important;
+        }
+
+        .portfolio-filter-item,
+        .portfolio-filter-item a {
+            color: #30231b !important;
+        }
+
+        .portfolio-filter-item img {
+            opacity: 1 !important;
+        }
+
+        .portfolio-page-hero h1,
+        .portfolio-page-hero p,
+        .portfolio-page-hero .section-sub {
+            opacity: 1 !important;
+            text-shadow: none !important;
+        }
+    </style>
+
+
+    <style id="mc-navbar-contrast-emergency-fix">
+        /* Fix: navbar was using white text on the ivory Portfolio background. */
+        html body header.mc-nav-wrapper,
+        html body header.mc-nav-wrapper nav.mc-nav {
+            background: #f7f1e8 !important;
+            background-color: #f7f1e8 !important;
+        }
+
+        html body header.mc-nav-wrapper nav.mc-nav a,
+        html body header.mc-nav-wrapper nav.mc-nav a:link,
+        html body header.mc-nav-wrapper nav.mc-nav a:visited,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand span,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links li a,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a:not(.btn-enquire-nav),
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions button {
+            color: #30231b !important;
+            -webkit-text-fill-color: #30231b !important;
+            text-shadow: none !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand span:last-child {
+            color: #9b6948 !important;
+            -webkit-text-fill-color: #9b6948 !important;
+        }
+
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a:hover,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a.active,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a[aria-current="page"] {
+            color: #9b6948 !important;
+            -webkit-text-fill-color: #9b6948 !important;
+        }
+
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions .btn-enquire-nav,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions .btn-enquire-nav * {
+            background-color: #493629 !important;
+            color: #fffaf2 !important;
+            -webkit-text-fill-color: #fffaf2 !important;
+            border-color: #493629 !important;
+        }
+
+        @media (max-width: 800px) {
+            html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a {
+                color: #30231b !important;
+                -webkit-text-fill-color: #30231b !important;
             }
         }
     </style>
+
 </head>
 
 <body>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.html"><i class="fa fa-home mr-2"></i> Home</a>
-        <a href="portfolio.html"><i class="fa fa-photo mr-2"></i> Portfolio</a>
-        <a href="wedding.html"><i class="fa fa-heart mr-2"></i> Wedding</a>
-        <a href="events.html"><i class="fa fa-calendar mr-2"></i> Events</a>
-        <a href="contact.html"><i class="fa fa-phone mr-2"></i> Contact</a>
-        <a href="about.html"><i class="fa fa-info-circle mr-2"></i> About</a>
-    </div>
-    <div id="nav">
-        <div class="nav-left">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="wedding.html">Wedding</a>
-            <a href="events.html">Events</a>
-        </div>
-        <div class="nav-center text-center" style="flex:1;">
-            <span class="brand-name">MountainClicks</span>
-        </div>
-        <div class="nav-right">
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <button class="btn-enquire" onclick="window.location='contact.html'">Enquire Now</button>
-        </div>
-    </div>
-    <div id="navMob">
-        <div style="flex:1;"><a onclick="openNav()" style="font-size:22px;"><i class="fa fa-bars"></i></a></div>
-        <div style="flex:2;text-align:center;"><span class="brand-name" style="font-size:18px;">MountainClicks</span>
-        </div>
-        <div style="flex:1;text-align:right;"><a href="contact.html" style="font-size:18px;"><i
-                    class="fa fa-phone"></i></a></div>
-    </div>
 
-    <div class="page-hero">
-        <p>Our Work</p>
-        <h1>Portfolio</h1>
-        <div class="gold-line"></div>
-    </div>
+    <!-- FLOATING LUXURY NAVBAR -->
+    <header class="mc-nav-wrapper">
+        <nav class="mc-nav">
+            <a href="index.html" class="mc-nav-brand">
+                <span class="brand-lens"></span> Mountain<span>Clicks</span>
+            </a>
 
-    <div class="filter-tabs">
-        <button class="tab-btn active" onclick="filterGallery('all',this)">All</button>
-        <button class="tab-btn" onclick="filterGallery('wedding',this)">Wedding</button>
-        <button class="tab-btn" onclick="filterGallery('prewedding',this)">Pre-Wedding</button>
-        <button class="tab-btn" onclick="filterGallery('birthday',this)">Birthday</button>
-        <button class="tab-btn" onclick="filterGallery('events',this)">Events</button>
-    </div>
+            <ul class="mc-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="Wedding.html">Wedding</a></li>
+                <li><a href="WeddingFilms.html">Wedding Films</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
 
-    <div class="gallery-section">
-        <div class="gallery-grid" id="galleryGrid">
-            <div class="gallery-item" data-cat="wedding"><a href="./public/final/optimized/gallery1.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery1.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Newlyweds beneath a flower-decorated wedding stage" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="wedding"><a href="./public/final/optimized/gallery2.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery2.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Groom performing a wedding ritual beside the bride" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="prewedding"><a href="./public/final/optimized/gallery3.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery3.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Couple posing together among tropical greenery" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="events"><a href="./public/final/optimized/gallery4.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery4.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Woman in traditional teal clothing beneath flowering trees" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="wedding"><a href="./public/final/optimized/gallery5.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery5.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Couple embracing beneath ornate wedding decor" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="prewedding"><a href="./public/final/optimized/gallery6.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery6.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Couple standing together outdoors in traditional attire" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="wedding"><a href="./public/final/optimized/gallery7.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery7.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Woman in a blue traditional outfit posing beside a tree" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="prewedding"><a href="./public/final/optimized/gallery8.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery8.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Couple holding hands beneath white architectural arches" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="events"><a href="./public/final/optimized/gallery9.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery9.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Bride and groom in traditional attire at an indoor celebration" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="prewedding"><a href="./public/final/optimized/gallery10.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery10.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Bride in a red embroidered lehenga standing outdoors" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="prewedding"><a href="./public/final/optimized/gallery11.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery11.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Couple sharing a close moment in warm evening light" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="wedding"><a href="./public/final/optimized/gallery12.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery12.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Bride smiling as she adjusts her earring, henna visible on her hands" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="birthday"><a href="./public/final/optimized/gallery13.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery13.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Bride and groom sharing a candid moment beneath wedding decor" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="wedding"><a href="./public/final/optimized/gallery14.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery14.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Bride in a red embroidered lehenga posing outdoors" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="birthday"><a href="./public/final/optimized/gallery15.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery15.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Bride smiling with henna-decorated hands beside her face" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="wedding"><a href="./public/final/optimized/gallery16.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery16.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Close-up of embroidered traditional bridal clothing" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="events"><a href="./public/final/optimized/gallery17.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery17.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Bride and groom sharing a close moment in traditional attire" loading="lazy"></a></div>
-            <div class="gallery-item" data-cat="wedding"><a href="./public/final/optimized/gallery18.jpg" class="glightbox" data-gallery="portfolio"><img src="./public/final/optimized/gallery18.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Newlyweds sharing a candid moment together" loading="lazy"></a></div>
+            <div class="mc-nav-actions">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                    style="color: var(--gold); font-size: 1.1rem; margin-right: 6px;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="Contact.html" class="btn-luxury btn-shimmer-gold btn-enquire-nav">
+                    <span>Enquire</span>
+                    <span class="shutter-icon"></span>
+                </a>
+                <button class="mc-mobile-toggle" aria-label="Open Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mc-mobile-menu">
+        <button class="mc-mobile-close" aria-label="Close Navigation Menu">&times;</button>
+        <ul class="mc-mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Wedding.html">Wedding</a></li>
+            <li><a href="WeddingFilms.html">Wedding Films</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div style="margin-top: 36px; text-align: center;">
+            <a href="Contact.html" class="btn-luxury btn-shimmer-gold">
+                <span>Book a Consultation</span>
+                <span class="shutter-icon"></span>
+            </a>
         </div>
     </div>
 
-    <section class="shoot-cta">
-        <p class="section-sub">Let's Create Something Memorable</p>
-        <h2>Have a project in mind?</h2>
-        <a href="contact.html">Book a Shoot</a>
+    <!-- PAGE HERO -->
+    <header class="portfolio-page-hero">
+        <p class="section-sub">Curated Archive</p>
+        <h1 class="portfolio-page-title">
+            The <em>Portfolio</em>
+        </h1>
+        <div class="gold-divider"></div>
+        <p class="portfolio-page-description">
+            A selective retrospective of weddings, destination romances, and private celebrations captured with
+            emotional resonance and fine-art craft.
+        </p>
+    </header>
+
+    <!-- INTERACTIVE FILTER BUTTONS -->
+    <div class="filter-tabs-modern">
+        <button class="filter-btn-luxury active" data-filter="all">All Works</button>
+        <button class="filter-btn-luxury" data-filter="wedding">Weddings</button>
+        <button class="filter-btn-luxury" data-filter="prewedding">Pre-Wedding</button>
+        <button class="filter-btn-luxury" data-filter="birthday">Birthdays &amp; Portraits</button>
+    </div>
+
+    <!-- MASONRY GALLERY GRID -->
+    <section style="padding: 10px 5% 100px; max-width: 1360px; margin: 0 auto;">
+        <div style="columns: 3 320px; column-gap: 20px;">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item portfolio-filter-item" data-category="wedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery1.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery1.jpg"
+                        alt="Newlyweds beneath a flower-decorated wedding stage"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item portfolio-filter-item" data-category="wedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery2.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery2.jpg"
+                        alt="Groom performing a wedding ritual beside the bride"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item portfolio-filter-item" data-category="prewedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery3.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery3.jpg"
+                        alt="Couple posing together among tropical greenery"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item portfolio-filter-item" data-category="events"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery4.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery4.jpg"
+                        alt="Woman in traditional teal clothing beneath flowering trees"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item portfolio-filter-item" data-category="wedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery5.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery5.jpg" alt="Couple embracing beneath ornate wedding decor"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item portfolio-filter-item" data-category="prewedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery6.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery6.jpg"
+                        alt="Couple standing together outdoors in traditional attire"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 7 -->
+            <div class="gallery-item portfolio-filter-item" data-category="wedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery7.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery7.jpg"
+                        alt="Woman in a blue traditional outfit posing beside a tree"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 8 -->
+            <div class="gallery-item portfolio-filter-item" data-category="prewedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery8.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery8.jpg"
+                        alt="Couple holding hands beneath white architectural arches"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 9 -->
+            <div class="gallery-item portfolio-filter-item" data-category="events"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery9.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery9.jpg"
+                        alt="Bride and groom in traditional attire at an indoor celebration"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 10 -->
+            <div class="gallery-item portfolio-filter-item" data-category="prewedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery10.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery10.jpg"
+                        alt="Bride in a red embroidered lehenga standing outdoors"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 11 -->
+            <div class="gallery-item portfolio-filter-item" data-category="prewedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery11.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery11.jpg"
+                        alt="Couple sharing a close moment in warm evening light"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 12 -->
+            <div class="gallery-item portfolio-filter-item" data-category="wedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery12.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery12.jpg"
+                        alt="Bride smiling as she adjusts her earring, henna visible on her hands"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 13 -->
+            <div class="gallery-item portfolio-filter-item" data-category="birthday"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery13.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery13.jpg"
+                        alt="Bride and groom sharing a candid moment beneath wedding decor"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 14 -->
+            <div class="gallery-item portfolio-filter-item" data-category="wedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery14.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery14.jpg"
+                        alt="Bride in a red embroidered lehenga posing outdoors"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 15 -->
+            <div class="gallery-item portfolio-filter-item" data-category="birthday"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery15.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery15.jpg"
+                        alt="Bride smiling with henna-decorated hands beside her face"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 16 -->
+            <div class="gallery-item portfolio-filter-item" data-category="wedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery16.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery16.jpg"
+                        alt="Close-up of embroidered traditional bridal clothing"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 17 -->
+            <div class="gallery-item portfolio-filter-item" data-category="events"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery17.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery17.jpg"
+                        alt="Bride and groom sharing a close moment in traditional attire"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+
+            <!-- Gallery Item 18 -->
+            <div class="gallery-item portfolio-filter-item" data-category="wedding"
+                style="break-inside: avoid; margin-bottom: 20px; border-radius: var(--radius-sm); overflow: hidden; position: relative; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <a href="./Public/final/optimized/gallery18.jpg" class="glightbox" data-gallery="portfolio">
+                    <img src="./Public/final/optimized/gallery18.jpg" alt="Newlyweds sharing a candid moment together"
+                        style="width: 100%; height: auto; display: block; transition: transform 0.6s var(--ease-out);"
+                        loading="lazy">
+                </a>
+            </div>
+        </div>
     </section>
 
-    <div class="footer-banner">
-        <h4>Get connected with us on social networks!</h4>
-        <div class="social-icons">
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-whatsapp"></i></a>
-        </div>
-    </div>
-    <div class="footer-bottom">© 2024 <a href="index.html">MountainClicks</a> — All Rights Reserved</div>
+    <!-- CALL TO ACTION -->
+    <section
+        style="background: var(--bg-charcoal); border-top: 1px solid var(--gold-border); padding: 100px 5%; text-align: center;">
+        <p class="section-sub">Reserve Commission</p>
+        <h2 class="section-title">Envisioning Your Story?</h2>
+        <div class="gold-divider"></div>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 30px; font-size: 0.95rem;">
+            Whether celebrating atop mountain peaks or in royal courtyards, we would be honored to craft your family’s
+            legacy images.
+        </p>
+        <a href="Contact.html" class="btn-luxury btn-shimmer-gold">
+            <span>Inquire About Your Date</span>
+            <span class="shutter-icon"></span>
+        </a>
+    </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- ELITE FOOTER -->
+    <footer class="mc-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>MountainClicks</h3>
+                <p>
+                    Fine art wedding and editorial photography studio dedicated to poetic imagery, luxury celebrations,
+                    and honest emotional storytelling.
+                </p>
+                <div class="footer-social-strip">
+                    <a href="https://www.instagram.com/mountainclicks.in/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="http://www.youtube.com/@mountainclicks5588" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="Wedding.html">Wedding Collections</a></li>
+                    <li><a href="About.html">Studio Story</a></li>
+                    <li><a href="Contact.html">Get in Touch</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Portfolio</h4>
+                <ul class="footer-links">
+                    <li><a href="Wedding.html">Palace Weddings</a></li>
+                    <li><a href="Portfolio.html">Pre-Wedding Shoots</a></li>
+                    <li><a href="Portfolio.html">Bridal Portraits</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio Inquiries</h4>
+                <div class="footer-contact-item">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Studio: Umarkhed,Yavatmal,Maharashtra</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-envelope-o"></i>
+                    <span>mountainclicks.in@gmail.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-phone"></i>
+                    <span>+91 95273 20932</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 MountainClicks Photography Studio. All Rights Reserved.
+            </div>
+            <div>
+                <span class="footer-placeholder-link" aria-disabled="true" title="This page is not available yet."
+                    style="margin-right: 20px;">Privacy Policy</span>
+                <span class="footer-placeholder-link" aria-disabled="true" title="This page is not available yet.">Terms
+                    of Commission</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/919527320932?text=Hi%20MountainClicks%2C%20I%20would%20like%20to%20enquire%20about%20photography%20portfolio%20packages."
+        target="_blank" rel="noopener noreferrer" class="floating-booking-pill"
+        aria-label="Quick WhatsApp Consultation">
+        <span class="pulse-dot"></span>
+        <span>WhatsApp Studio</span>
+    </a>
+
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
     <script>
-        function openNav() { document.getElementById("mySidenav").style.width = "100%"; }
-        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
-        GLightbox({ selector: '.glightbox' });
-        function restoreAnimationStyles(elements) {
-            elements.forEach(element => {
-                element.style.removeProperty('opacity');
-                element.style.removeProperty('visibility');
-                element.style.removeProperty('transform');
-                element.style.removeProperty('translate');
-                element.style.removeProperty('rotate');
-                element.style.removeProperty('scale');
+        document.addEventListener('DOMContentLoaded', function () {
+            window.mcPortfolioLightbox = GLightbox({
+                selector: '.glightbox',
+                touchNavigation: true,
+                loop: true
             });
-        }
-        let portfolioAnimationsInitialized = false;
-        function initializePortfolioAnimations() {
-            if (portfolioAnimationsInitialized) { return; }
-            if (!window.gsap || !window.ScrollTrigger) {
-                console.error('Portfolio reveal animations unavailable: GSAP or ScrollTrigger failed to load.');
-                return;
-            }
-            try {
-                gsap.registerPlugin(ScrollTrigger);
-                gsap.from('.tab-btn', {
-                    opacity: 0,
-                    y: 18,
-                    duration: 0.6,
-                    stagger: 0.1,
-                    ease: 'power2.out',
-                    clearProps: 'transform,opacity',
-                    scrollTrigger: {
-                        trigger: '.filter-tabs',
-                        start: 'top 85%',
-                        once: true
-                    }
-                });
-                ScrollTrigger.batch('.gallery-item', {
-                    start: 'top 88%',
-                    once: true,
-                    onEnter: elements => {
-                        const visibleElements = elements.filter(element => getComputedStyle(element).display !== 'none');
-                        try {
-                            if (visibleElements.length) {
-                                gsap.from(visibleElements, {
-                                    opacity: 0,
-                                    y: 24,
-                                    duration: 0.6,
-                                    stagger: 0.08,
-                                    ease: 'power2.out',
-                                    clearProps: 'transform,opacity'
-                                });
-                            }
-                        } catch (error) {
-                            gsap.killTweensOf(visibleElements);
-                            restoreAnimationStyles(visibleElements);
-                            console.error('Gallery reveal animation failed:', error);
-                        }
-                    }
-                });
-                portfolioAnimationsInitialized = true;
-            } catch (error) {
-                gsap.killTweensOf('.tab-btn, .gallery-item');
-                restoreAnimationStyles(Array.from(document.querySelectorAll('.tab-btn, .gallery-item')));
-                console.error('Portfolio reveal animations could not be initialized:', error);
-            }
-        }
-        if (document.visibilityState === 'visible') {
-            initializePortfolioAnimations();
-        } else {
-            document.addEventListener('visibilitychange', function startPortfolioAnimations() {
-                if (document.visibilityState === 'visible') {
-                    document.removeEventListener('visibilitychange', startPortfolioAnimations);
-                    initializePortfolioAnimations();
-                }
-            });
-        }
-        function filterGallery(cat, btn) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            document.querySelectorAll('.gallery-item').forEach(item => {
-                if (cat === 'all' || item.dataset.cat === cat) { item.style.display = 'block'; }
-                else { item.style.display = 'none'; }
-            });
-            if (window.ScrollTrigger) { ScrollTrigger.refresh(); }
-        }
+        });
     </script>
+    <script src="js/luxury-photographer.js"></script>
 </body>
 
 </html>

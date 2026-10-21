@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Films — MountainClicks</title>
+    <meta name="description"
+        content="Cinematic wedding films, pre-wedding films, and teasers crafted with emotion and timeless luxury by MountainClicks.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wedding Films — MountainClicks">
+    <meta property="og:description"
+        content="Cinematic wedding films and unscripted love stories captured across the mountains and worldwide.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/luxury-photographer.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      /* ===================================================================
+         WEDDING FILMS PAGE — MOUNTAINCLICKS LIGHT LUXURY THEME
+         =================================================================== */
+
+      :root {
+        --films-bg: #f7f3eb;
+        --films-card-bg: #ffffff;
+        --films-text-dark: #302c26;
+        --films-text-body: #55473d;
+        --films-gold: #805236;
+        --films-gold-light: #9b6948;
+      }
+
+      body {
+        background: var(--films-bg) !important;
+        color: var(--films-text-body) !important;
+        font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      /* Navbar rules matching Portfolio.html */
+      html body header.mc-nav-wrapper,
+      html body header.mc-nav-wrapper nav.mc-nav {
+        background: #f7f1e8 !important;
+        background-color: #f7f1e8 !important;
+        border-bottom: 1px solid rgba(69, 54, 43, 0.08) !important;
+      }
+      html body header.mc-nav-wrapper nav.mc-nav a,
+      html body header.mc-nav-wrapper nav.mc-nav a:link,
+      html body header.mc-nav-wrapper nav.mc-nav a:visited,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand span,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links li a,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a:not(.btn-enquire-nav),
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions button {
+        color: #30231b !important;
+        -webkit-text-fill-color: #30231b !important;
+        text-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand span:last-child {
+        color: #9b6948 !important;
+        -webkit-text-fill-color: #9b6948 !important;
+      }
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a:hover,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a.active,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a[aria-current="page"] {
+        color: #9b6948 !important;
+        -webkit-text-fill-color: #9b6948 !important;
+      }
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions .btn-enquire-nav,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions .btn-enquire-nav * {
+        background-color: #493629 !important;
+        color: #fffaf2 !important;
+        -webkit-text-fill-color: #fffaf2 !important;
+        border-color: #493629 !important;
+      }
+
+      /* Hero section */
+      .films-hero {
+        padding: clamp(140px, 15vw, 190px) 5% clamp(30px, 5vw, 50px);
+        text-align: center;
+        background: radial-gradient(ellipse at 50% 30%, rgba(139, 98, 70, 0.08) 0%, transparent 70%);
+      }
+      .films-hero .section-sub,
+      .films-hero h1,
+      .films-hero h1 em,
+      .films-hero .films-desc,
+      .films-hero .gold-divider {
+        opacity: 1 !important;
+        visibility: visible !important;
+        text-shadow: none !important;
+      }
+      .films-hero .section-sub {
+        color: #76543e !important;
+        -webkit-text-fill-color: #76543e !important;
+        font-size: 0.82rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+      .films-hero h1 {
+        font-family: 'Cormorant Garamond', Georgia, serif !important;
+        font-size: clamp(2.8rem, 6vw, 5.2rem) !important;
+        font-weight: 400 !important;
+        color: #30231b !important;
+        -webkit-text-fill-color: #30231b !important;
+        line-height: 1.1 !important;
+        margin: 0 auto 18px !important;
+      }
+      .films-hero h1 em {
+        font-family: 'Dancing Script', cursive !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        color: #9b6948 !important;
+        -webkit-text-fill-color: #9b6948 !important;
+        padding-left: 6px !important;
+      }
+      .films-hero .films-desc {
+        max-width: 720px !important;
+        margin: 0 auto !important;
+        font-family: 'DM Sans', sans-serif !important;
+        font-size: clamp(0.98rem, 1.4vw, 1.12rem) !important;
+        line-height: 1.85 !important;
+        color: #493629 !important;
+        -webkit-text-fill-color: #493629 !important;
+      }
+
+      /* Filter Tabs */
+      .films-tabs-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 36px 0 54px;
+        padding: 0 5%;
+      }
+      .films-tab-btn {
+        background: #ffffff;
+        border: 1px solid rgba(139, 98, 70, 0.22);
+        color: var(--films-text-body);
+        padding: 12px 28px;
+        border-radius: 9999px;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 14px rgba(69, 54, 43, 0.04);
+      }
+      .films-tab-btn:hover {
+        border-color: var(--films-gold);
+        color: var(--films-gold);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(69, 54, 43, 0.08);
+      }
+      .films-tab-btn.active {
+        background: #38291f;
+        color: #fffaf1 !important;
+        border-color: #38291f;
+        box-shadow: 0 8px 24px rgba(56, 41, 31, 0.25);
+        transform: translateY(-2px);
+      }
+      .films-tab-btn .badge-count {
+        display: inline-block;
+        background: rgba(139, 98, 70, 0.15);
+        color: inherit;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        margin-left: 6px;
+      }
+      .films-tab-btn.active .badge-count {
+        background: rgba(255, 255, 255, 0.25);
+        color: #fffaf1;
+      }
+
+      /* Video Grid */
+      .films-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+        max-width: 1360px;
+        margin: 0 auto;
+        padding: 0 5% 100px;
+      }
+      @media (max-width: 1024px) {
+        .films-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 22px;
+        }
+      }
+      @media (max-width: 650px) {
+        .films-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+      }
+
+      /* Video Card */
+      .film-card {
+        background: var(--films-card-bg);
+        border-radius: 14px;
+        border: 1px solid rgba(139, 98, 70, 0.16);
+        overflow: hidden;
+        box-shadow: 0 8px 28px rgba(69, 54, 43, 0.07);
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      }
+      .film-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 42px rgba(69, 54, 43, 0.13);
+        border-color: rgba(139, 98, 70, 0.35);
+      }
+      .film-video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        background: #231c17;
+        cursor: pointer;
+      }
+      .film-video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        z-index: 1;
+      }
+      .film-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 2;
+        transition: transform 0.6s ease, filter 0.4s ease;
+      }
+      .film-video-wrapper:hover .film-thumb {
+        transform: scale(1.04);
+        filter: brightness(0.92);
+      }
+      .film-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 62px;
+        height: 62px;
+        background: rgba(48, 35, 27, 0.88);
+        border: 2px solid #b58a68;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fffaf1;
+        font-size: 1.25rem;
+        z-index: 3;
+        transition: all 0.35s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        pointer-events: none;
+      }
+      .film-play-btn i {
+        margin-left: 3px;
+      }
+      .film-video-wrapper:hover .film-play-btn {
+        background: #8b6246;
+        border-color: #fffaf1;
+        transform: translate(-50%, -50%) scale(1.12);
+        box-shadow: 0 12px 32px rgba(139, 98, 70, 0.6);
+      }
+      .film-video-wrapper.is-playing .film-thumb,
+      .film-video-wrapper.is-playing .film-play-btn {
+        display: none !important;
+      }
+
+      /* CTA Banner */
+      .films-cta-strip {
+        background: #eee7db;
+        border-top: 1px solid rgba(139, 98, 70, 0.16);
+        border-bottom: 1px solid rgba(139, 98, 70, 0.16);
+        padding: clamp(65px, 8vw, 100px) 6%;
+        text-align: center;
+      }
+      .films-cta-strip h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: clamp(2.5rem, 4.5vw, 4rem);
+        color: var(--films-gold);
+        margin: 0 0 14px;
+      }
+      .films-cta-strip p {
+        font-size: clamp(1rem, 1.4vw, 1.15rem);
+        color: var(--films-text-body);
+        max-width: 660px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+      }
+      .films-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 42px;
+        background: #302c26;
+        color: #fffaf1 !important;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.92rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 9999px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: all 0.35s ease;
+        box-shadow: 0 10px 28px rgba(48, 44, 38, 0.18);
+      }
+      .films-cta-btn:hover {
+        background: var(--films-gold);
+        transform: translateY(-2px);
+        box-shadow: 0 14px 34px rgba(128, 82, 54, 0.28);
+      }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING LUXURY NAVBAR -->
+    <header class="mc-nav-wrapper">
+        <nav class="mc-nav">
+            <a href="index.html" class="mc-nav-brand">
+                <span class="brand-lens"></span> Mountain<span>Clicks</span>
+            </a>
+
+            <ul class="mc-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="Wedding.html">Wedding</a></li>
+                <li><a href="WeddingFilms.html" class="active">Wedding Films</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+
+            <div class="mc-nav-actions">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                    style="color: var(--gold); font-size: 1.1rem; margin-right: 6px;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="Contact.html" class="btn-luxury btn-shimmer-gold btn-enquire-nav">
+                    <span>Enquire</span>
+                    <span class="shutter-icon"></span>
+                </a>
+                <button class="mc-mobile-toggle" aria-label="Open Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mc-mobile-menu">
+        <button class="mc-mobile-close" aria-label="Close Navigation Menu">&times;</button>
+        <ul class="mc-mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Wedding.html">Wedding</a></li>
+            <li><a href="WeddingFilms.html" class="active">Wedding Films</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div style="margin-top: 36px; text-align: center;">
+            <a href="Contact.html" class="btn-luxury btn-shimmer-gold">
+                <span>Book a Consultation</span>
+                <span class="shutter-icon"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="films-hero">
+        <p class="section-sub">Cinematic Chronicle</p>
+        <h1>Wedding <em>Films</em></h1>
+        <div class="gold-divider" style="margin: 0 auto 20px;"></div>
+        <p class="films-desc">
+            Preserving the sacred vows, heartfelt glances, and unscripted laughter through timeless cinematic artistry. Explore our collection of pre-wedding films, teasers, and wedding trailers.
+        </p>
+    </section>
+
+    <!-- INTERACTIVE CATEGORY TABS -->
+    <div class="films-tabs-container">
+        <button class="films-tab-btn active" data-target="tab-prewedding">
+            Prewedding Videos <span class="badge-count">11</span>
+        </button>
+        <button class="films-tab-btn" data-target="tab-teasers">
+            Teaser Videos <span class="badge-count">8</span>
+        </button>
+        <button class="films-tab-btn" data-target="tab-trailers">
+            Wedding Trailers <span class="badge-count">18</span>
+        </button>
+    </div>
+
+    <!-- TAB 1: PREWEDDING VIDEOS (11 Videos) -->
+    <section id="tab-prewedding" class="films-grid">
+        <div class="film-card">
+            <div class="film-video-wrapper" data-video-id="Hnjtof0V3Qo">
+                <img src="https://i.ytimg.com/vi/Hnjtof0V3Qo/sddefault.jpg" alt="Sumit & Tanuja Prewedding Film" class="film-thumb">
+                <div class="film-play-btn" aria-label="Play Film"><i class="fa fa-play"></i></div>
+                <iframe src="about:blank" data-src="https://www.youtube.com/embed/Hnjtof0V3Qo?autoplay=1&rel=0" title="Sumit & Tanuja Prewedding Film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/wRtjRPPD55I" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/EbQ7fEGP5DY" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/-HcFvCTuhLU" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/CWV4yW4ntXo" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/bdfgR69vnAU" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/QWCMf3BLFvs" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/nZncGf-Kwfo" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/gfQKcen45mw" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/5baPJgT0BTs" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/WjhyWpxTkKw" title="Prewedding Film" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAB 2: TEASER VIDEOS (8 Videos) -->
+    <section id="tab-teasers" class="films-grid" style="display: none;">
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/7r9PT0rkPmI" title="Wedding Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/30dM0i9QtM8" title="Wedding Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/4NwuoEuqUMk" title="Wedding Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/FhC_m7dgiFI" title="Wedding Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/4x1nLV9SsbI" title="Wedding Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/9qK7dx-xdgo" title="Wedding Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/2avzdq99ndo" title="Wedding Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/iBJjHUFlLB4" title="Wedding Teaser" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAB 3: WEDDING TRAILERS (18 Videos) -->
+    <section id="tab-trailers" class="films-grid" style="display: none;">
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/_g1CcnjSW2E" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/1hh-Rx8CNrs" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/aHf7bgs7eao" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/bSXW9YbFWVs" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/emiUgxLYFz8" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/hWdfM7fB9UM" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/hcssMo_TIhc" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/SvciZr4opIc" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/B0u0l5g07Fg" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/M-BceuJKS5U" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/CagP9veXJmA" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/FfZ7UDZ3N3I" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/wvPm6ILL1gE" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/ghFpGF0nVNk" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/nObj9YZa3kM" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/O2zhxm0UWcc" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/B4LMGHSISsc" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="film-card">
+            <div class="film-video-wrapper">
+                <iframe src="https://www.youtube.com/embed/a5ENZJstHKA" title="Wedding Trailer" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION STRIP -->
+    <section class="films-cta-strip">
+        <h2>Ready to Film Your Story?</h2>
+        <p>
+            Whether it's an intimate mountain gathering or a grand royal celebration, let's create a cinematic heirloom your family will cherish forever.
+        </p>
+        <a href="Contact.html" class="films-cta-btn">
+            <span>Enquire About Film Packages</span>
+            <i class="fa fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <!-- ELITE FOOTER -->
+    <footer class="mc-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>MountainClicks</h3>
+                <p>
+                    Story-driven wedding photography and films. Weddings, pre-wedding shoots, birthdays and events.
+                </p>
+                <div class="footer-social-strip">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="Wedding.html">Wedding Collections</a></li>
+                    <li><a href="WeddingFilms.html">Wedding Films</a></li>
+                    <li><a href="About.html">Studio Story</a></li>
+                    <li><a href="Contact.html">Get in Touch</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Portfolio</h4>
+                <ul class="footer-links">
+                    <li><a href="Wedding.html">Weddings</a></li>
+                    <li><a href="Portfolio.html">Pre-Wedding Shoots</a></li>
+                    <li><a href="WeddingFilms.html">Cinema Films</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio Inquiries</h4>
+                <div class="footer-contact-item">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Studio: Mumbai &bull; Destination Worldwide</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-envelope-o"></i>
+                    <span>commissions@mountainclicks.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 MountainClicks Photography Studio. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20MountainClicks%2C%20I%20would%20like%20to%20enquire%20about%20wedding%20films%20and%20cinema%20packages."
+        target="_blank" rel="noopener noreferrer" class="floating-booking-pill" aria-label="Quick WhatsApp Consultation">
+        <span class="pulse-dot"></span>
+        <span>WhatsApp Studio</span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="js/luxury-photographer.js"></script>
+
+    <!-- Interactive Tab Controller & YouTube Video Engine -->
+    <script>
+      (function() {
+        // Setup high-res poster thumbnails & click-to-play for all film cards
+        function initVideoThumbnails() {
+          document.querySelectorAll('.film-video-wrapper').forEach(function(wrap) {
+            var iframe = wrap.querySelector('iframe');
+            var videoId = wrap.getAttribute('data-video-id');
+            var src = (iframe ? (iframe.getAttribute('src') || iframe.getAttribute('data-src')) : '') || '';
+
+            if (!videoId && src) {
+              var match = src.match(/(?:embed\/|youtu\.be\/|[?&]v=|shorts\/)([a-zA-Z0-9_-]+)/);
+              if (match && match[1]) {
+                videoId = match[1];
+                wrap.setAttribute('data-video-id', videoId);
+              }
+            }
+
+            if (!videoId) return;
+
+            // Defer iframes so they don't flood network & crash WebGL contexts
+            if (iframe && iframe.getAttribute('src') && iframe.getAttribute('src') !== 'about:blank' && !iframe.getAttribute('data-src')) {
+              iframe.setAttribute('data-src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
+              iframe.setAttribute('src', 'about:blank');
+            }
+
+            // Create thumbnail img if not already present
+            if (!wrap.querySelector('.film-thumb')) {
+              var img = document.createElement('img');
+              img.className = 'film-thumb';
+              img.alt = 'Wedding Film Thumbnail';
+              img.loading = 'lazy';
+              img.src = 'https://i.ytimg.com/vi/' + videoId + '/sddefault.jpg';
+              img.onerror = function() {
+                this.onerror = null;
+                this.src = 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
+              };
+              wrap.insertBefore(img, wrap.firstChild);
+            }
+
+            // Create luxury gold play button if not already present
+            if (!wrap.querySelector('.film-play-btn')) {
+              var playBtn = document.createElement('div');
+              playBtn.className = 'film-play-btn';
+              playBtn.setAttribute('aria-label', 'Play Film');
+              playBtn.innerHTML = '<i class="fa fa-play"></i>';
+              wrap.appendChild(playBtn);
+            }
+
+            // Click-to-play handler
+            wrap.addEventListener('click', function() {
+              if (wrap.classList.contains('is-playing')) return;
+              wrap.classList.add('is-playing');
+              var currentIframe = wrap.querySelector('iframe');
+              if (currentIframe) {
+                var playUrl = currentIframe.getAttribute('data-src') || ('https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0');
+                currentIframe.src = playUrl;
+              }
+            });
+          });
+        }
+
+        initVideoThumbnails();
+
+        var buttons = document.querySelectorAll('.films-tab-btn');
+        var grids = {
+          'tab-prewedding': document.getElementById('tab-prewedding'),
+          'tab-teasers': document.getElementById('tab-teasers'),
+          'tab-trailers': document.getElementById('tab-trailers')
+        };
+
+        buttons.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            buttons.forEach(function(b) { b.classList.remove('active'); });
+            this.classList.add('active');
+
+            var targetId = this.getAttribute('data-target');
+            Object.keys(grids).forEach(function(id) {
+              if (grids[id]) {
+                grids[id].style.display = (id === targetId) ? 'grid' : 'none';
+              }
+            });
+          });
+        });
+      })();
+    </script>
+</body>
+
+</html>

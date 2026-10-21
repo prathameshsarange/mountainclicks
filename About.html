@@ -1,193 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — MountainClicks</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://use.fontawesome.com/db006bf474.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>About Us — MountainClicks</title>
+    <meta name="description"
+        content="MountainClicks is a story-driven wedding photography and films studio. Meet Shailesh Hendre and the team behind the camera.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us — MountainClicks">
+    <meta property="og:description"
+        content="A story-driven wedding photography and films studio, rooted in the mountains.">
+    <meta property="og:image" content="./Public/final/optimized/hero2.jpg">
+
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/luxury-photographer.css">
+
+    <!-- Google Fonts: Script heading font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        :root{--dark:#1a1a18;--gold:#c8a96e;--light:#f5f0e8;}
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{font-family:'Jost',sans-serif;font-weight:300;color:var(--dark);background:var(--light);}
-        ::-webkit-scrollbar{width:6px;} ::-webkit-scrollbar-thumb{background:var(--gold);}
-        #nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:18px 5%;display:flex;align-items:center;background:var(--dark);}
-        .nav-left,.nav-right{display:flex;align-items:center;gap:28px;flex:1;}
-        .nav-right{justify-content:flex-end;}
-        #nav a{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;text-decoration:none;color:#ccc;transition:0.3s;}
-        #nav a:hover{color:var(--gold);}
-        .brand-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:4px;text-transform:uppercase;color:var(--gold);}
-        .btn-enquire{border:1px solid var(--gold);padding:7px 22px;font-size:10px;letter-spacing:2px;text-transform:uppercase;background:transparent;cursor:pointer;transition:0.3s;font-family:'Jost',sans-serif;color:var(--gold);}
-        .btn-enquire:hover{background:var(--gold);color:var(--dark);}
-        .sidenav{height:100vh;width:0;position:fixed;z-index:9999;top:0;left:0;background:var(--dark);overflow-x:hidden;transition:0.5s;padding-top:80px;font-family:'Jost',sans-serif;letter-spacing:3px;}
-        .sidenav a{padding:12px 32px;text-decoration:none;color:#ccc;display:block;font-size:13px;text-transform:uppercase;}
-        .sidenav a:hover{color:var(--gold);}
-        .sidenav .closebtn{position:absolute;top:15px;right:25px;font-size:32px;color:#ccc;}
-        #navMob{display:none;position:fixed;top:0;left:0;right:0;z-index:999;background:var(--dark);padding:14px 5%;align-items:center;}
-        #navMob a{color:#ccc;text-decoration:none;}
-        .page-hero{height:50vh;background:var(--dark);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;}
-        .page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,90px);font-weight:300;color:#fff;letter-spacing:4px;}
-        .page-hero p{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-top:12px;}
-        .gold-line{width:50px;height:1px;background:var(--gold);margin:16px auto;}
-        .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:300;letter-spacing:2px;}
-        .section-sub{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-        .ph{background:linear-gradient(135deg,#c8a96e22,#1a1a1844);border:1px dashed #c8a96e55;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;}
-        /* ABOUT STORY */
-        .about-story{padding:100px 5%;}
-        .about-story .story-text{padding-right:60px;}
-        .about-story .about-image-wrap{height:550px;overflow:hidden;}
-        .about-story .about-image-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
-        .about-story h2{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,56px);font-weight:300;margin-bottom:24px;line-height:1.2;}
-        .about-story p{font-size:14px;color:#666;line-height:2;margin-bottom:16px;}
-        .about-story .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--dark);border-left:2px solid var(--gold);padding-left:24px;margin:30px 0;}
-        /* STATS */
-        .stats-section{background:var(--dark);padding:60px 5%;text-align:center;}
-        .stat-item h3{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--gold);}
-        .stat-item p{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#999;margin-top:4px;}
-        /* VALUES */
-        .values-section{padding:80px 5%;background:#fff;text-align:center;}
-        .value-card{padding:40px 20px;}
-        .value-icon{width:60px;height:60px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
-        .value-icon i{color:var(--gold);font-size:20px;}
-        .value-card h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;margin-bottom:12px;}
-        .value-card p{font-size:13px;color:#666;line-height:1.8;}
-        /* CTA */
-        .cta-section{padding:80px 5%;background:var(--gold);text-align:center;}
-        .cta-section h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,5vw,60px);font-weight:300;color:var(--dark);margin-bottom:16px;}
-        .cta-section p{font-size:13px;color:var(--dark);letter-spacing:2px;text-transform:uppercase;margin-bottom:30px;}
-        .cta-btn{display:inline-block;border:1px solid var(--dark);color:var(--dark);padding:14px 50px;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:0.3s;font-family:'Jost',sans-serif;}
-        .cta-btn:hover{background:var(--dark);color:var(--gold);text-decoration:none;}
-        /* FOOTER */
-        .footer-banner{background:var(--dark);padding:30px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
-        .footer-banner h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#fff;margin:0;}
-        .footer-banner .social-icons a{color:var(--gold);font-size:20px;margin-left:20px;}
-        .footer-bottom{background:var(--dark);color:#999;padding:30px 5%;text-align:center;font-size:11px;letter-spacing:2px;border-top:1px solid #222;}
-        .footer-bottom a{color:var(--gold);text-decoration:none;}
-        @media(max-width:768px){#nav{display:none!important;}#navMob{display:flex!important;}.about-story .story-text{padding-right:0;margin-bottom:40px;}.about-story .about-image-wrap{height:360px;}}
+      /* ===================================================================
+         ABOUT PAGE — LIGHT LUXURY THEME
+         Matching Portfolio, Wedding, and Home pages:
+         Warm cream background #f7f3eb, dark walnut text #302c26 / #55473d,
+         and warm terracotta / earth-gold accents #805236.
+         =================================================================== */
+
+      :root {
+        --about-bg: #f7f3eb;
+        --about-bg-subtle: #fffdf8;
+        --about-bg-card: #ffffff;
+        --about-bg-warm: #eee7db;
+        --about-text-dark: #302c26;
+        --about-text-body: #55473d;
+        --about-text-muted: #786c60;
+        --about-gold: #805236;
+        --about-gold-light: #9b6948;
+        --about-gold-dark: #68452f;
+        --about-border: rgba(139, 98, 70, 0.18);
+        --about-script: 'Dancing Script', cursive;
+      }
+
+      body {
+        background: var(--about-bg) !important;
+        color: var(--about-text-body) !important;
+      }
+
+      /* Matching light luxury floating navbar (identical to Portfolio.html) */
+      html body header.mc-nav-wrapper,
+      html body header.mc-nav-wrapper nav.mc-nav {
+        background: #f7f1e8 !important;
+        background-color: #f7f1e8 !important;
+        border-bottom: 1px solid rgba(69, 54, 43, 0.08) !important;
+      }
+      html body header.mc-nav-wrapper nav.mc-nav a,
+      html body header.mc-nav-wrapper nav.mc-nav a:link,
+      html body header.mc-nav-wrapper nav.mc-nav a:visited,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand span,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links li a,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a:not(.btn-enquire-nav),
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions button {
+        color: #30231b !important;
+        -webkit-text-fill-color: #30231b !important;
+        text-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-brand span:last-child {
+        color: #9b6948 !important;
+        -webkit-text-fill-color: #9b6948 !important;
+      }
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a:hover,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a.active,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-links a[aria-current="page"] {
+        color: #9b6948 !important;
+        -webkit-text-fill-color: #9b6948 !important;
+      }
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions .btn-enquire-nav,
+      html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions .btn-enquire-nav * {
+        background-color: #493629 !important;
+        color: #fffaf2 !important;
+        -webkit-text-fill-color: #fffaf2 !important;
+        border-color: #493629 !important;
+      }
+
+      /* =================================================================
+         SECTION 1: HERO — Photo Left + Story Text Right (Light Luxury)
+         ================================================================= */
+      .hs-about-hero {
+        background: var(--about-bg);
+        padding: clamp(140px, 14vw, 185px) 6% clamp(70px, 8vw, 110px);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hs-about-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 85% 20%, rgba(139,98,70,0.08) 0%, transparent 60%),
+                    radial-gradient(ellipse at 15% 80%, rgba(139,98,70,0.05) 0%, transparent 50%);
+        pointer-events: none;
+      }
+
+      .hs-about-layout {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: clamp(40px, 6vw, 90px);
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Photo Left */
+      .hs-about-photo {
+        margin: 0;
+        position: relative;
+      }
+      .hs-about-photo img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 640px;
+        object-fit: cover;
+        object-position: center 22%;
+        border-radius: 8px;
+        box-shadow: 0 18px 45px rgba(69, 54, 43, 0.12);
+      }
+      .hs-about-photo::after {
+        content: '';
+        position: absolute;
+        top: 14px; left: 14px; right: -14px; bottom: -14px;
+        border: 1.5px solid rgba(139, 98, 70, 0.35);
+        border-radius: 8px;
+        pointer-events: none;
+      }
+
+      /* Text Right */
+      .hs-about-text {
+        color: var(--about-text-body);
+      }
+      .hs-about-subtitle {
+        display: inline-block;
+        font-family: 'DM Sans', Arial, sans-serif;
+        font-size: 0.82rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--about-gold);
+        margin-bottom: 12px;
+      }
+      .hs-about-text h1 {
+        font-family: var(--about-script) !important;
+        font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+        font-weight: 400;
+        color: var(--about-gold) !important;
+        margin: 0 0 clamp(20px, 3vw, 32px);
+        line-height: 1.15;
+        letter-spacing: 0.5px;
+      }
+      .hs-about-text p {
+        font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+        font-size: clamp(1.02rem, 1.35vw, 1.15rem);
+        line-height: 1.95;
+        color: var(--about-text-body);
+        margin: 0 0 clamp(14px, 2vw, 22px);
+      }
+      .hs-about-text p strong {
+        color: var(--about-text-dark);
+        font-weight: 600;
+      }
+
+      /* =================================================================
+         SECTION 2: OUR APPROACH — Centered on Soft Ivory
+         ================================================================= */
+      .hs-approach {
+        background: var(--about-bg-subtle);
+        padding: clamp(70px, 9vw, 130px) 6%;
+        text-align: center;
+        position: relative;
+        border-top: 1px solid rgba(139, 98, 70, 0.12);
+        border-bottom: 1px solid rgba(139, 98, 70, 0.12);
+      }
+
+      .hs-approach::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--about-gold), var(--about-gold-light), var(--about-gold), transparent);
+      }
+
+      .hs-approach-inner {
+        max-width: 880px;
+        margin: 0 auto;
+      }
+
+      .hs-approach h2 {
+        font-family: var(--about-script) !important;
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        font-weight: 400;
+        color: var(--about-gold) !important;
+        margin: 0 0 clamp(16px, 2.5vw, 28px);
+        line-height: 1.15;
+      }
+
+      .hs-approach p {
+        font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+        font-size: clamp(1rem, 1.3vw, 1.14rem);
+        line-height: 1.95;
+        color: var(--about-text-body);
+        margin: 0 auto clamp(14px, 2vw, 22px);
+        max-width: 780px;
+      }
+
+      .hs-approach p.hs-approach-tagline {
+        font-size: clamp(1.2rem, 2vw, 1.55rem);
+        font-style: normal;
+        color: var(--about-text-dark);
+        margin: 0 auto clamp(24px, 3.5vw, 40px);
+        letter-spacing: 0.3px;
+        font-weight: 500;
+      }
+
+      .hs-approach-cta {
+        display: inline-block;
+        margin-top: clamp(18px, 3vw, 36px);
+        padding: 14px 38px;
+        border: 1.5px solid var(--about-gold);
+        color: var(--about-gold);
+        font-family: 'DM Sans', Arial, sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 30px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: all 0.35s ease;
+      }
+      .hs-approach-cta:hover,
+      .hs-approach-cta:focus-visible {
+        background: var(--about-gold);
+        color: #ffffff;
+        box-shadow: 0 8px 24px rgba(128, 82, 54, 0.25);
+        transform: translateY(-2px);
+      }
+
+      /* =================================================================
+         SECTION 3: VALUES — Warm Light Cards
+         ================================================================= */
+      .hs-values {
+        background: var(--about-bg);
+        padding: clamp(65px, 8vw, 115px) 6%;
+      }
+      .hs-values-inner {
+        max-width: 1140px;
+        margin: 0 auto;
+      }
+      .hs-values h2 {
+        font-family: var(--about-script) !important;
+        font-size: clamp(2.6rem, 4.5vw, 4rem);
+        font-weight: 400;
+        color: var(--about-gold) !important;
+        text-align: center;
+        margin: 0 0 clamp(32px, 4.5vw, 54px);
+      }
+      .hs-values-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+      }
+      .hs-value-card {
+        background: var(--about-bg-card);
+        border: 1px solid rgba(139, 98, 70, 0.16);
+        border-radius: 14px;
+        padding: clamp(28px, 3.5vw, 38px);
+        box-shadow: 0 8px 28px rgba(69, 54, 43, 0.06);
+        transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      }
+      .hs-value-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 40px rgba(69, 54, 43, 0.12);
+        border-color: rgba(139, 98, 70, 0.32);
+      }
+      .hs-value-card .card-icon {
+        width: 52px; height: 52px;
+        background: var(--about-gold);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 22px;
+        font-size: 1.25rem;
+        color: #ffffff;
+      }
+      .hs-value-card h3 {
+        font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+        font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+        color: var(--about-text-dark);
+        margin: 0 0 12px;
+        font-weight: 500;
+      }
+      .hs-value-card p {
+        font-family: 'DM Sans', Arial, sans-serif;
+        color: var(--about-text-body);
+        line-height: 1.85;
+        font-size: 0.95rem;
+        margin: 0;
+      }
+
+      /* =================================================================
+         SECTION 4: CTA STRIP — Warm Light Banner
+         ================================================================= */
+      .hs-cta {
+        background: var(--about-bg-warm);
+        border-top: 1px solid rgba(139, 98, 70, 0.16);
+        border-bottom: 1px solid rgba(139, 98, 70, 0.16);
+        padding: clamp(65px, 8vw, 105px) 6%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .hs-cta::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at center, rgba(139, 98, 70, 0.08) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .hs-cta h2 {
+        font-family: var(--about-script) !important;
+        font-size: clamp(2.6rem, 5vw, 4.2rem);
+        font-weight: 400;
+        color: var(--about-gold) !important;
+        margin: 0 0 16px;
+        position: relative;
+        z-index: 1;
+      }
+      .hs-cta p {
+        max-width: 680px;
+        margin: 0 auto 30px;
+        font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+        color: var(--about-text-body);
+        line-height: 1.85;
+        font-size: clamp(1rem, 1.4vw, 1.15rem);
+        position: relative;
+        z-index: 1;
+      }
+      .hs-cta a.hs-cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 42px;
+        background: var(--about-text-dark);
+        color: #fffaf1 !important;
+        font-family: 'DM Sans', Arial, sans-serif;
+        font-size: 0.92rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 9999px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: all 0.35s ease;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 10px 28px rgba(48, 44, 38, 0.18);
+      }
+      .hs-cta a.hs-cta-btn:hover {
+        background: var(--about-gold);
+        transform: translateY(-2px);
+        box-shadow: 0 14px 34px rgba(128, 82, 54, 0.28);
+      }
+
+      /* =================================================================
+         SCROLL REVEAL ANIMATIONS
+         ================================================================= */
+      .js .reveal,
+      .js .reveal-left,
+      .js .reveal-right { opacity: 0; }
+
+      .js .reveal.visible,
+      .js .reveal-left.visible,
+      .js .reveal-right.visible {
+        opacity: 1;
+        animation: hsRise 0.8s ease backwards;
+      }
+      .js .reveal-left.visible  { animation-name: hsFromLeft;  animation-duration: 0.9s; }
+      .js .reveal-right.visible { animation-name: hsFromRight; animation-duration: 0.9s; }
+      .js .reveal-delay-1.visible { animation-delay: 0.15s; }
+      .js .reveal-delay-2.visible { animation-delay: 0.3s; }
+      .js .reveal-delay-3.visible { animation-delay: 0.45s; }
+
+      @keyframes hsRise      { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+      @keyframes hsFromLeft  { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: none; } }
+      @keyframes hsFromRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: none; } }
+
+      @media (prefers-reduced-motion: reduce) {
+        .js .reveal, .js .reveal-left, .js .reveal-right { opacity: 1; }
+        .js .reveal.visible, .js .reveal-left.visible, .js .reveal-right.visible { animation: none; }
+        .hs-value-card, .hs-approach-cta, .hs-cta a { transition: none; }
+      }
+
+      /* =================================================================
+         RESPONSIVE
+         ================================================================= */
+      @media (max-width: 900px) {
+        .hs-about-layout { grid-template-columns: 1fr; gap: 36px; }
+        .hs-about-photo img { max-height: none; }
+        .hs-about-text { text-align: center; }
+        .hs-values-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+        .mc-nav { padding-left: 5%; padding-right: 5%; }
+        .mc-nav .mc-nav-brand { font-size: clamp(1rem, 4vw, 1.4rem); }
+      }
+      @media (max-width: 600px) {
+        .hs-about-hero { padding-top: 110px; }
+      }
     </style>
 </head>
+
 <body>
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="index.html"><i class="fa fa-home mr-2"></i> Home</a>
-    <a href="portfolio.html"><i class="fa fa-photo mr-2"></i> Portfolio</a>
-    <a href="wedding.html"><i class="fa fa-heart mr-2"></i> Wedding</a>
-    <a href="events.html"><i class="fa fa-calendar mr-2"></i> Events</a>
-    <a href="contact.html"><i class="fa fa-phone mr-2"></i> Contact</a>
-    <a href="about.html"><i class="fa fa-info-circle mr-2"></i> About</a>
-</div>
-<div id="nav">
-    <div class="nav-left"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a href="wedding.html">Wedding</a><a href="events.html">Events</a></div>
-    <div class="nav-center text-center" style="flex:1;"><span class="brand-name">MountainClicks</span></div>
-    <div class="nav-right"><a href="about.html">About</a><a href="contact.html">Contact</a><button class="btn-enquire" onclick="window.location='contact.html'">Enquire Now</button></div>
-</div>
-<div id="navMob">
-    <div style="flex:1;"><a onclick="openNav()" style="font-size:22px;"><i class="fa fa-bars"></i></a></div>
-    <div style="flex:2;text-align:center;"><span class="brand-name" style="font-size:18px;">MountainClicks</span></div>
-    <div style="flex:1;text-align:right;"><a href="contact.html" style="font-size:18px;"><i class="fa fa-phone"></i></a></div>
-</div>
 
-<div class="page-hero">
-    <p>Our Story</p>
-    <h1>About Us</h1>
-    <div class="gold-line"></div>
-</div>
+    <!-- FLOATING LUXURY NAVBAR -->
+    <header class="mc-nav-wrapper">
+        <nav class="mc-nav">
+            <a href="index.html" class="mc-nav-brand">
+                <span class="brand-lens"></span> Mountain<span>Clicks</span>
+            </a>
 
-<div class="about-story">
-    <div class="row align-items-center">
-        <div class="col-md-6 story-text">
-            <p class="section-sub">Who We Are</p>
-            <h2>We Don't Just<br>Take Photos —<br>We Tell Stories.</h2>
-            <div class="gold-line" style="margin:20px 0;"></div>
-            <p>MountainClicks was born from a passion for preserving life's most precious moments. We believe every wedding, every celebration, every milestone deserves to be remembered with beauty and authenticity.</p>
-            <p>Based in Maharashtra, we travel across India to capture weddings, pre-weddings, birthdays, and events. Our approach is candid, emotional, and deeply personal.</p>
-            <div class="quote">"You live it, we capture it — for a lifetime."</div>
-            <a href="contact.html" style="display:inline-block;border:1px solid var(--dark);color:var(--dark);padding:12px 40px;font-size:11px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;transition:0.3s;"
-               onmouseover="this.style.background='var(--dark)';this.style.color='#fff'"
-               onmouseout="this.style.background='transparent';this.style.color='var(--dark)'">
-                Book a Session
+            <ul class="mc-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="Wedding.html">Wedding</a></li>
+                <li><a href="WeddingFilms.html">Wedding Films</a></li>
+                <li><a href="About.html" class="active">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+
+            <div class="mc-nav-actions">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color: var(--gold); font-size: 1.1rem; margin-right: 6px;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="Contact.html" class="btn-luxury btn-shimmer-gold btn-enquire-nav">
+                    <span>Enquire</span>
+                    <span class="shutter-icon"></span>
+                </a>
+                <button class="mc-mobile-toggle" aria-label="Open Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mc-mobile-menu">
+        <button class="mc-mobile-close" aria-label="Close Navigation Menu">&times;</button>
+        <ul class="mc-mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Wedding.html">Wedding</a></li>
+            <li><a href="WeddingFilms.html">Wedding Films</a></li>
+            <li><a href="About.html" class="active">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div style="margin-top: 36px; text-align: center;">
+            <a href="Contact.html" class="btn-luxury btn-shimmer-gold">
+                <span>Book a Consultation</span>
+                <span class="shutter-icon"></span>
             </a>
         </div>
-        <div class="col-md-6">
-            <div class="about-image-wrap">
-                <img src="./public/final/optimized/hero1.jpg" style="width:100%; height:100%; object-fit:cover;" alt="MountainClicks Lead Photographer">
+    </div>
+
+    <!-- ===================================================================
+         SECTION 1: LIGHT HERO — About Us
+         =================================================================== -->
+    <section class="hs-about-hero">
+        <div class="hs-about-layout">
+            <figure class="hs-about-photo reveal-left">
+                <img src="./Public/final/optimized/About.jpeg" alt="Shailesh Hendre — MountainClicks founder with camera" fetchpriority="high" decoding="async">
+            </figure>
+            <div class="hs-about-text reveal-right">
+                <span class="hs-about-subtitle">The Story Behind The Lens</span>
+                <h1>About Us</h1>
+                <p>We are a story-driven wedding photography &amp; films studio rooted in the mountains — capturing weddings with heart, soul, and an uncompromising eye for genuine emotion.</p>
+                <p><strong>Shailesh Hendre</strong>, a passionate visual storyteller, started following his love for capturing people's stories more than 8 years ago. Growing up witnessing the vibrant colours and rituals of Indian weddings, photography became more than a profession — it became a calling.</p>
+                <p>MountainClicks was born from that deep-rooted passion, and over the years a team of creative minds joined who share the same love for authentic, unscripted moments.</p>
+                <p>Backed by a passionate team of creative professionals, we specialize in documenting wedding stories in their purest, most authentic form — blending rich traditions with a modern, candid touch.</p>
+                <p>We believe that being friends with our clients and making them feel comfortable gives us an upper hand. It helps us bring the best in you, which results in a magical output.</p>
             </div>
         </div>
-    </div>
-</div>
+    </section>
 
-<div class="stats-section">
-    <div class="row">
-        <div class="col-md-3 col-6 stat-item mb-4">
-            <h3>200+</h3>
-            <p>Weddings Covered</p>
-        </div>
-        <div class="col-md-3 col-6 stat-item mb-4">
-            <h3>500+</h3>
-            <p>Happy Clients</p>
-        </div>
-        <div class="col-md-3 col-6 stat-item mb-4">
-            <h3>5+</h3>
-            <p>Years Experience</p>
-        </div>
-        <div class="col-md-3 col-6 stat-item mb-4">
-            <h3>50K+</h3>
-            <p>Photos Delivered</p>
-        </div>
-    </div>
-</div>
-
-<div class="values-section">
-    <p class="section-sub">Why Choose Us</p>
-    <h2 class="section-title">Our Values</h2>
-    <div class="gold-line"></div>
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="value-card">
-                <div class="value-icon"><i class="fa fa-heart"></i></div>
-                <h4>Emotion First</h4>
-                <p>We capture feelings, not just faces. Every shot tells a real story.</p>
+    <!-- ===================================================================
+         SECTION 2: OUR APPROACH — Centered on Soft Ivory
+         =================================================================== -->
+    <section class="hs-approach">
+        <div class="hs-approach-inner">
+            <h2 class="reveal">Our Approach</h2>
+            <p class="hs-approach-tagline reveal reveal-delay-1">&ldquo;Frames of Nostalgia, Stories of Love&rdquo;</p>
+            <p class="reveal reveal-delay-1">We love to be inspired by your personalities and your wedding to tell your individual story — because every story, every couple, and every wedding is unique and different.</p>
+            <p class="reveal reveal-delay-2">With us you will get a wedding reportage with authentic pictures, heartfelt films, real feelings and memories.</p>
+            <p class="reveal reveal-delay-2">We love to travel, and we are ready to go anywhere to capture special stories and meet great people.</p>
+            <p class="reveal reveal-delay-3">We're in this to give you something no one else can —<br>a memory that's all heart, no templates.</p>
+            <div class="reveal reveal-delay-3">
+                <a href="Portfolio.html" class="hs-approach-cta">Explore Our Portfolio</a>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="value-card">
-                <div class="value-icon"><i class="fa fa-camera"></i></div>
-                <h4>Premium Quality</h4>
-                <p>Professional equipment and expert editing for gallery-worthy results.</p>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 3: VALUES — Warm Cards
+         =================================================================== -->
+    <section class="hs-values">
+        <div class="hs-values-inner">
+            <h2 class="reveal">What Guides Our Work</h2>
+            <div class="hs-values-grid">
+                <article class="hs-value-card reveal reveal-delay-1">
+                    <div class="card-icon"><i class="fa fa-camera-retro"></i></div>
+                    <h3>Pure Documentary Style</h3>
+                    <p>We blend rich traditions with a modern, candid touch. Instead of forced poses, we capture unscripted smiles, tender tears, and raw emotions as they naturally unfold.</p>
+                </article>
+                <article class="hs-value-card reveal reveal-delay-2">
+                    <div class="card-icon"><i class="fa fa-heart"></i></div>
+                    <h3>Like Family, Not Vendors</h3>
+                    <p>We step into your celebrations not merely as service providers, but as extended family members who ensure you feel completely relaxed, natural, and comfortable throughout your big day.</p>
+                </article>
+                <article class="hs-value-card reveal reveal-delay-3">
+                    <div class="card-icon"><i class="fa fa-handshake-o"></i></div>
+                    <h3>Driven by Relationships</h3>
+                    <p>For us, success isn't measured by accolades — it's measured by the trust we build, the comfort we provide, and the lasting relationships we form with our clients.</p>
+                </article>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="value-card">
-                <div class="value-icon"><i class="fa fa-clock-o"></i></div>
-                <h4>On Time, Every Time</h4>
-                <p>We respect your schedule and deliver photos within the promised timeline.</p>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 4: CTA — Light Warm Banner (No Dark Background)
+         =================================================================== -->
+    <section class="hs-cta">
+        <h2 class="reveal">Let's Tell Your Story Together</h2>
+        <p class="reveal reveal-delay-1">Every celebration is unique. We would love to learn about your plans and help preserve the emotions, traditions, and moments that matter most.</p>
+        <a href="Contact.html" class="hs-cta-btn reveal reveal-delay-2">
+            <span>Check Date Availability</span>
+            <i class="fa fa-arrow-right"></i>
+        </a>
+    </section>
+
+    <!-- ELITE FOOTER -->
+    <footer class="mc-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>MountainClicks</h3>
+                <p>
+                    Story-driven wedding photography and films. Weddings, pre-wedding shoots, birthdays and events.
+                </p>
+                <div class="footer-social-strip">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="Wedding.html">Wedding Collections</a></li>
+                    <li><a href="About.html">Studio Story</a></li>
+                    <li><a href="Contact.html">Get in Touch</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Portfolio</h4>
+                <ul class="footer-links">
+                    <li><a href="Wedding.html">Weddings</a></li>
+                    <li><a href="Portfolio.html">Pre-Wedding Shoots</a></li>
+                    <li><a href="Portfolio.html">Bridal Portraits</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio Inquiries</h4>
+                <div class="footer-contact-item">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Studio: Mumbai &bull; Destination Worldwide</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-envelope-o"></i>
+                    <span>commissions@mountainclicks.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
-<div class="cta-section">
-    <h2>Ready to Book Your Session?</h2>
-    <p>Let's create something beautiful together</p>
-    <a href="contact.html" class="cta-btn">Get in Touch</a>
-</div>
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 MountainClicks Photography Studio. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
-<div class="footer-banner">
-    <h4>Follow our journey</h4>
-    <div class="social-icons">
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-whatsapp"></i></a>
-    </div>
-</div>
-<div class="footer-bottom">© 2024 <a href="index.html">MountainClicks</a> — All Rights Reserved</div>
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%20MountainClicks%2C%20I%20would%20like%20to%20know%20more%20about%20your%20studio%20story%20and%20team."
+        target="_blank" rel="noopener noreferrer" class="floating-booking-pill" aria-label="Quick WhatsApp Consultation">
+        <span class="pulse-dot"></span>
+        <span>WhatsApp Studio</span>
+    </a>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script>
-function openNav(){document.getElementById("mySidenav").style.width="100%";}
-function closeNav(){document.getElementById("mySidenav").style.width="0";}
-</script>
+    <script src="js/luxury-photographer.js"></script>
+
+    <!-- Scroll reveal animation (content stays visible if this script fails) -->
+    <script>
+      (function () {
+        var items = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        function showAll() { items.forEach(function (el) { el.classList.add('visible'); }); }
+        if (!('IntersectionObserver' in window)) { showAll(); return; }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        items.forEach(function (el) { observer.observe(el); });
+        setTimeout(showAll, 4000); /* safety net */
+      })();
+    </script>
 </body>
+
 </html>

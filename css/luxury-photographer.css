@@ -1,0 +1,3030 @@
+/* ==========================================================================
+   MOUNTAINCLICKS LUXURY PHOTOGRAPHY ENGINE
+   Aesthetic Architecture: Editorial Vogue / Cinematic Italian Darkroom
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-dark: #f7f3eb;
+    --bg-darker: #eee7db;
+    --bg-charcoal: #eee7db;
+    --bg-card: #fffdf8;
+    --bg-card-hover: #f0e7d9;
+    --bg-surface: #eee7db;
+    --bg-light: #fbf8f1;
+    --bg-light-soft: #eee7db;
+
+    --gold: #8b6246;
+    --gold-light: #b58a68;
+    --gold-dark: #68452f;
+    --gold-subtle: rgba(139, 98, 70, 0.12);
+    --gold-border: rgba(139, 98, 70, 0.22);
+    --gold-border-bright: rgba(139, 98, 70, 0.55);
+    --gold-glow: rgba(139, 98, 70, 0.18);
+
+    --text-white: #2c2923;
+    --text-primary: #302c26;
+    --text-secondary: #62584d;
+    --text-muted: #82776b;
+    --text-dark: #302c26;
+
+    --font-serif: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-brand: 'Poppins', sans-serif;
+
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+}
+
+/* --------------------------------------------------------------------------
+   GLOBAL RESET & BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.7;
+    position: relative;
+    letter-spacing: 0.01em;
+}
+
+body.light-theme {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--bg-dark);
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--gold-light), var(--gold-dark));
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s var(--ease-out);
+}
+
+/* --------------------------------------------------------------------------
+   TYPOGRAPHY ARCHITECTURE
+   -------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+    font-family: var(--font-serif);
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    text-wrap: balance;
+}
+
+.hero-title {
+    font-size: clamp(2.75rem, 6.5vw, 5.8rem);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--text-white);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-title em {
+    font-style: normal;
+    font-weight: 500;
+    color: var(--gold-light);
+}
+
+.section-title {
+    font-size: clamp(2.2rem, 4.5vw, 4.2rem);
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--text-white);
+    margin-bottom: 0.75rem;
+}
+
+.section-sub {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.section-sub::before,
+.section-sub::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+}
+
+.gold-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1.5rem auto 2.2rem;
+}
+
+.gold-divider-left {
+    margin-left: 0;
+    margin-right: auto;
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+/* --------------------------------------------------------------------------
+   ADVANCED ANIMATED BUTTONS
+   -------------------------------------------------------------------------- */
+.btn-luxury {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 34px;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    border: 1px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), border-color 0.4s var(--ease-out), background-color 0.4s var(--ease-out);
+    z-index: 1;
+    transform: translateZ(0);
+}
+
+.btn-luxury:active {
+    transform: scale(0.97);
+}
+
+/* Shimmer Liquid Gold Button */
+.btn-shimmer-gold {
+    background: var(--gold);
+    color: #0b0b0a !important;
+    border-color: var(--gold-light);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.btn-shimmer-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.65),
+            transparent);
+    transform: skewX(-25deg);
+    transition: 0.75s ease;
+}
+
+.btn-shimmer-gold:hover::before {
+    left: 180%;
+}
+
+.btn-shimmer-gold:hover {
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.45), 0 0 15px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
+    color: #000000 !important;
+}
+
+/* Glassmorphic Outline Button with Shutter Animation */
+.btn-glass-shutter {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--text-white) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.btn-glass-shutter::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s var(--ease-out);
+    z-index: -1;
+    border-radius: var(--radius-full);
+}
+
+.btn-glass-shutter:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.btn-glass-shutter:hover {
+    color: #0d0d0c !important;
+    border-color: var(--gold);
+    box-shadow: 0 8px 28px rgba(212, 175, 55, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Camera Aperture / Shutter Blade Icon */
+.shutter-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.shutter-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: currentColor;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-luxury:hover .shutter-icon {
+    transform: rotate(180deg) scale(1.15);
+}
+
+/* Minimal Editorial Link Button */
+.btn-link-editorial {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.btn-link-editorial::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0.4);
+    transform-origin: left;
+    transition: transform 0.4s var(--ease-out);
+}
+
+.btn-link-editorial:hover::after {
+    transform: scaleX(1);
+}
+
+.btn-link-editorial i {
+    transition: transform 0.3s var(--ease-out);
+}
+
+.btn-link-editorial:hover i {
+    transform: translateX(5px);
+}
+
+/* Floating Quick Action WhatsApp / Enquire Button */
+.floating-booking-pill {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 990;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(18, 18, 16, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--gold-border-bright);
+    color: var(--gold-light);
+    padding: 12px 22px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px var(--gold-glow);
+    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.floating-booking-pill:hover {
+    transform: translateY(-4px) scale(1.03);
+    color: #fff;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.55);
+}
+
+.floating-booking-pill .pulse-dot {
+    width: 9px;
+    height: 9px;
+    background: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    animation: pulseRing 2s infinite;
+}
+
+@keyframes pulseRing {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   LUXURY FLOATING NAVIGATION
+   -------------------------------------------------------------------------- */
+.mc-nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    pointer-events: none;
+    transition: all 0.4s var(--ease-out);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, transparent 100%);
+}
+
+.mc-nav {
+    pointer-events: auto;
+    width: 100%;
+    max-width: 1400px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: none;
+    transition: all 0.4s var(--ease-out);
+}
+
+.mc-nav-wrapper.scrolled,
+.mc-nav.scrolled {
+    background: rgba(10, 10, 9, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    padding: 12px 5%;
+}
+
+.mc-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-brand);
+    font-size: 1.45rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-white);
+}
+
+.mc-nav-brand span {
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 300;
+}
+
+.mc-nav-brand .brand-lens {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.mc-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.mc-nav-links a {
+    font-size: 0.73rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    position: relative;
+    padding: 6px 4px;
+    transition: color 0.3s var(--ease-out);
+}
+
+.mc-nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 16px;
+    height: 1px;
+    background: var(--gold);
+    transition: transform 0.3s var(--ease-out);
+}
+
+.mc-nav-links a:hover,
+.mc-nav-links a.active {
+    color: var(--gold-light);
+}
+
+.mc-nav-links a:hover::after,
+.mc-nav-links a.active::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+.mc-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mc-nav-actions .btn-enquire-nav {
+    padding: 9px 22px;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+}
+
+.mc-mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-size: 1.4rem;
+    cursor: pointer;
+    padding: 4px;
+}
+
+/* Fullscreen Luxury Mobile Menu */
+.mc-mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 8, 7, 0.98);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease-out);
+    padding: 40px 20px;
+}
+
+.mc-mobile-menu.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mc-mobile-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: transparent;
+    border: 1px solid var(--gold-border);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s var(--ease-out);
+}
+
+.mc-mobile-close:hover {
+    transform: rotate(90deg);
+}
+
+.mc-mobile-nav-list {
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.mc-mobile-nav-list li {
+    margin: 18px 0;
+}
+
+.mc-mobile-nav-list a {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+    transition: color 0.3s;
+}
+
+.mc-mobile-nav-list a:hover {
+    color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   HERO ARCHITECTURE (AIDA: ATTENTION)
+   -------------------------------------------------------------------------- */
+.mc-hero {
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+}
+
+.mc-hero-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.mc-hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s var(--ease-out), transform 8s linear;
+    transform: scale(1.08);
+}
+
+.mc-hero-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.mc-hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95) contrast(1.02);
+}
+
+/* Subtle Top & Bottom Gradient for Clean Text Legibility */
+.mc-hero-vignette {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, transparent 25%, transparent 75%, rgba(10, 10, 9, 0.8) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.mc-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 120px 24px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Camera Metadata Pill / Editorial Badge */
+.camera-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(22, 22, 20, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--gold-border);
+    padding: 7px 18px;
+    border-radius: var(--radius-full);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+}
+
+.camera-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.hero-sub-editorial {
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 1.5rem auto 2.5rem;
+    line-height: 1.8;
+}
+
+.hero-cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* Slider Controls & Progress Line */
+.hero-controls {
+    position: absolute;
+    bottom: 35px;
+    left: 5%;
+    right: 5%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-slide-counter {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--gold-light);
+}
+
+.hero-progress-bar {
+    flex: 1;
+    max-width: 320px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 24px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-full);
+}
+
+.hero-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--gold);
+    transition: width 0.1s linear;
+}
+
+.hero-nav-arrows {
+    display: flex;
+    gap: 10px;
+}
+
+.hero-arrow-btn {
+    background: rgba(20, 20, 18, 0.6);
+    border: 1px solid var(--gold-border);
+    color: var(--gold-light);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.3s var(--ease-out);
+}
+
+.hero-arrow-btn:hover {
+    background: var(--gold);
+    color: #0b0b0a;
+    border-color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   EDITORIAL BENTO GRID (AIDA: INTEREST)
+   Mathematically gapless interlocking grid
+   -------------------------------------------------------------------------- */
+.bento-section {
+    padding: 130px 5%;
+    background: var(--bg-dark);
+    position: relative;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+    gap: 20px;
+    max-width: 1340px;
+    margin: 40px auto 0;
+}
+
+.bento-card {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.4s var(--ease-out), transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+    cursor: pointer;
+}
+
+.bento-card:hover {
+    border-color: var(--gold-border-bright);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 25px var(--gold-glow);
+}
+
+.bento-card-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    overflow: hidden;
+}
+
+.bento-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out), filter 0.8s var(--ease-out);
+    filter: brightness(0.85);
+}
+
+.bento-card:hover .bento-card-img-wrap img {
+    transform: scale(1.06);
+    filter: brightness(0.95);
+}
+
+/* Interlocking Spans */
+.col-span-8 {
+    grid-column: span 8;
+}
+
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.col-span-6 {
+    grid-column: span 6;
+}
+
+.col-span-12 {
+    grid-column: span 12;
+}
+
+.row-span-2 {
+    grid-row: span 2;
+}
+
+.bento-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(10, 10, 9, 0.92) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 32px 28px;
+    z-index: 2;
+    transition: background 0.4s var(--ease-out);
+}
+
+.bento-tag {
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+}
+
+.bento-title {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--text-white);
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.bento-meta {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   FEATURED EDITORIAL STORIES (AIDA: DESIRE)
+   -------------------------------------------------------------------------- */
+.stories-section {
+    padding: 130px 5%;
+    background: var(--bg-charcoal);
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.story-chapter {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto 100px;
+}
+
+.story-chapter:last-child {
+    margin-bottom: 0;
+}
+
+.story-chapter.reversed {
+    grid-template-columns: 0.9fr 1.1fr;
+}
+
+.story-chapter.reversed .story-visual {
+    order: 2;
+}
+
+.story-visual {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--gold-border);
+}
+
+.story-visual img {
+    width: 100%;
+    height: 540px;
+    object-fit: cover;
+    transition: transform 0.9s var(--ease-out);
+}
+
+.story-visual:hover img {
+    transform: scale(1.04);
+}
+
+.story-badge-floating {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    background: rgba(12, 12, 10, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--gold-border);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+}
+
+.story-content {
+    padding: 20px;
+}
+
+.story-quote {
+    font-family: var(--font-serif);
+    font-style: normal;
+    font-size: 1.55rem;
+    line-height: 1.6;
+    color: var(--gold-light);
+    border-left: 2px solid var(--gold);
+    padding-left: 24px;
+    margin: 28px 0;
+}
+
+.story-details-list {
+    display: flex;
+    gap: 30px;
+    margin: 28px 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.story-detail-item h5 {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+}
+
+.story-detail-item p {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    color: var(--text-white);
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   STATS COUNTER SECTION
+   -------------------------------------------------------------------------- */
+.stats-section {
+    padding: 90px 5%;
+    background: #090908;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px;
+    position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(212, 175, 55, 0.2);
+}
+
+.stat-number {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 4.5vw, 4.6rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--gold-light);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   PHILOSOPHY & CRAFTSMANSHIP
+   -------------------------------------------------------------------------- */
+.philosophy-section {
+    padding: 130px 5%;
+    background: var(--bg-dark);
+    text-align: center;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1260px;
+    margin: 60px auto 0;
+    text-align: left;
+}
+
+.pillar-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    padding: 45px 35px;
+    transition: transform 0.4s var(--ease-out), border-color 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+}
+
+.pillar-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--gold-border-bright);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
+}
+
+.pillar-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid var(--gold-border);
+    background: rgba(212, 175, 55, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+    transition: transform 0.5s var(--ease-out);
+}
+
+.pillar-card:hover .pillar-icon {
+    transform: rotate(360deg) scale(1.1);
+    background: var(--gold);
+    color: #0c0c0b;
+}
+
+.pillar-title {
+    font-family: var(--font-serif);
+    font-size: 1.65rem;
+    color: var(--text-white);
+    margin-bottom: 12px;
+}
+
+.pillar-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* --------------------------------------------------------------------------
+   INSTAGRAM / SOCIAL LIVE FEED
+   -------------------------------------------------------------------------- */
+.insta-section {
+    padding: 110px 5%;
+    background: var(--bg-charcoal);
+    text-align: center;
+}
+
+.insta-grid-modern {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    max-width: 1340px;
+    margin: 50px auto 0;
+}
+
+.insta-box {
+    position: relative;
+    height: 240px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.insta-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-out);
+}
+
+.insta-box-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 14, 12, 0.7);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
+    color: var(--gold);
+    font-size: 1.6rem;
+}
+
+.insta-box:hover img {
+    transform: scale(1.08);
+}
+
+.insta-box:hover .insta-box-overlay {
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   ELITE FOOTER (AIDA: ACTION)
+   -------------------------------------------------------------------------- */
+.mc-footer {
+    background: #050505;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 90px 5% 40px;
+    position: relative;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px;
+    max-width: 1320px;
+    margin: 0 auto 70px;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    color: var(--text-white);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.footer-brand p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 380px;
+    margin-bottom: 24px;
+}
+
+.footer-col h4 {
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.footer-contact-item i {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.footer-social-strip {
+    display: flex;
+    gap: 18px;
+}
+
+.footer-social-strip a {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.footer-social-strip a:hover {
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   CUSTOM LUXURY CURSOR
+   -------------------------------------------------------------------------- */
+.custom-cursor-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s, transform 0.1s linear;
+}
+
+.custom-cursor-ring {
+    position: fixed;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s var(--ease-out), height 0.3s var(--ease-out), background-color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: transparent;
+}
+
+.custom-cursor-ring.cursor-hover {
+    width: 70px;
+    height: 70px;
+    background: rgba(212, 175, 55, 0.18);
+    border-color: var(--gold);
+    backdrop-filter: blur(2px);
+    color: var(--gold-light);
+}
+
+/* --------------------------------------------------------------------------
+   LIGHTBOX / PHOTO MODAL
+   -------------------------------------------------------------------------- */
+.mc-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 6, 5, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease-out);
+}
+
+.mc-lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mc-lightbox-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    position: relative;
+    text-align: center;
+}
+
+.mc-lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.2);
+    border: 1px solid var(--gold-border);
+}
+
+.mc-lightbox-caption {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    color: var(--gold-light);
+    margin-top: 14px;
+}
+
+.mc-lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    background: transparent;
+    border: 1px solid var(--gold-border);
+    color: var(--gold);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.mc-lightbox-close:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* --------------------------------------------------------------------------
+   FILTER TABS (PORTFOLIO / WEDDING / EVENTS)
+   -------------------------------------------------------------------------- */
+.filter-tabs-modern {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 40px 0 50px;
+}
+
+.filter-btn-luxury {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-secondary);
+    padding: 10px 26px;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.35s var(--ease-out);
+}
+
+.filter-btn-luxury:hover,
+.filter-btn-luxury.active {
+    background: var(--gold);
+    color: #0c0c0b;
+    border-color: var(--gold-light);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN RULES
+   -------------------------------------------------------------------------- */
+/* Tablet & Medium Screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .bento-section {
+        padding: 90px 4%;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        grid-auto-flow: row !important;
+        gap: 18px !important;
+    }
+
+    .col-span-12,
+    .col-span-8 {
+        grid-column: span 2 !important;
+    }
+
+    .col-span-6,
+    .col-span-4 {
+        grid-column: span 1 !important;
+    }
+
+    .bento-card-img-wrap {
+        height: 340px !important;
+        min-height: 280px !important;
+    }
+
+    .story-chapter,
+    .story-chapter.reversed {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .story-chapter.reversed .story-visual {
+        order: 1;
+    }
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .insta-grid-modern {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile & Small Screens (max-width: 768px) */
+@media (max-width: 768px) {
+
+    .mc-nav-wrapper {
+        padding: 8px 14px;
+    }
+
+    .mc-nav-links,
+    .mc-nav-actions .btn-enquire-nav {
+        display: none !important;
+    }
+
+    .mc-mobile-toggle {
+        display: block !important;
+    }
+
+    .mc-nav {
+        padding: 8px 16px;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .bento-section {
+        padding: 60px 4% 70px !important;
+    }
+
+    /* Bento Grid: 1 single clean full-width column, completely preventing compression */
+    .bento-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        width: 100% !important;
+        margin: 28px auto 0 !important;
+    }
+
+    .bento-card,
+    .col-span-12,
+    .col-span-8,
+    .col-span-6,
+    .col-span-4 {
+        width: 100% !important;
+        max-width: 100% !important;
+        grid-column: 1 / -1 !important;
+    }
+
+    .bento-card-img-wrap {
+        width: 100% !important;
+        height: clamp(280px, 48vh, 380px) !important;
+        min-height: 280px !important;
+    }
+
+    .bento-card-overlay {
+        padding: 22px 18px !important;
+    }
+
+    .bento-title {
+        font-size: 1.35rem !important;
+        line-height: 1.3 !important;
+    }
+
+    .bento-meta {
+        font-size: 0.72rem !important;
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+
+    .stories-section {
+        padding: 70px 4% !important;
+    }
+
+    .story-chapter,
+    .story-chapter.reversed {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 24px !important;
+        margin-bottom: 50px !important;
+    }
+
+    .story-visual {
+        width: 100% !important;
+        height: clamp(260px, 45vh, 360px) !important;
+    }
+
+    .story-visual img {
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .story-content {
+        padding: 0 !important;
+    }
+
+    .story-quote {
+        font-size: 1.1rem !important;
+        padding-left: 16px !important;
+        margin: 18px 0 !important;
+    }
+
+    .story-details-list {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .story-detail-item h5 {
+        font-size: 0.68rem !important;
+    }
+
+    .story-detail-item p {
+        font-size: 0.8rem !important;
+    }
+
+    .philosophy-section {
+        padding: 70px 4% !important;
+    }
+
+    .pillars-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .pillar-card {
+        padding: 24px 20px !important;
+    }
+
+    .insta-section {
+        padding: 60px 4% !important;
+    }
+
+    .insta-grid-modern {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .insta-box {
+        height: 180px !important;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .stat-item:nth-child(2)::after {
+        display: none;
+    }
+
+    .footer-top {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 36px !important;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .floating-booking-pill {
+        bottom: 16px !important;
+        right: 16px !important;
+        padding: 9px 16px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .custom-cursor-dot,
+    .custom-cursor-ring {
+        display: none !important;
+    }
+}
+
+/* Page-specific responsive layouts */
+.wedding-stories-grid,
+.wedding-collections-grid,
+.about-standards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+.wedding-stories-grid {
+    max-width: 1280px;
+}
+
+.wedding-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.events-services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.events-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.about-story-layout,
+.contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 70px;
+    align-items: center;
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+.contact-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    align-items: start;
+}
+
+.about-story-actions {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.contact-form-card {
+    min-width: 0;
+    background: var(--bg-card);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: var(--radius-md);
+    padding: 50px 42px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.form-status {
+    min-height: 1.5em;
+    margin: 0 0 18px;
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.footer-placeholder-link {
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+@media (max-width: 1024px) {
+
+    .wedding-stories-grid,
+    .wedding-collections-grid,
+    .about-standards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wedding-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .events-services-grid,
+    .events-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-story-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .wedding-stories-grid,
+    .wedding-collections-grid,
+    .wedding-gallery-grid,
+    .about-standards-grid,
+    .events-services-grid,
+    .events-gallery-grid,
+    .contact-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-card {
+        padding: 34px 22px;
+    }
+
+    .about-story-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .mc-hero-slide {
+        transform: none;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   GLIGHTBOX CLEAN LUXURY OVERRIDES (HIDE CAPTIONS / WHITE BOTTOM BARS)
+   -------------------------------------------------------------------------- */
+.gslide-description,
+.gdesc-inner,
+.gslide-title,
+.gslide-desc {
+    display: none !important;
+}
+
+.goverlay {
+    background: rgba(6, 6, 5, 0.96) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.glightbox-clean .gclose,
+.glightbox-clean .gprev,
+.glightbox-clean .gnext {
+    background: rgba(20, 20, 18, 0.6) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+    border-radius: 50% !important;
+}
+
+.glightbox-clean .gclose:hover,
+.glightbox-clean .gprev:hover,
+.glightbox-clean .gnext:hover {
+    background: var(--gold) !important;
+    color: #0b0b0a !important;
+}
+
+/* ======================================================================
+   GAATHA-INSPIRED EDITORIAL THEME OVERRIDE
+   Warm, quiet, photography-first styling across the existing site.
+   Palette is an interpretive match to the live reference, not a claim
+   that these are its exact extracted CSS tokens.
+   ====================================================================== */
+
+:root {
+    --bg-dark: #f7f5f0;
+    --bg-darker: #eeebe4;
+    --bg-charcoal: #f0ede6;
+    --bg-card: #fffefa;
+    --bg-card-hover: #f2eee6;
+    --bg-surface: #e8e3d9;
+    --bg-light: #fffefa;
+    --bg-light-soft: #f7f5f0;
+
+    --gold: #8b806b;
+    --gold-light: #b8ad98;
+    --gold-dark: #655b4b;
+    --gold-subtle: rgba(139, 128, 107, 0.12);
+    --gold-border: rgba(139, 128, 107, 0.28);
+    --gold-border-bright: rgba(139, 128, 107, 0.55);
+    --gold-glow: rgba(139, 128, 107, 0.14);
+
+    --text-white: #fffefa;
+    --text-primary: #292722;
+    --text-secondary: #625e55;
+    --text-muted: #898276;
+    --text-dark: #292722;
+
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+html,
+body {
+    background: #f7f5f0;
+    color: #292722;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    letter-spacing: 0;
+}
+
+body.light-theme {
+    background: #f7f5f0;
+    color: #292722;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.section-title,
+.page-title,
+.logo-text {
+    font-family: var(--font-serif);
+    color: #292722;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select,
+button,
+.nav-link,
+.btn,
+small,
+.caption,
+.eyebrow,
+.section-subtitle {
+    font-family: var(--font-sans);
+}
+
+::selection {
+    background: #d8d0c1;
+    color: #292722;
+}
+
+::-webkit-scrollbar-track {
+    background: #eeebe4;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b8ad98;
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #8b806b;
+}
+
+/* Replace common hard-coded dark surfaces and gold accents. */
+body,
+main,
+section,
+.section,
+.page-wrapper,
+.site-wrapper,
+.page-content,
+.content-wrapper,
+.portfolio-page,
+.gallery-page,
+.about-page,
+.contact-page,
+.services-page {
+    background-color: #f7f5f0;
+    color: #292722;
+}
+
+header,
+.site-header,
+nav,
+.navbar,
+.navigation,
+.footer,
+footer,
+.site-footer {
+    background-color: #f7f5f0;
+    color: #292722;
+}
+
+.card,
+.project-card,
+.portfolio-card,
+.service-card,
+.contact-card,
+.modal-content,
+.dropdown-menu,
+.form-container {
+    background-color: #fffefa;
+    color: #292722;
+    border-color: rgba(139, 128, 107, 0.22);
+    box-shadow: 0 8px 30px rgba(41, 39, 34, 0.045);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+label,
+.nav-link,
+.section-description,
+.hero-description,
+.footer-text {
+    color: inherit;
+}
+
+a {
+    color: #655b4b;
+}
+
+a:hover {
+    color: #292722;
+}
+
+button,
+.btn,
+.button,
+input[type="submit"],
+.cta-button,
+.primary-button {
+    background: #292722;
+    color: #fffefa;
+    border-color: #292722;
+}
+
+button:hover,
+.btn:hover,
+.button:hover,
+input[type="submit"]:hover,
+.cta-button:hover,
+.primary-button:hover {
+    background: #655b4b;
+    color: #fffefa;
+    border-color: #655b4b;
+}
+
+input,
+textarea,
+select {
+    background: #fffefa;
+    color: #292722;
+    border-color: #d8d1c5;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline-color: #8b806b;
+    border-color: #8b806b;
+}
+
+hr,
+.divider,
+.section-divider {
+    border-color: rgba(139, 128, 107, 0.25);
+}
+
+/* Photography remains the visual focus; keep image overlays restrained. */
+img {
+    border-color: transparent;
+}
+
+.image-overlay,
+.portfolio-overlay,
+.gallery-overlay {
+    background: linear-gradient(180deg, transparent 45%, rgba(25, 24, 21, 0.58) 100%);
+}
+
+/* Keep explicitly dark cinematic image sections readable, while avoiding
+   a site-wide dark theme. */
+.hero,
+.hero-section,
+.image-hero,
+.full-screen-hero,
+.video-hero,
+.dark-section {
+    color: #fffefa;
+}
+
+.hero h1,
+.hero h2,
+.hero p,
+.hero-section h1,
+.hero-section h2,
+.hero-section p,
+.image-hero h1,
+.image-hero h2,
+.image-hero p,
+.video-hero h1,
+.video-hero h2,
+.video-hero p,
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section p {
+    color: #fffefa;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =====================================================================
+   GAATHA-INSPIRED EDITORIAL THEME OVERRIDES
+   Warm ivory, sandstone, walnut, muted terracotta and olive.
+   ===================================================================== */
+:root {
+    --earth-ivory: #f7f3eb;
+    --earth-paper: #fbf8f1;
+    --earth-sand: #e9dfd0;
+    --earth-walnut: #45362b;
+    --earth-terracotta: #9a634b;
+    --earth-olive: #73775a;
+    --earth-line: rgba(69, 54, 43, .18);
+}
+
+html {
+    background: var(--earth-ivory);
+}
+
+body {
+    background: var(--earth-ivory) !important;
+    color: var(--earth-walnut) !important;
+}
+
+body.light-theme {
+    background: var(--earth-ivory) !important;
+    color: var(--earth-walnut) !important;
+}
+
+::selection {
+    background: var(--earth-walnut);
+    color: var(--earth-paper);
+}
+
+/* Keep photography heroes cinematic while the rest of the site stays light. */
+.mc-hero,
+.mc-hero-slider,
+.mc-hero-slide,
+.mc-hero-vignette {
+    color: #fffdf8;
+}
+
+.mc-hero-slide {
+    background-color: #45362b;
+}
+
+.mc-hero-vignette {
+    background: linear-gradient(180deg, rgba(32, 25, 20, .22), rgba(32, 25, 20, .08) 45%, rgba(32, 25, 20, .58)) !important;
+}
+
+.mc-hero h1,
+.mc-hero h2,
+.mc-hero p,
+.mc-hero .section-sub {
+    color: #fffaf1;
+}
+
+/* Main surfaces */
+.mc-nav-wrapper,
+.mc-nav-wrapper.scrolled,
+.mc-nav.scrolled,
+.mc-mobile-menu,
+.mc-footer,
+.contact-form-card,
+.pillar-card,
+.bento-card,
+.portfolio-filter-item,
+.gallery-item,
+.story-visual,
+.about-standards-grid,
+.contact-layout,
+.contact-form-grid {
+    border-color: var(--earth-line);
+}
+
+.mc-nav-wrapper {
+    background: rgba(247, 243, 235, .94) !important;
+    backdrop-filter: blur(18px);
+}
+
+.mc-nav,
+.mc-nav a,
+.mc-nav-brand,
+.mc-nav-links a,
+.mc-nav-actions {
+    color: var(--earth-walnut) !important;
+}
+
+.mc-nav.scrolled,
+.mc-nav-wrapper.scrolled {
+    background: rgba(247, 243, 235, .97) !important;
+    box-shadow: 0 8px 30px rgba(69, 54, 43, .08);
+}
+
+.mc-mobile-menu {
+    background: var(--earth-paper) !important;
+    color: var(--earth-walnut) !important;
+}
+
+.mc-mobile-menu a,
+.mc-mobile-close {
+    color: var(--earth-walnut) !important;
+}
+
+.mc-footer {
+    background: #e9dfd0 !important;
+    color: var(--earth-walnut) !important;
+}
+
+.mc-footer a,
+.mc-footer p,
+.mc-footer li,
+.footer-contact-item {
+    color: #625548 !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--earth-line) !important;
+}
+
+/* ==========================================================================
+   POPPINS TYPOGRAPHY ARCHITECTURE (Curated Weights)
+   ========================================================================== */
+h1,
+h2,
+.section-title,
+.hero-title,
+.page-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    color: var(--earth-walnut) !important;
+    letter-spacing: -0.02em !important;
+}
+
+h3,
+.bento-title,
+.story-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    color: var(--earth-walnut) !important;
+    letter-spacing: -0.01em !important;
+}
+
+h4,
+h5,
+h6,
+.pillar-title,
+.footer-col h4 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+    color: var(--earth-walnut) !important;
+}
+
+.story-quote,
+blockquote {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+    font-style: normal !important;
+    line-height: 1.8 !important;
+}
+
+/* Global Strict No-Italics Rule */
+*,
+*::before,
+*::after,
+em,
+cite,
+dfn,
+blockquote,
+.story-quote,
+.hero-title em,
+.section-title em,
+.hs-approach p.hs-approach-tagline {
+    font-style: normal !important;
+}
+
+.footer-brand,
+.mc-nav-brand {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+}
+
+.section-sub,
+.bento-tag,
+.story-badge-floating,
+.camera-badge {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.18em !important;
+    text-transform: uppercase !important;
+    color: var(--earth-walnut) !important;
+}
+
+.mc-nav-links a {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.12em !important;
+}
+
+.btn-luxury,
+.btn-shimmer-gold,
+.btn-glass-shutter,
+.filter-btn-luxury,
+button {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.18em !important;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select,
+.pillar-desc,
+.footer-contact-item span,
+.story-detail-item p {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+}
+
+.story-detail-item h5 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+}
+
+.bento-meta,
+.hero-slide-counter,
+.floating-booking-pill {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+.gold-divider,
+.gold-divider-left {
+    background: var(--earth-terracotta) !important;
+}
+
+.brand-lens,
+.badge-dot,
+.pulse-dot {
+    color: var(--earth-terracotta) !important;
+}
+
+.btn-luxury,
+.btn-enquire-nav,
+.btn-glass-shutter,
+.btn-shimmer-gold {
+    background: var(--earth-walnut) !important;
+    color: #fffaf1 !important;
+    border-color: var(--earth-walnut) !important;
+    box-shadow: none !important;
+}
+
+.btn-luxury:hover,
+.btn-enquire-nav:hover,
+.btn-glass-shutter:hover {
+    background: var(--earth-terracotta) !important;
+    border-color: var(--earth-terracotta) !important;
+}
+
+.btn-link-editorial,
+.footer-links a:hover,
+.mc-nav a:hover {
+    color: var(--earth-terracotta) !important;
+}
+
+.filter-btn-luxury {
+    border-color: var(--earth-line) !important;
+    color: var(--earth-walnut) !important;
+    background: transparent !important;
+}
+
+.filter-btn-luxury.active,
+.filter-btn-luxury:hover {
+    background: var(--earth-walnut) !important;
+    color: #fffaf1 !important;
+}
+
+/* Cards and sections */
+.pillar-card,
+.contact-form-card,
+.story-content,
+.story-detail-item,
+.about-standards-grid>*,
+.contact-form-grid>*,
+.contact-layout>* {
+    background-color: var(--earth-paper) !important;
+    color: var(--earth-walnut) !important;
+    border-color: var(--earth-line) !important;
+    box-shadow: 0 12px 38px rgba(69, 54, 43, .055);
+}
+
+.pillar-desc,
+.stat-label,
+.story-detail-item,
+.contact-form-card p {
+    color: #6d6257 !important;
+}
+
+input,
+textarea,
+select {
+    background: #fffdf8 !important;
+    color: var(--earth-walnut) !important;
+    border: 1px solid var(--earth-line) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #948679 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 2px solid rgba(154, 99, 75, .22);
+    border-color: var(--earth-terracotta) !important;
+}
+
+.form-status {
+    color: var(--earth-walnut) !important;
+}
+
+/* Floating controls, lightbox and Instagram tiles */
+.floating-booking-pill {
+    background: var(--earth-walnut) !important;
+    color: #fffaf1 !important;
+}
+
+.mc-lightbox {
+    background: rgba(31, 25, 20, .96) !important;
+}
+
+.mc-lightbox-caption {
+    color: #fffaf1 !important;
+}
+
+.insta-box-overlay {
+    background: rgba(69, 54, 43, .46) !important;
+}
+
+/* Respect narrow screens and touch users */
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .mc-nav-wrapper {
+        background: rgba(247, 243, 235, .98) !important;
+    }
+
+    .mc-hero h1 {
+        max-width: 100%;
+    }
+
+    .contact-form-card,
+    .pillar-card {
+        padding: clamp(1rem, 4vw, 1.5rem) !important;
+    }
+
+    .floating-booking-pill {
+        max-width: calc(100vw - 24px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =====================================================================
+   READABILITY PATCH — stronger text contrast on every page
+   ===================================================================== */
+:root {
+    --text-primary: #30271f;
+    --text-secondary: #514438;
+    --text-muted: #65584b;
+    --text-white: #30271f;
+    --gold: #805238;
+    --gold-light: #8a5a3b;
+}
+
+body,
+p,
+li,
+dd,
+dt,
+label,
+.section-description,
+.story-detail-item p,
+.footer-contact-item,
+.pillar-desc,
+.stat-label,
+.caption {
+    color: #45382d;
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select,
+button {
+    font-size: max(0.94rem, 14px);
+    line-height: 1.7;
+}
+
+small,
+.eyebrow,
+.section-subtitle,
+.stat-label {
+    color: #5e5043 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.bento-title,
+.pillar-title {
+    color: #38291f !important;
+    text-shadow: none;
+}
+
+a {
+    color: #68442f;
+}
+
+a:hover,
+a:focus-visible {
+    color: #8b5035;
+}
+
+/* Keep page intro headers legible over their dark/image backgrounds. */
+header[style*="background: #000"] h1,
+header[style*="background: #000"] h2,
+header[style*="background: #000"] p,
+header[style*="radial-gradient"] h1,
+header[style*="radial-gradient"] h2,
+header[style*="radial-gradient"] p,
+header[style*="background: #000"] .section-sub,
+header[style*="radial-gradient"] .section-sub {
+    color: #fffaf1 !important;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .42);
+}
+
+header[style*="background: #000"] .section-sub,
+header[style*="radial-gradient"] .section-sub {
+    color: #ead8c4 !important;
+}
+
+/* Convert leftover dark inline content panels to the light editorial palette. */
+section[style*="radial-gradient(circle at center, #1b1b17"],
+section[style*="radial-gradient(circle at center, #1b1b17"] * {
+    color: #45382d;
+}
+
+section[style*="radial-gradient(circle at center, #1b1b17"] {
+    background: #eee5d8 !important;
+}
+
+div[style*="background: #1e1e1a"] {
+    background: #fffaf2 !important;
+    color: #45382d !important;
+    border-color: rgba(69, 54, 43, .2) !important;
+    box-shadow: 0 12px 34px rgba(69, 54, 43, .08) !important;
+}
+
+div[style*="background: #1e1e1a"] h1,
+div[style*="background: #1e1e1a"] h2,
+div[style*="background: #1e1e1a"] h3,
+div[style*="background: #1e1e1a"] p,
+div[style*="background: #1e1e1a"] li,
+div[style*="background: #1e1e1a"] ul {
+    color: #45382d !important;
+}
+
+div[style*="background: #1e1e1a"] div[style*="background: var(--gold)"] {
+    color: #fffaf1 !important;
+}
+
+/* Form controls stay dark-on-light even where old inline styles remain. */
+input,
+textarea,
+select,
+option {
+    color: #38291f !important;
+    background-color: #fffdf8 !important;
+    border-color: #c9b9a5 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #76685b !important;
+    opacity: 1;
+}
+
+label {
+    color: #5a402f !important;
+}
+
+:focus-visible {
+    outline: 3px solid rgba(139, 80, 53, .55);
+    outline-offset: 3px;
+}
+
+
+/* ======================================================================
+   READABILITY PATCH — high contrast for the warm editorial palette
+   ====================================================================== */
+:root {
+    --text-white: #2b211b;
+    --text-primary: #30251e;
+    --text-secondary: #514338;
+    --text-muted: #65574b;
+    --text-dark: #2b211b;
+    --gold: #805236;
+    --gold-light: #9b6b49;
+    --gold-dark: #603c27;
+}
+
+body,
+p,
+li,
+label,
+small,
+.footer-contact-item,
+.mc-footer a {
+    color: #44372d;
+}
+
+/* Filled buttons must always have contrasting light text, including nested spans. */
+a.btn-luxury,
+button.btn-luxury,
+.btn-luxury span,
+.btn-shimmer-gold,
+.btn-shimmer-gold span,
+.mc-nav-actions .btn-enquire-nav,
+.mc-nav-actions .btn-enquire-nav span,
+.mc-mobile-menu .btn-luxury,
+.mc-mobile-menu .btn-luxury span {
+    color: #fffaf2 !important;
+}
+
+.btn-shimmer-gold,
+.btn-glass-shutter {
+    background-color: #543b2c !important;
+    border-color: #76553d !important;
+    box-shadow: 0 4px 18px rgba(55, 37, 25, .18);
+    color: #fffaf2 !important;
+}
+
+.btn-shimmer-gold:hover,
+.btn-glass-shutter:hover,
+.btn-luxury:hover {
+    background-color: #9a634b !important;
+    border-color: #9a634b !important;
+    color: #fffaf2 !important;
+}
+
+.btn-luxury:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #805236 !important;
+    outline-offset: 4px;
+}
+
+input,
+textarea,
+select {
+    color: #30251e !important;
+    background-color: #fffdf8 !important;
+    border-color: #bca58f !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #6d6054 !important;
+    opacity: 1;
+}
+
+/* Hero copy sits on top of darkened photography, so use light text there. */
+body>header:not(.mc-nav-wrapper) h1,
+body>header:not(.mc-nav-wrapper) h1 em,
+body>header:not(.mc-nav-wrapper) p,
+body>header:not(.mc-nav-wrapper) .camera-badge,
+body>header:not(.mc-nav-wrapper) .camera-badge span {
+    color: #fffaf2 !important;
+}
+
+/* Keep normal page headings and body copy dark on the light background. */
+main h1,
+main h2,
+main h3,
+section h1,
+section h2,
+section h3,
+footer h1,
+footer h2,
+footer h3 {
+    color: #30251e;
+}
+
+.mc-nav-links a,
+.mc-mobile-nav-list a {
+    color: #514338 !important;
+}
+
+.mc-nav-brand,
+.mc-nav-brand span {
+    color: #38291f !important;
+}
+
+.mc-nav-brand>span:not(.brand-lens) {
+    color: #805236 !important;
+}
+
+::selection {
+    color: #fffaf2;
+    background: #805236;
+}
+
+/* TRANSPARENT OVERLAY NAVBAR — image remains visible behind the header */
+.mc-nav-wrapper {
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-bottom: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.mc-nav-wrapper:not(.scrolled),
+.mc-nav:not(.scrolled) {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Light navigation lettering stays readable over the dark hero photograph. */
+.mc-nav-wrapper:not(.scrolled) .mc-nav-brand,
+.mc-nav-wrapper:not(.scrolled) .mc-nav-brand span,
+.mc-nav-wrapper:not(.scrolled) .mc-nav-links a,
+.mc-nav-wrapper:not(.scrolled) .mc-mobile-toggle,
+.mc-nav:not(.scrolled) .mc-nav-brand,
+.mc-nav:not(.scrolled) .mc-nav-links a {
+    color: #fffaf2 !important;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, .45);
+}
+
+.mc-nav-wrapper:not(.scrolled) .mc-nav-brand>span:not(.brand-lens) {
+    color: #ead0b8 !important;
+}
+
+.mc-nav-wrapper:not(.scrolled) .mc-nav-brand .brand-lens {
+    background: #ead0b8 !important;
+    box-shadow: 0 0 10px rgba(255, 250, 242, .65) !important;
+}
+
+.mc-nav-wrapper:not(.scrolled) .mc-nav-links a::after {
+    background: #fffaf2 !important;
+}
+
+/* On scroll, switch to an opaque light surface with dark, high-contrast text. */
+.mc-nav-wrapper.scrolled,
+.mc-nav.scrolled {
+    background: rgba(247, 243, 235, .97) !important;
+    border-bottom: 1px solid rgba(69, 54, 43, .12) !important;
+    box-shadow: 0 8px 28px rgba(40, 28, 20, .10) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.mc-nav-wrapper.scrolled .mc-nav-brand,
+.mc-nav-wrapper.scrolled .mc-nav-brand span,
+.mc-nav-wrapper.scrolled .mc-nav-links a,
+.mc-nav-wrapper.scrolled .mc-mobile-toggle,
+.mc-nav.scrolled .mc-nav-brand,
+.mc-nav.scrolled .mc-nav-links a {
+    color: #38291f !important;
+    text-shadow: none !important;
+}
+
+.mc-nav-wrapper.scrolled .mc-nav-brand>span:not(.brand-lens) {
+    color: #805236 !important;
+}
+
+.mc-nav-wrapper.scrolled .mc-nav-brand .brand-lens {
+    background: #805236 !important;
+}
+
+.mc-nav-wrapper.scrolled .mc-nav-links a:hover,
+.mc-nav-wrapper.scrolled .mc-nav-links a.active {
+    color: #805236 !important;
+}
+
+/* FINAL READABILITY PATCH: text on photography cards */
+.bento-card-overlay,
+.bento-card-overlay * {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.72) !important;
+}
+
+.bento-card-overlay {
+    background: linear-gradient(to bottom,
+            rgba(54, 40, 31, 0.02) 10%,
+            rgba(54, 40, 31, 0.22) 40%,
+            rgba(45, 33, 24, 0.88) 100%) !important;
+}
+
+.bento-card .bento-tag {
+    color: #f0c9a5 !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+.bento-card .bento-title,
+.bento-card-overlay h1,
+.bento-card-overlay h2,
+.bento-card-overlay h3,
+.bento-card-overlay h4 {
+    color: #fffaf2 !important;
+    opacity: 1 !important;
+}
+
+.bento-card .bento-meta,
+.bento-card .bento-meta span,
+.bento-card-overlay p {
+    color: #fff5e9 !important;
+    opacity: 1 !important;
+}
+
+.bento-card-img-wrap img {
+    filter: brightness(0.92) !important;
+}
+
+.bento-card:hover .bento-card-img-wrap img {
+    filter: brightness(0.98) !important;
+}
+
+
+/* === MountainClicks readability and navigation fixes === */
+:root {
+    --mc-paper: #f7f1e8;
+    --mc-ink: #30231b;
+    --mc-muted: #55473d;
+    --mc-cream: #fffaf2;
+    --mc-brown: #4a3022;
+    --mc-accent: #9b6948;
+}
+
+body {
+    color: var(--mc-ink);
+}
+
+/* Transparent over the hero; solid readable surface after scrolling. */
+.mc-nav-wrapper {
+    background: linear-gradient(180deg, rgba(18, 13, 10, .55), transparent);
+}
+
+.mc-nav,
+.mc-nav-wrapper:not(.scrolled) .mc-nav {
+    background: transparent !important;
+}
+
+.mc-nav-links a,
+.mc-nav-brand {
+    color: #fffaf2 !important;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .65);
+}
+
+.mc-nav-wrapper.scrolled,
+.mc-nav.scrolled {
+    background: rgba(247, 241, 232, .97) !important;
+    backdrop-filter: blur(16px);
+}
+
+.mc-nav-wrapper.scrolled .mc-nav-links a,
+.mc-nav.scrolled .mc-nav-links a,
+.mc-nav-wrapper.scrolled .mc-nav-brand,
+.mc-nav.scrolled .mc-nav-brand {
+    color: #30231b !important;
+    text-shadow: none;
+}
+
+.btn-luxury,
+.hero-arrow-btn,
+.filter-btn-luxury {
+    color: #fffaf2 !important;
+    background-color: #4a3022;
+    border-color: #4a3022;
+}
+
+.btn-luxury span,
+.btn-luxury strong {
+    color: #fffaf2 !important;
+}
+
+/* Readable captions on image cards */
+.story-visual,
+.bento-card,
+.portfolio-card,
+.gallery-item {
+    position: relative;
+}
+
+.story-visual::after,
+.bento-card::after,
+.portfolio-card::after,
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 35% 0 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent 0%, rgba(54, 40, 31, .72) 100%);
+    z-index: 1;
+}
+
+.story-visual>*,
+.bento-card>*,
+.portfolio-card>*,
+.gallery-item>* {
+    position: relative;
+    z-index: 2;
+}
+
+.story-visual h1,
+.story-visual h2,
+.story-visual h3,
+.story-visual p,
+.bento-card h1,
+.bento-card h2,
+.bento-card h3,
+.bento-card p,
+.portfolio-card h1,
+.portfolio-card h2,
+.portfolio-card h3,
+.portfolio-card p,
+.gallery-item h1,
+.gallery-item h2,
+.gallery-item h3,
+.gallery-item p {
+    color: #fffaf2 !important;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, .8);
+}
+
+input,
+textarea,
+select {
+    color: #30231b !important;
+    background: #fffaf2 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #66564a !important;
+    opacity: 1;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #b87a50;
+    outline-offset: 3px;
+}
+
+/* MountainClicks Wedding Story & Wedding Gallery: 2 images per row */
+.wedding-gallery-grid,
+.ws-timeline {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: clamp(16px, 2.5vw, 36px) !important;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+.wedding-gallery-grid img,
+.ws-timeline img,
+.ws-photo img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.6s ease;
+}
+
+.wedding-gallery-grid .bento-card:hover img,
+.ws-photo:hover img {
+    transform: scale(1.02);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .wedding-gallery-grid,
+    .ws-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+    }
+}
+
+/* Mobile: 2 images side by side */
+@media (max-width: 640px) {
+    .wedding-gallery-grid,
+    .ws-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}

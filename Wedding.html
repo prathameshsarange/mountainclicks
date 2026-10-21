@@ -4,669 +4,601 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding — MountainClicks</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://use.fontawesome.com/db006bf474.js"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@200;300;400&display=swap"
-        rel="stylesheet">
-    <style>
-        :root {
-            --dark: #1a1a18;
-            --gold: #c8a96e;
-            --light: #f5f0e8;
+    <title>Wedding Photography — MountainClicks Luxury Studio</title>
+    <meta name="description"
+        content="Documenting royal, palace, and destination weddings worldwide with timeless emotional depth, poetic natural light, and discreet artistry.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wedding Photography — MountainClicks">
+    <meta property="og:description"
+        content="Documenting royal, palace, and destination weddings worldwide with timeless emotional depth.">
+    <meta property="og:image" content="./Public/final/optimized/wedding1.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/luxury-photographer.css">
+
+    <!-- MountainClicks shared Enquire button color fix -->
+    <style id="mc-wedding-enquire-color-fix">
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav:link,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav:visited {
+            background: #493629 !important;
+            background-color: #493629 !important;
+            color: #fffaf3 !important;
+            -webkit-text-fill-color: #fffaf3 !important;
+            border: 1px solid #493629 !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav span,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav i,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav .shutter-icon {
+            color: #fffaf3 !important;
+            -webkit-text-fill-color: #fffaf3 !important;
+            border-color: #fffaf3 !important;
         }
 
-        body {
-            font-family: 'Jost', sans-serif;
-            font-weight: 300;
-            color: var(--dark);
-            background: var(--light);
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav:hover,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav:focus-visible {
+            background: #30231b !important;
+            background-color: #30231b !important;
+            border-color: #30231b !important;
         }
+    </style>
 
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold);
-        }
-
-        #nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            padding: 18px 5%;
-            display: flex;
-            align-items: center;
-            background: var(--dark);
-        }
-
-        .nav-left,
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 28px;
-            flex: 1;
-        }
-
-        .nav-right {
-            justify-content: flex-end;
-        }
-
-        #nav a {
-            font-size: 11px;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: #ccc;
-            transition: 0.3s;
-        }
-
-        #nav a:hover {
-            color: var(--gold);
-        }
-
-        .brand-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-        }
-
-        .btn-enquire {
-            border: 1px solid var(--gold);
-            padding: 7px 22px;
-            font-size: 10px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: transparent;
-            cursor: pointer;
-            transition: 0.3s;
-            font-family: 'Jost', sans-serif;
-            color: var(--gold);
-        }
-
-        .btn-enquire:hover {
-            background: var(--gold);
-            color: var(--dark);
-        }
-
-        .sidenav {
-            height: 100vh;
-            width: 0;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            background: var(--dark);
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 80px;
-            font-family: 'Jost', sans-serif;
-            letter-spacing: 3px;
-        }
-
-        .sidenav a {
-            padding: 12px 32px;
-            text-decoration: none;
-            color: #ccc;
-            display: block;
-            font-size: 13px;
-            text-transform: uppercase;
-        }
-
-        .sidenav a:hover {
-            color: var(--gold);
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 32px;
-            color: #ccc;
-        }
-
-        #navMob {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            background: var(--dark);
-            padding: 14px 5%;
-            align-items: center;
-        }
-
-        #navMob a {
-            color: #ccc;
-            text-decoration: none;
-        }
-
-        .page-hero {
-            height: 60vh;
-            background: var(--dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .page-hero .ph-bg {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, #c8a96e22, #1a1a18cc);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: #c8a96e55;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .page-hero h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(48px, 7vw, 90px);
-            font-weight: 300;
-            color: #fff;
-            letter-spacing: 4px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-hero p {
-            font-size: 11px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-top: 12px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-hero .sub-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 18px;
-            color: #ccc;
-            margin-top: 8px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .gold-line {
-            width: 50px;
-            height: 1px;
-            background: var(--gold);
-            margin: 16px auto;
-        }
-
-        .section-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(32px, 4vw, 52px);
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        .section-sub {
-            font-size: 11px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gold);
-            margin-bottom: 16px;
-        }
-
-        .ph {
-            background: linear-gradient(135deg, #c8a96e22, #1a1a1844);
-            border: 1px dashed #c8a96e55;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        /* STORIES */
+    <style id="mc-iconic-wedding-stories-zigzag">
+        /* Iconic Wedding Stories: editorial zig-zag layout */
         .stories-section {
-            padding: 80px 5%;
-            background: var(--dark);
-            color: #fff;
-            text-align: center;
+            padding: clamp(56px, 7vw, 100px) 5%;
+            background: #f7f1e8;
+            color: #30231b;
         }
 
-        .story-card {
-            margin-bottom: 40px;
+        .stories-section>div:first-child {
+            margin-bottom: clamp(34px, 5vw, 62px) !important;
         }
 
-        .story-img-wrap {
-            height: 420px;
-            overflow: hidden;
+        .stories-section .section-title {
+            color: #30231b !important;
         }
 
-        .story-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
+        .stories-section .wedding-stories-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: clamp(30px, 5vw, 64px) !important;
+            max-width: 1120px;
+            margin: 0 auto;
         }
 
-        .story-img-wrap:hover img {
-            transform: scale(1.03);
-            filter: brightness(0.9);
-        }
-
-        .story-img-wrap .ph {
-            width: 100%;
-            height: 420px;
-            transition: 0.5s;
-        }
-
-        .story-img-wrap:hover .ph {
-            filter: brightness(0.8);
-        }
-
-        .story-info {
-            text-align: left;
-            margin-top: 16px;
-        }
-
-        .story-info h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            color: #fff;
-            font-weight: 300;
-        }
-
-        .story-info h5 {
-            font-size: 11px;
-            color: #777;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 4px;
-        }
-
-        .story-btn {
-            display: inline-block;
-            margin-top: 12px;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 8px 24px;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .story-btn:hover {
-            background: var(--gold);
-            color: var(--dark);
-            text-decoration: none;
-        }
-
-        /* GALLERY */
-        .gallery-section {
-            padding: 80px 5%;
-            background: var(--light);
-        }
-
-        .gallery-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .masonry {
-            columns: 3;
-            gap: 12px;
-        }
-
-        .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 12px;
-            overflow: hidden;
-            height: 320px;
-        }
-
-        .masonry-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .masonry-item:hover img {
-            transform: scale(1.03);
-        }
-
-        .masonry-item .ph {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* PACKAGES */
-        .packages-section {
-            padding: 80px 5%;
-            background: #fff;
-            text-align: center;
-        }
-
-        .pkg-card {
-            border: 1px solid #e0d8cc;
-            padding: 40px 30px;
-            margin-bottom: 20px;
-            transition: 0.3s;
-        }
-
-        .pkg-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 4px 20px rgba(200, 169, 110, 0.15);
-        }
-
-        .pkg-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 8px;
-        }
-
-        .pkg-card .price {
-            font-size: 13px;
-            color: var(--gold);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .pkg-card ul {
-            list-style: none;
-            padding: 0;
-            font-size: 13px;
-            line-height: 2;
-            color: #666;
-        }
-
-        .pkg-card .pkg-btn {
-            display: inline-block;
-            margin-top: 24px;
-            border: 1px solid var(--dark);
-            color: var(--dark);
-            padding: 10px 30px;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .pkg-card .pkg-btn:hover {
-            background: var(--dark);
-            color: #fff;
-        }
-
-        /* FOOTER */
-        .footer-banner {
-            background: var(--gold);
-            padding: 30px 5%;
-            display: flex;
+        .stories-section .bento-card {
+            display: grid !important;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr) !important;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
+            gap: clamp(24px, 4vw, 58px);
+            background: transparent !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            overflow: visible !important;
+            cursor: default;
         }
 
-        .footer-banner h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 22px;
-            font-weight: 300;
-            color: var(--dark);
-            margin: 0;
+        .stories-section .bento-card:nth-child(even) {
+            grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr) !important;
         }
 
-        .footer-banner .social-icons a {
-            color: var(--dark);
-            font-size: 20px;
-            margin-left: 20px;
+        .stories-section .bento-card:nth-child(even) .bento-card-img-wrap {
+            order: 2;
         }
 
-        .footer-bottom {
-            background: var(--dark);
-            color: #999;
-            padding: 30px 5%;
-            text-align: center;
-            font-size: 11px;
-            letter-spacing: 2px;
+        .stories-section .bento-card:nth-child(even) .bento-card-overlay {
+            order: 1;
         }
 
-        .footer-bottom a {
-            color: var(--gold);
-            text-decoration: none;
+        .stories-section .bento-card-img-wrap {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: auto !important;
+            min-width: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            position: relative;
         }
 
-        @media(max-width:768px) {
-            #nav {
-                display: none !important;
-            }
-
-            #navMob {
-                display: flex !important;
-            }
-
-            .story-img-wrap {
-                height: 320px;
-            }
-
-            .masonry-item {
-                height: 260px;
-            }
-
-            .masonry {
-                columns: 2;
-            }
+        .stories-section .bento-card-img-wrap img {
+            display: block;
+            width: 100% !important;
+            height: auto !important;
+            object-fit: contain !important;
+            border-radius: 6px;
+            transition: transform .6s ease;
         }
 
-        @media(max-width:480px) {
-            .story-img-wrap {
-                height: 280px;
+        .stories-section .bento-card:hover .bento-card-img-wrap img {
+            transform: scale(1.025);
+        }
+
+        .stories-section .bento-card-overlay {
+            position: static !important;
+            inset: auto !important;
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            padding: 12px 0 !important;
+            background: transparent !important;
+            color: #30231b !important;
+            text-align: left;
+        }
+
+        .stories-section .bento-tag {
+            display: inline-block;
+            color: #986746 !important;
+            font-size: .72rem;
+            letter-spacing: .16em;
+            line-height: 1.7;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .stories-section .bento-title {
+            color: #30231b !important;
+            font-size: clamp(2rem, 3.5vw, 3.2rem) !important;
+            line-height: 1.12;
+            margin: 0 0 18px !important;
+        }
+
+        .stories-section .bento-card-overlay p {
+            color: #665447 !important;
+            font-size: 1rem !important;
+            line-height: 1.85;
+            margin: 0 0 22px !important;
+            max-width: 430px;
+        }
+
+        .stories-section .btn-link-editorial {
+            color: #8e5e3f !important;
+            font-size: .8rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 700px) {
+
+            .stories-section .bento-card,
+            .stories-section .bento-card:nth-child(even) {
+                grid-template-columns: 1fr !important;
+                gap: 18px;
             }
 
-            .masonry-item {
-                height: 220px;
+            .stories-section .bento-card:nth-child(even) .bento-card-img-wrap,
+            .stories-section .bento-card:nth-child(even) .bento-card-overlay {
+                order: initial;
             }
 
-            .masonry {
-                columns: 1;
+            .stories-section .bento-card-img-wrap {
+                height: auto !important;
+            }
+
+            .stories-section .bento-title {
+                font-size: 2.2rem !important;
             }
         }
     </style>
+
+
+    <style id="mc-wedding-collection-enquiry-colors-only">
+        /* Only recolor the enquiry buttons inside the wedding collection cards. */
+        .wedding-collections-grid a.btn-luxury {
+            background: #493629 !important;
+            background-color: #493629 !important;
+            color: #fffaf3 !important;
+            -webkit-text-fill-color: #fffaf3 !important;
+            border: 1px solid #493629 !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+
+        .wedding-collections-grid a.btn-luxury span,
+        .wedding-collections-grid a.btn-luxury i {
+            color: #fffaf3 !important;
+            -webkit-text-fill-color: #fffaf3 !important;
+        }
+
+        .wedding-collections-grid a.btn-luxury:hover,
+        .wedding-collections-grid a.btn-luxury:focus-visible {
+            background: #30231b !important;
+            background-color: #30231b !important;
+            border-color: #30231b !important;
+        }
+    </style>
+
+
+    <style id="mc-wedding-visual-fixes">
+        /* Keep story rows bright: remove inherited dark overlays and text shadows. */
+        .stories-section,
+        .stories-section .bento-card,
+        .stories-section .bento-card-overlay {
+            background: #f7f1e8 !important;
+            background-image: none !important;
+            color: #30231b !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+            filter: none !important;
+        }
+
+        .stories-section .bento-card::before,
+        .stories-section .bento-card::after,
+        .stories-section .bento-card-img-wrap::before,
+        .stories-section .bento-card-img-wrap::after,
+        .stories-section .bento-card-overlay::before,
+        .stories-section .bento-card-overlay::after {
+            content: none !important;
+            display: none !important;
+            background: transparent !important;
+        }
+
+        .stories-section .bento-card-overlay h3,
+        .stories-section .bento-card-overlay p,
+        .stories-section .bento-card-overlay .bento-tag,
+        .stories-section .bento-card-overlay .btn-link-editorial {
+            opacity: 1 !important;
+            filter: none !important;
+            text-shadow: none !important;
+        }
+
+        /* Wedding Gallery: Show images in their full original proportions without cropping */
+        .wedding-gallery-grid {
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: clamp(24px, 3vw, 40px) !important;
+            max-width: 1400px !important;
+            width: 100%;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        .wedding-gallery-grid .bento-card {
+            width: 100% !important;
+            min-width: 0;
+            overflow: hidden !important;
+            border-radius: 6px;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .wedding-gallery-grid .bento-card-img-wrap {
+            width: 100% !important;
+            height: auto !important;
+            aspect-ratio: auto !important;
+            min-height: 0 !important;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .wedding-gallery-grid .bento-card-img-wrap img {
+            display: block;
+            width: 100% !important;
+            height: auto !important;
+            object-fit: contain !important;
+            transition: transform .6s ease;
+        }
+
+        .wedding-gallery-grid .bento-card:hover .bento-card-img-wrap img {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .wedding-gallery-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.html"><i class="fa fa-home mr-2"></i> Home</a>
-        <a href="portfolio.html"><i class="fa fa-photo mr-2"></i> Portfolio</a>
-        <a href="wedding.html"><i class="fa fa-heart mr-2"></i> Wedding</a>
-        <a href="events.html"><i class="fa fa-calendar mr-2"></i> Events</a>
-        <a href="contact.html"><i class="fa fa-phone mr-2"></i> Contact</a>
-        <a href="about.html"><i class="fa fa-info-circle mr-2"></i> About</a>
-    </div>
-    <div id="nav">
-        <div class="nav-left"><a href="index.html">Home</a><a href="portfolio.html">Portfolio</a><a
-                href="wedding.html">Wedding</a><a href="events.html">Events</a></div>
-        <div class="nav-center text-center" style="flex:1;"><span class="brand-name">MountainClicks</span></div>
-        <div class="nav-right"><a href="about.html">About</a><a href="contact.html">Contact</a><button
-                class="btn-enquire" onclick="window.location='contact.html'">Enquire Now</button></div>
-    </div>
-    <div id="navMob">
-        <div style="flex:1;"><a onclick="openNav()" style="font-size:22px;"><i class="fa fa-bars"></i></a></div>
-        <div style="flex:2;text-align:center;"><span class="brand-name" style="font-size:18px;">MountainClicks</span>
-        </div>
-        <div style="flex:1;text-align:right;"><a href="contact.html" style="font-size:18px;"><i
-                    class="fa fa-phone"></i></a></div>
-    </div>
 
-    <div class="page-hero">
-        <img src="./public/final/optimized/wedding1.jpg"
-            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(0.35); z-index:1;"
-            alt="Wedding Moments">
-        <p>Timeless Moments</p>
-        <h1>Wedding</h1>
-        <div class="gold-line" style="margin:12px auto;"></div>
-        <div class="sub-text">Capturing love, one frame at a time.</div>
-    </div>
+    <!-- FLOATING LUXURY NAVBAR -->
+    <header class="mc-nav-wrapper">
+        <nav class="mc-nav">
+            <a href="index.html" class="mc-nav-brand">
+                <span class="brand-lens"></span> Mountain<span>Clicks</span>
+            </a>
 
-    <div class="stories-section">
-        <p class="section-sub">Real Couples</p>
-        <h2 class="section-title" style="color:#fff;">Featured Stories</h2>
-        <div class="gold-line"></div>
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="story-card">
-                    <div class="story-img-wrap"><img src="./public/final/optimized/story1.jpg"
-                            style="width:100%; height:100%; object-fit:cover;" alt="Aditya & Priya"></div>
-                    <div class="story-info">
-                        <h4>Aditya & Priya</h4>
-                        <h5>Venue: Lakeview Pavilion, Udaipur</h5>
-                        <a href="#" class="story-btn">Explore</a>
-                    </div>
-                </div>
+            <ul class="mc-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="Wedding.html" class="active">Wedding</a></li>
+                <li><a href="WeddingFilms.html">Wedding Films</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+
+            <div class="mc-nav-actions">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                    style="color: var(--gold); font-size: 1.1rem; margin-right: 6px;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="Contact.html" class="btn-luxury btn-shimmer-gold btn-enquire-nav">
+                    <span>Enquire</span>
+                    <span class="shutter-icon"></span>
+                </a>
+                <button class="mc-mobile-toggle" aria-label="Open Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </button>
             </div>
-            <div class="col-md-4">
-                <div class="story-card">
-                    <div class="story-img-wrap"><img src="./public/final/optimized/story2.jpg"
-                            style="width:100%; height:100%; object-fit:cover;" alt="Rohan & Ananya"></div>
-                    <div class="story-info">
-                        <h4>Rohan & Ananya</h4>
-                        <h5>Venue: Tropical Estate, Goa</h5>
-                        <a href="#" class="story-btn">Explore</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="story-card">
-                    <div class="story-img-wrap"><img src="./public/final/optimized/story3.jpg"
-                            style="width:100%; height:100%; object-fit:cover;" alt="Omkar & Sneha"></div>
-                    <div class="story-info">
-                        <h4>Omkar & Sneha</h4>
-                        <h5>Venue: Grand Palace, Pune</h5>
-                        <a href="#" class="story-btn">Explore</a>
-                    </div>
-                </div>
-            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mc-mobile-menu">
+        <button class="mc-mobile-close" aria-label="Close Navigation Menu">&times;</button>
+        <ul class="mc-mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Wedding.html">Wedding</a></li>
+            <li><a href="WeddingFilms.html">Wedding Films</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div style="margin-top: 36px; text-align: center;">
+            <a href="Contact.html" class="btn-luxury btn-shimmer-gold">
+                <span>Book a Consultation</span>
+                <span class="shutter-icon"></span>
+            </a>
         </div>
     </div>
 
-    <div class="gallery-section">
-        <div class="gallery-header">
-            <p class="section-sub">Our Gallery</p>
-            <h2 class="section-title">Wedding Photography</h2>
-            <div class="gold-line"></div>
-        </div>
-        <div class="masonry">
-            <div class="masonry-item"><img src="./public/final/optimized/wedding2.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Wedding Rituals"></div>
-            <div class="masonry-item"><img src="./public/final/optimized/prewedding1.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Prewedding Love"></div>
-            <div class="masonry-item"><img src="./public/final/optimized/wedding3.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Wedding Ceremony"></div>
-            <div class="masonry-item"><img src="./public/final/optimized/prewedding2.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Romantic Moments"></div>
-            <div class="masonry-item"><img src="./public/final/optimized/wedding4.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Bridal Elegance"></div>
-            <div class="masonry-item"><img src="./public/final/optimized/prewedding3.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Couple Outdoor"></div>
-            <div class="masonry-item"><img src="./public/final/optimized/wedding5.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Sacred Vows"></div>
-            <div class="masonry-item"><img src="./public/final/optimized/prewedding4.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Lawn Prewedding"></div>
-            <div class="masonry-item"><img src="./public/final/optimized/prewedding5.jpg"
-                    style="width:100%; height:100%; object-fit:cover;" alt="Golden Hour Romance"></div>
-        </div>
-    </div>
+    <!-- PAGE HERO -->
+    <header
+        style="position: relative; min-height: 65vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; background: #000; padding: 160px 5% 70px;">
+        <img src="./Public/final/optimized/wedding1.jpg" alt="Luxury Wedding Header"
+            style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4) contrast(1.1); transform: scale(1.03);">
+        <div class="mc-hero-vignette"></div>
 
-    <div class="packages-section">
-        <p class="section-sub">Packages</p>
-        <h2 class="section-title">Wedding Packages</h2>
-        <div class="gold-line"></div>
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <div class="pkg-card">
-                    <h3>Essential</h3>
-                    <div class="price">Starting ₹XX,XXX</div>
-                    <ul>
-                        <li>6 Hours Coverage</li>
-                        <li>1 Photographer</li>
-                        <li>300+ Edited Photos</li>
-                        <li>Online Gallery</li>
-                    </ul>
-                    <a href="contact.html" class="pkg-btn">Book Now</a>
+        <div style="position: relative; z-index: 2; max-width: 900px; margin: 0 auto;">
+            <div class="camera-badge">
+                <span class="badge-dot"></span>
+                <span>Destination &bull; Royal &bull; Intimate</span>
+            </div>
+            <h1 style="font-size: clamp(3rem, 6.5vw, 5.6rem); color: var(--text-white); margin-bottom: 16px;">
+                Wedding <em>Collections</em>
+            </h1>
+            <div class="gold-divider"></div>
+            <p
+                style="color: var(--text-secondary); max-width: 680px; margin: 0 auto; font-size: 1rem; line-height: 1.8;">
+                We preserve the sacred vows, heartfelt embraces, and breathtaking celebrations of couples who value
+                timeless elegance above fleeting trends.
+            </p>
+        </div>
+    </header>
+
+    <!-- FEATURED WEDDING STORIES -->
+    <section class="stories-section">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 60px;">
+            <p class="section-sub">Real Celebrations</p>
+            <h2 class="section-title">Iconic Wedding Stories</h2>
+            <div class="gold-divider"></div>
+        </div>
+
+        <div class="wedding-stories-grid">
+            <!-- Story 1 -->
+            <div class="bento-card" onclick="window.location='WeddingStory.html?id=aarav-meera'"
+                style="cursor: pointer;">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/wedding2.jpg" alt="Aarav & Meera Wedding">
+                </div>
+                <div class="bento-card-overlay">
+                    <span class="bento-tag">Udaipur Palace &bull; 3 Days</span>
+                    <h3 class="bento-title">Aarav &amp; Meera</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">
+                        A grand lakeside palace wedding steeped in centuries of heritage, candlelit courtyards, and deep
+                        emotion.
+                    </p>
+                    <span class="btn-link-editorial">View Wedding Story <i class="fa fa-angle-right"></i></span>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="pkg-card" style="border-color:var(--gold);">
-                    <h3>Premium</h3>
-                    <div class="price">Starting ₹XX,XXX</div>
-                    <ul>
-                        <li>Full Day Coverage</li>
-                        <li>2 Photographers</li>
-                        <li>600+ Edited Photos</li>
-                        <li>Online Gallery + USB</li>
-                        <li>Pre-Wedding Shoot</li>
-                    </ul>
-                    <a href="contact.html" class="pkg-btn">Book Now</a>
+
+            <!-- Story 2 -->
+            <div class="bento-card" onclick="window.location='WeddingStory.html?id=rohan-priya'"
+                style="cursor: pointer;">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/wedding3.jpg" alt="Rohan & Priya Wedding">
+                </div>
+                <div class="bento-card-overlay">
+                    <span class="bento-tag">Goa Coastal &bull; Sunset</span>
+                    <h3 class="bento-title">Rohan &amp; Priya</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">
+                        Barefoot vows on golden sands followed by an uninhibited tropical party beneath strings of fairy
+                        lights.
+                    </p>
+                    <span class="btn-link-editorial">View Wedding Story <i class="fa fa-angle-right"></i></span>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="pkg-card">
-                    <h3>Luxury</h3>
-                    <div class="price">Starting ₹XX,XXX</div>
-                    <ul>
-                        <li>2 Days Coverage</li>
-                        <li>2 Photographers + Videographer</li>
-                        <li>1000+ Edited Photos</li>
-                        <li>Wedding Film</li>
-                        <li>Premium Album</li>
-                    </ul>
-                    <a href="contact.html" class="pkg-btn">Book Now</a>
+
+            <!-- Story 3 -->
+            <div class="bento-card" onclick="window.location='WeddingStory.html?id=vikram-pooja'"
+                style="cursor: pointer;">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/wedding4.jpg" alt="Vikram & Pooja Wedding">
+                </div>
+                <div class="bento-card-overlay">
+                    <span class="bento-tag">Himalayan Estate &bull; Pine Woods</span>
+                    <h3 class="bento-title">Vikram &amp; Pooja</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">
+                        Misty mountain morning ceremonies, bonfire conversations, and laughter echoing under evergreen
+                        canopies.
+                    </p>
+                    <span class="btn-link-editorial">View Wedding Story <i class="fa fa-angle-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Story 4 (Placeholder) -->
+            <div class="bento-card" onclick="window.location='WeddingStory.html?id=story-4'" style="cursor: pointer;">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/gallery4.jpg" alt="Dev & Ishita Wedding Story">
+                </div>
+                <div class="bento-card-overlay">
+                    <span class="bento-tag">Heritage Fort &bull; 3 Days</span>
+                    <h3 class="bento-title">Dev &amp; Ishita</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">
+                        An intimate royal celebration amidst sandstone arches, candlelit banquet halls, and timeless
+                        vows.
+                    </p>
+                    <span class="btn-link-editorial">View Wedding Story <i class="fa fa-angle-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Story 5 (Placeholder) -->
+            <div class="bento-card" onclick="window.location='WeddingStory.html?id=story-5'" style="cursor: pointer;">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/gallery2.jpg" alt="Arjun & Tara Wedding Story">
+                </div>
+                <div class="bento-card-overlay">
+                    <span class="bento-tag">Alpine Valley &bull; Golden Hour</span>
+                    <h3 class="bento-title">Arjun &amp; Tara</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">
+                        Sunlit cedar woods, floral canopies, and unhurried laughter shared with their dearest family and
+                        friends.
+                    </p>
+                    <span class="btn-link-editorial">View Wedding Story <i class="fa fa-angle-right"></i></span>
+                </div>
+            </div>
+
+            <!-- Story 6 (Placeholder) -->
+            <div class="bento-card" onclick="window.location='WeddingStory.html?id=story-6'" style="cursor: pointer;">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/gallery3.jpg" alt="Aditya & Sanjana Wedding Story">
+                </div>
+                <div class="bento-card-overlay">
+                    <span class="bento-tag">Lakefront Haven &bull; Twilight</span>
+                    <h3 class="bento-title">Aditya &amp; Sanjana</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 14px;">
+                        A twilight garden gathering with fairy-lit pergolas, soulful acoustic melodies, and heartfelt
+                        toasts.
+                    </p>
+                    <span class="btn-link-editorial">View Wedding Story <i class="fa fa-angle-right"></i></span>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="footer-banner">
-        <h4>Ready to book your wedding photography?</h4>
-        <div class="social-icons">
-            <a href="#"><i class="fa fa-instagram"></i></a>
-            <a href="#"><i class="fa fa-whatsapp"></i></a>
+    <!-- CURATED WEDDING GALLERY -->
+    <section style="padding: 100px 5%; background: var(--bg-dark);">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+            <p class="section-sub">Unscripted Poetry</p>
+            <h2 class="section-title">The Photo Gallery</h2>
+            <div class="gold-divider"></div>
         </div>
-    </div>
-    <div class="footer-bottom">© 2024 <a href="index.html">MountainClicks</a> — All Rights Reserved</div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script>
-        function openNav() { document.getElementById("mySidenav").style.width = "100%"; }
-        function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
-    </script>
+        <div class="wedding-gallery-grid">
+            <div class="bento-card" data-cursor="VIEW">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/wedding5.jpg" alt="Royal Wedding Detail">
+                </div>
+            </div>
+            <div class="bento-card" data-cursor="VIEW">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/story1.jpg" alt="Bridal Getting Ready">
+                </div>
+            </div>
+            <div class="bento-card" data-cursor="VIEW">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/story2.jpg" alt="First Look Romance">
+                </div>
+            </div>
+            <div class="bento-card" data-cursor="VIEW">
+                <div class="bento-card-img-wrap">
+                    <img src="./Public/final/optimized/story3.jpg" alt="Ceremony Atmosphere">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ELITE FOOTER -->
+    <footer class="mc-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>MountainClicks</h3>
+                <p>
+                    Fine art wedding and editorial photography studio dedicated to poetic imagery, luxury celebrations,
+                    and honest emotional storytelling.
+                </p>
+                <div class="footer-social-strip">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i
+                            class="fa fa-pinterest"></i></a>
+                    <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i
+                            class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="Wedding.html">Wedding Collections</a></li>
+                    <li><a href="Events.html">Private Events</a></li>
+                    <li><a href="About.html">Studio Story</a></li>
+                    <li><a href="Contact.html">Get in Touch</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Portfolio</h4>
+                <ul class="footer-links">
+                    <li><a href="Wedding.html">Palace Weddings</a></li>
+                    <li><a href="Portfolio.html">Pre-Wedding Shoots</a></li>
+                    <li><a href="Events.html">Gala Celebrations</a></li>
+                    <li><a href="Portfolio.html">Bridal Portraits</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio Inquiries</h4>
+                <div class="footer-contact-item">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Studio: Mumbai &bull; Destination Worldwide</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-envelope-o"></i>
+                    <span>commissions@mountainclicks.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 MountainClicks Photography Studio. All Rights Reserved.
+            </div>
+            <div>
+                <span class="footer-placeholder-link" aria-disabled="true" title="This page is not available yet."
+                    style="margin-right: 20px;">Privacy Policy</span>
+                <span class="footer-placeholder-link" aria-disabled="true" title="This page is not available yet.">Terms
+                    of Commission</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/919876543210?text=Hi%20MountainClicks%2C%20I%20would%20like%20to%20enquire%20about%20wedding%20photography%20dates."
+        target="_blank" rel="noopener noreferrer" class="floating-booking-pill"
+        aria-label="Quick WhatsApp Consultation">
+        <span class="pulse-dot"></span>
+        <span>WhatsApp Studio</span>
+    </a>
+
+    <script src="js/luxury-photographer.js"></script>
 </body>
 
 </html>

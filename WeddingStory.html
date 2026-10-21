@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f3eb">
+
+    <title>Wedding Story | MountainClicks Luxury Studio</title>
+    <meta name="description"
+        content="Experience poetic, full-frame wedding stories documented with genuine emotion, quiet elegance, and discreet artistry.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wedding Story — MountainClicks">
+    <meta property="og:description"
+        content="Experience poetic, full-frame wedding stories documented with genuine emotion.">
+    <meta property="og:image" content="./Public/final/optimized/wedding1.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/luxury-photographer.css">
+
+    <!-- MountainClicks Shared Enquire Button Color Fix -->
+    <style id="mc-wedding-enquire-color-fix">
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav:link,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav:visited {
+            background: #493629 !important;
+            background-color: #493629 !important;
+            color: #fffaf3 !important;
+            -webkit-text-fill-color: #fffaf3 !important;
+            border: 1px solid #493629 !important;
+            box-shadow: none !important;
+            text-shadow: none !important;
+        }
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav span,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav i,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav .shutter-icon {
+            color: #fffaf3 !important;
+            -webkit-text-fill-color: #fffaf3 !important;
+            border-color: #fffaf3 !important;
+        }
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav:hover,
+        html body header.mc-nav-wrapper nav.mc-nav .mc-nav-actions a.btn-enquire-nav:focus-visible {
+            background: #30231b !important;
+            background-color: #30231b !important;
+            border-color: #30231b !important;
+        }
+    </style>
+
+    <!-- Wedding Story Styles: Matches Wedding.html Fonts, Palette & Visual Language -->
+    <style id="mc-wedding-story-theme">
+        body {
+            background: var(--bg-dark);
+            color: var(--text-dark);
+            font-family: var(--font-sans);
+            margin: 0;
+        }
+
+        /* Hero Section */
+        .story-hero-section {
+            position: relative;
+            min-height: 68vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: #150f0b;
+            padding: 160px 5% 80px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .story-hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story-hero-section h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 7vw, 5.8rem);
+            font-weight: 400;
+            color: #fffaf3 !important;
+            margin-bottom: 20px;
+            line-height: 1.08;
+            letter-spacing: 0.02em;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Pure Image Flow Section: 2 Images Per Row */
+        .stories-gallery-wrap {
+            padding: clamp(50px, 6vw, 90px) 5%;
+            background: var(--bg-dark);
+        }
+
+        .ws-timeline,
+        .wedding-gallery-grid {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: clamp(16px, 2.5vw, 36px) !important;
+            align-items: start;
+        }
+
+        .ws-stage {
+            display: block;
+            width: 100%;
+            margin: 0;
+            min-width: 0;
+        }
+
+        .ws-photo {
+            margin: 0 auto;
+            width: 100%;
+            background: transparent;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 16px 45px rgba(48, 35, 27, 0.08);
+        }
+
+        .ws-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: auto;
+            object-fit: contain;
+            border-radius: 6px;
+            transition: transform 0.6s ease;
+        }
+
+        .ws-photo:hover img {
+            transform: scale(1.02);
+        }
+
+        .ws-empty {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-family: var(--font-sans);
+        }
+
+        @media (max-width: 640px) {
+            .ws-timeline,
+            .wedding-gallery-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 12px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- FLOATING LUXURY NAVBAR -->
+    <header class="mc-nav-wrapper">
+        <nav class="mc-nav">
+            <a href="index.html" class="mc-nav-brand">
+                <span class="brand-lens"></span> Mountain<span>Clicks</span>
+            </a>
+
+            <ul class="mc-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="Wedding.html">Wedding</a></li>
+                <li><a href="WeddingFilms.html">Wedding Films</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+
+            <div class="mc-nav-actions">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color: var(--gold); font-size: 1.1rem; margin-right: 6px;">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="Contact.html" class="btn-luxury btn-shimmer-gold btn-enquire-nav">
+                    <span>Enquire</span>
+                    <span class="shutter-icon"></span>
+                </a>
+                <button class="mc-mobile-toggle" aria-label="Open Navigation Menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mc-mobile-menu">
+        <button class="mc-mobile-close" aria-label="Close Navigation Menu">&times;</button>
+        <ul class="mc-mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+            <li><a href="Wedding.html">Wedding</a></li>
+            <li><a href="WeddingFilms.html">Wedding Films</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+        <div style="margin-top: 36px; text-align: center;">
+            <a href="Contact.html" class="btn-luxury btn-shimmer-gold">
+                <span>Book a Consultation</span>
+                <span class="shutter-icon"></span>
+            </a>
+        </div>
+    </div>
+
+    <!-- MAIN WEDDING STORY -->
+    <main id="wedding-story">
+        <!-- HERO SECTION -->
+        <header class="story-hero-section" id="ws-hero">
+            <div class="mc-hero-vignette"></div>
+
+            <div class="story-hero-inner">
+                <div class="camera-badge" style="margin-bottom: 20px;">
+                    <span class="badge-dot"></span>
+                    <span id="ws-location">A MountainClicks Chronicle</span>
+                </div>
+
+                <h1 id="ws-title">Wedding Story</h1>
+                <div class="gold-divider" style="margin: 0 auto 26px;"></div>
+
+                <a href="#story-timeline" class="btn-luxury btn-shimmer-gold" style="margin-top: 6px;">
+                    <span>View Gallery</span>
+                    <span class="shutter-icon"></span>
+                </a>
+            </div>
+        </header>
+
+        <!-- PURE IMAGE ESSAY GALLERY -->
+        <section class="stories-gallery-wrap">
+            <div
+                class="ws-timeline wedding-gallery-grid"
+                id="story-timeline"
+                aria-label="Wedding story gallery"
+                aria-live="polite"
+            >
+                <p class="ws-empty">Loading wedding story...</p>
+            </div>
+        </section>
+
+        <!-- THE STORY CONTINUES (CTA) -->
+        <section style="text-align: center; background: #eee7db; padding: 90px 6%;">
+            <p class="section-sub" style="margin-bottom: 10px;">A MountainClicks Chronicle</p>
+            <h2 class="section-title" style="color: var(--text-dark); margin-bottom: 16px;">The Story Continues</h2>
+            <div class="gold-divider" style="margin: 0 auto 24px;"></div>
+            <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto 30px; font-family: var(--font-sans); font-size: 1.02rem; line-height: 1.8;">
+                Every celebration holds breathtaking moments waiting to be preserved for generations. Tell us about your upcoming celebration.
+            </p>
+            <a href="Contact.html" class="btn-luxury btn-shimmer-gold">
+                <span>Tell Us Your Story</span>
+                <span class="shutter-icon"></span>
+            </a>
+        </section>
+    </main>
+
+    <!-- ELITE FOOTER -->
+    <footer class="mc-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h3>MountainClicks</h3>
+                <p>
+                    Fine art wedding and editorial photography studio dedicated to poetic imagery, luxury celebrations, and honest emotional storytelling.
+                </p>
+                <div class="footer-social-strip">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fa fa-pinterest"></i></a>
+                    <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Portfolio.html">Portfolio</a></li>
+                    <li><a href="Wedding.html">Wedding Collections</a></li>
+                    <li><a href="WeddingFilms.html">Wedding Films</a></li>
+                    <li><a href="About.html">Studio Story</a></li>
+                    <li><a href="Contact.html">Get in Touch</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Portfolio</h4>
+                <ul class="footer-links">
+                    <li><a href="Wedding.html">Palace Weddings</a></li>
+                    <li><a href="Portfolio.html">Pre-Wedding Shoots</a></li>
+                    <li><a href="WeddingFilms.html">Cinema Films</a></li>
+                    <li><a href="Portfolio.html">Bridal Portraits</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio Inquiries</h4>
+                <div class="footer-contact-item">
+                    <i class="fa fa-map-marker"></i>
+                    <span>Studio: Mumbai &bull; Destination Worldwide</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-envelope-o"></i>
+                    <span>commissions@mountainclicks.com</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa fa-phone"></i>
+                    <span>+91 98765 43210</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                &copy; 2026 MountainClicks Photography Studio. All Rights Reserved.
+            </div>
+            <div>
+                <span class="footer-placeholder-link" aria-disabled="true" title="This page is not available yet." style="margin-right: 20px;">Privacy Policy</span>
+                <span class="footer-placeholder-link" aria-disabled="true" title="This page is not available yet.">Terms of Commission</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/919876543210?text=Hi%20MountainClicks%2C%20I%20would%20like%20to%20enquire%20about%20wedding%20photography%20dates."
+        target="_blank" rel="noopener noreferrer" class="floating-booking-pill" aria-label="Quick WhatsApp Consultation">
+        <span class="pulse-dot"></span>
+        <span>WhatsApp Studio</span>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script src="js/wedding-stories.js"></script>
+    <script src="js/luxury-photographer.js"></script>
+
+    <script>
+        (function () {
+            const stories = window.weddingStories || {};
+            const params = new URLSearchParams(window.location.search);
+            const requestedId = params.get("id") || "wedding-a";
+            const story = stories[requestedId] || stories["wedding-a"];
+
+            const heroElement = document.getElementById("ws-hero");
+            const titleElement = document.getElementById("ws-title");
+            const locationElement = document.getElementById("ws-location");
+            const timeline = document.getElementById("story-timeline");
+
+            if (!story) {
+                timeline.innerHTML = "";
+
+                const message = document.createElement("p");
+                message.className = "ws-empty";
+                message.textContent =
+                    "No wedding story is available yet. Please check back soon.";
+
+                timeline.appendChild(message);
+                return;
+            }
+
+            if (heroElement && story.coverImage) {
+                heroElement.style.backgroundImage = 'linear-gradient(rgba(18, 12, 8, 0.58), rgba(18, 12, 8, 0.82)), url("' + story.coverImage + '")';
+            }
+
+            document.title =
+                (story.couple ? story.couple + " — Wedding Story" : (story.title || "Wedding Story")) + " | MountainClicks";
+
+            if (titleElement) {
+                titleElement.textContent = story.couple || story.title || "Wedding Story";
+            }
+
+            if (locationElement) {
+                locationElement.textContent = story.location || "A MOUNTAINCLICKS WEDDING CHRONICLE";
+            }
+
+            timeline.innerHTML = "";
+
+            const rawImages = story.images || (Array.isArray(story.stages) ? story.stages.map(function(s) { return typeof s === 'string' ? s : (s.image || ""); }) : []);
+
+            if (rawImages.length === 0) {
+                const message = document.createElement("p");
+                message.className = "ws-empty";
+                message.textContent = "Wedding images will be added soon.";
+                timeline.appendChild(message);
+                return;
+            }
+
+            rawImages.forEach(function (imageSrc, index) {
+                if (!imageSrc) return;
+
+                const article = document.createElement("article");
+                article.className = "ws-stage";
+
+                const figure = document.createElement("figure");
+                figure.className = "ws-photo";
+
+                const image = document.createElement("img");
+                image.src = imageSrc;
+                image.alt = (story.couple || "Wedding") + " - photograph " + (index + 1);
+                image.loading = "eager";
+                image.decoding = "async";
+
+                image.onerror = function () {
+                    figure.style.minHeight = "260px";
+                    figure.style.display = "grid";
+                    figure.style.placeItems = "center";
+
+                    const fallback = document.createElement("p");
+                    fallback.className = "ws-empty";
+                    fallback.textContent =
+                        "Image unavailable. Check this path: " + imageSrc;
+
+                    figure.replaceChildren(fallback);
+                };
+
+                figure.appendChild(image);
+                article.appendChild(figure);
+                timeline.appendChild(article);
+            });
+        })();
+    </script>
+</body>
+</html>

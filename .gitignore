@@ -4,3 +4,5 @@ Public.zip
 public/*.jpg
 public/*.jpeg
 public/*.png
+.agents\skills
+skills-lock.json
